@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+
+    <title>{{ tab_title }}</title>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="{% static 'src/dashboard/css/_base_structure.css' %} ">
+    <link rel="stylesheet" href="{% static 'src/dashboard/css/sidebar.css' %} ">
+    
+        <!-- <link rel="stylesheet" href="{% static 'src/dashboard/css/dashhome.css' %}">
+        <link rel="stylesheet" href="{% static 'src/dashboard/css/utils.css' %}">
+        <link rel="stylesheet" href="{% static 'src/dashboard/css/pages/db.css' %}"> -->
+
+    {% if dash_home %}
+        <link rel="stylesheet" href="{% static 'src/dashboard/css/home.css' %} ">
+    {% endif %}
+    {% if dash_post %}
+        <link rel="stylesheet" href="{% static 'src/dashboard/css/post.css' %} ">
+    {% endif %}          
+    {% if dash_find %}
+        <link rel="stylesheet" href="{% static 'src/dashboard/css/find.css' %} ">
+    {% endif %}                   
+    {% if dash_profile %}
+        <link rel="stylesheet" href="{% static 'src/dashboard/css/profile.css' %} ">
+    {% endif %}
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <div class="dashboard">
+
+
+
+        <div class="gridlayouts">
+            <div class="sidebarCon">
+                {% include 'pages/sidebar/sidebar.html' %}
+            </div>
+
+            <!--------------------------------------------------------------------------->
+
+            <div class="mainCon">
+
+
+                <div class="databasepage">
+
+                    {% if dash_home %}
+                        {% include 'pages/dashboard/home.html' %}
+                    {% endif %}
+                    
+                    {% if dash_post %}
+                        {% include 'pages/dashboard/post.html' %}
+                    {% endif %}
+                    
+                    {% if dash_find %}
+                        {% include 'pages/dashboard/find.html' %}
+                    {% endif %}
+                    
+                    {% if dash_profile %}
+                        {% include 'pages/dashboard/profile.html' %}
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!--=============================-->
+
+
+</body>
+</html>
