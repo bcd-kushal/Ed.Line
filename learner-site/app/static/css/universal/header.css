@@ -1,0 +1,243 @@
+.header{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background: var(--bgcolor1-light);
+}
+
+.header > *{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+
+.title{
+    font-size: 165%;
+}
+
+/* MINI SCREEN ################################################# */
+.miniScreen{
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.02);
+}
+
+.miniScreen > *{
+    padding: 8px;
+}
+
+
+.hamburger,.title,.search{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+/* LARGER SCREEN ################################################# */
+.largeScreen{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: "center";
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.02);
+}
+
+.largeScreen > *{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainBar{
+    height: 72px;
+    padding: 0 24px;
+}
+
+.fieldsBar{
+    height: calc( 100% - 72px );
+    border-top: .7px solid rgba(155, 155, 155, .6);
+    display: grid;
+    width: 100%;
+}
+
+.fieldsBar > *{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+
+.categoriesSection > *{
+    padding: 8px 16px;
+    height: 32px;
+    margin: 0 6px;
+    border: .7px solid rgba(155, 155, 155, .6);
+    font-size: .88rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+    width: auto;
+    cursor: pointer !important;
+}
+
+.fieldContainer a{
+    text-decoration: none;
+    color: var(--text0-light);
+}
+
+.fieldContainer:hover{
+    border-color: var(--text0-light);
+    background: var(--blue);
+    border-color: var(--blue);
+    transition: .33s;
+}
+.fieldContainer:hover a{
+    color: var(--bgcolor0-light);
+    transition: .33s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rightSection{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.rightSection > *{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.searchContainer{
+    display: grid;
+    width: 220px;
+    justify-content: flex-end;
+}
+
+.searchContainer > *{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.searchField{
+    margin-right: -20px;
+}
+
+.profileContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile{
+    width: 45px;
+    height: 45px;
+    background: var(--text0-light);
+    color: #fff;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchField input{
+    outline: none;
+    text-decoration: none;
+    background: transparent;
+    height: 45px;
+    border: .7px solid rgba(155, 155, 155, .6);
+    padding: 7px 20px 7px 13px;
+    border-radius: 30px;
+    text-align: right;
+}
+
+.rightSection > *{
+    cursor: pointer;
+}
+
+#searchbar{ cursor:text; }
+
+#searchbar:hover, #searchbar:focus{
+    border-color: var(--blue);
+}
+
+
+.myLearningContainer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* MEDIA QUERIES ################################################# */
+
+@media (max-width: 60000px){
+    .miniScreen{
+        display: none;
+    }
+    .largeScreen{
+        display: flex;
+    }
+    .header{
+        height: 120px;
+    }
+}
+
+
+
+@media (max-width: 1310px){
+
+}
+
+
+
+
+
+@media (max-width: 800px){
+    .miniScreen{
+        display: flex;
+    }
+    .largeScreen{
+        display: none;
+    }
+    .header{
+        height: 56px;
+    }
+}

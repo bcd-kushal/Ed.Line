@@ -1,0 +1,18 @@
+.closeButton{
+    position: absolute;
+    justify-self: flex-start;
+    align-self: flex-start;
+    height: 50px;
+    width: 50px;
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    top: 15px;
+    left: 15px;
+}
+
+.closeButton:hover{
+    background: var(--burger-link-light);
+}

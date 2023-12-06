@@ -1,0 +1,322 @@
+.footer {
+  background: var(--footer-light);
+  color: var(--footer-text0-light);
+  padding: 100px 24px 40px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--footer-text0-light);
+}
+
+.mainFooterContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.footerBoldWords, .callOfCall, .callNumber{
+    font-size: 1.04rem;
+    color: var(--footer-text0-light);
+    font-weight: 900;
+    letter-spacing: .45px;
+
+}
+
+.footerSubWords, .footerSubWords a{
+    font-size: 0.91rem;
+    color: var(--footer-text1-light);
+    font-weight: 500;
+    letter-spacing: .3px;
+}
+
+.footerSubWords a:hover{
+    color: var(--footer-text0-light) !important;
+}
+
+
+
+/* BOTTOM LINE ____________________________________ */
+.bottomLine {
+  width: 100%;
+  display: flex;
+  border-top: 0.5px solid rgba(169, 169, 169, 0.215);
+}
+
+.bottomLine > * {
+  display: flex;
+  align-items: center;
+}
+
+.footer a:hover {
+  color: var(--footer-text1-light);
+}
+
+
+.linksContainer > *{
+    padding: 3px;
+    margin: 0 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+
+.linksContainer > *:hover{
+    border-radius: 5px;
+    background: var(--footer-hover-dark);
+}
+
+.copyrightContainer{ 
+    cursor: text; 
+    color: var(--footer-text1-light);
+    font-size: .8rem;
+}
+
+
+
+
+
+/* TOP CONTAINER __________________________________ */
+.mainFooterChunk{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.contact_aboutSection{
+    width: 39%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.contact_aboutSection > *{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.seperator{
+    height: 70px;
+    justify-content: center;
+}
+.linksSection{
+    width: 59%;
+    height: 100%;
+}
+
+.SLINE{
+    height: .5px;
+    width: 50px;
+    background: var(--footer-text1-light);
+}
+
+.contactBar > *, .aboutEdLineContainer > *{
+    margin-bottom: 5px;
+}
+
+
+
+.callContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.callContainer > *{
+    margin-right: 7px;
+}
+
+.callNumber{
+    margin-left: 10px;
+}
+
+.callIcon{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.iconOfCall{ margin-right: 7px;}
+
+.aboutEdLineContainer .titleContainer{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.callNumber a:hover{
+    color: var(--footer-text0-light);
+}
+
+.getOnSiteContainer{
+    padding: 14px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.appStoreContainer, .playStoreContainer{
+    width: 130px;
+    height: 42px;
+    background: var(--footer-play-btn-light);
+    border-radius: 5px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.appStoreContainer:hover, .playStoreContainer:hover{
+    box-shadow: 0 0 8px 2px var(--footer-btn-hover-light);
+}
+
+.iconOfBlack{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoOfBlack{
+    width: calc( 100% - 40px );
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+
+/* ------ grid flex wrap of right section of footer ------------- */
+.linksSection{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.linksSection > *{
+    margin-bottom: 20px;
+    min-height: 225px;
+    min-width: 170px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES ____________________________ */
+@media (max-width: 60000px) {
+  .bottomLine {
+    height: 60px;
+    padding: 0 110px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .mainFooterChunk{ 
+    padding: 0 110px ;
+    padding-bottom: 20px;
+ }
+
+  .copyrightContainer {
+    justify-content: flex-start;
+  }
+
+  .linksContainer {
+    justify-content: flex-end;
+  }
+
+  .mainFooterChunk{
+    flex-direction: row;
+  }
+  
+  .linksSection{
+    justify-content: flex-end;
+}
+}
+
+
+
+@media (max-width: 1000px) {
+  .bottomLine {
+    height: 100px;
+    padding: 0;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .mainFooterChunk{ 
+    padding: 0 0 ;
+    padding-bottom: 20px; 
+    }
+  
+  .copyrightContainer,.linksContainer {
+    justify-content: center;
+  }
+
+  .linksContainer{
+    margin-bottom: 8px;
+  }
+
+
+
+}
+
+
+
+
+@media (max-width: 800px) {
+    .mainFooterChunk{
+        flex-direction: column;
+    }
+
+    .contact_aboutSection,.linksSection{
+        width: 100%;
+    }
+
+    .contact_aboutSection{
+        padding-bottom: 60px;
+        border-bottom: 0.5px solid rgba(169, 169, 169, 0.215);
+    }
+
+    .linksSection{
+        margin-top: 40px;
+        justify-content: flex-start;
+    }
+
+    .linksSection > *{
+        padding: 0 8px 8px 0;
+        margin-left: 0;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
