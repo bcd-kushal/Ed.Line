@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tab_title }}</title>
+</head>
+<body>
+    
+    <div class="gridLayerContainer">
+
+        <div class="backgroundLayer">
+
+        </div>
+
+
+        <div class="contentLayer">
+
+            <div class="welcomeBox">
+
+                <div class="artSection">
+
+                </div>
+
+                <div class="textSection">
+
+                    <div class="titleArea">
+                        //SAMPLE TITLE
+                    </div>
+
+                    <div class="descArea">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laudantium beatae delectus quasi. Ea odit placeat deleniti dignissimos, suscipit nostrum dolorem, nobis quia officiis ab quibusdam optio aperiam quos cum!
+                    </div>
+
+                    <hr>
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="landing_mobile" id="landing_mobile">
+                        <button type="submit">Join for Free</button>
+                    </form>
+                    
+                    <hr>
+
+                    <div class="buttons">
+                        
+                        <div class="signInArea">
+                            <a href="/signup/">SignUp</a>
+                        </div>
+
+                        <br>
+                        
+                        <div class="loginArea">
+                            <a href="/login/">Log in</a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
