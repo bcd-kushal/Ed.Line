@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tab_title }}</title>
+</head>
+<body>
+    
+
+    <h1 style="text-align: center;">
+        {% if bad_request %}
+            Page Not Accessible...
+        {% endif %}
+
+        {% if bad_route %}
+            Oops! Page Not Found...
+        {% endif %}
+    </h1>
+
+    <br>
+
+    <h3 style="text-align: center;">
+        {% if bad_request %}
+            The requested method was unauthorized
+        {% endif %}
+
+        {% if bad_route %}
+            Looks like you're looking for something that doesn't exist.
+        {% endif %}
+    </h3>
+    
+    <a href="/">Go Home</a>
+
+
+</body>
+</html>
