@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tab_title }}</title>
+</head>
+<body>
+    
+
+                    <div class="buttons">
+                        
+                        <div class="signInArea">
+                            <form action="{% url 'user-signup' %}" method="post">
+
+                                <button type="submit">
+                                    Sign Up
+                                </button>
+
+                            </form>
+                        </div>
+
+                        <div class="loginArea">
+                            <form action="{% url 'user-login' %}" method="post">
+
+                                <button type="submit">
+                                    Login
+                                </button>
+
+                            </form>
+                        </div>
+
+
+                    </div>
+
+
+</body>
+</html>
