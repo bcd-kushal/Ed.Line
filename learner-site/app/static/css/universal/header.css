@@ -206,6 +206,48 @@
     color: inherit;
 }
 
+
+.streakShow{
+    height: 28px;
+    background: var(--streak-light);
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px 0 6px;
+    scale: 1.01;
+}
+
+.streakShow:hover{
+    scale: 1.027;
+}
+
+.streakSection{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 6px;
+}
+.streakSection > *{ padding: 0 3px; }
+
+.streakTime{
+    font-weight: 990;
+    font-size: .75rem;
+    padding-top: 1px;
+    padding-left: 0;
+}
+
+.streakImg img{
+    scale: .8;
+    padding-top: 4px;
+}
+
+.yess{
+    filter: hue-rotate(153deg);
+    opacity: .7;
+}
+
+
 /* MEDIA QUERIES ################################################# */
 
 @media (max-width: 60000px){
