@@ -23,7 +23,7 @@ urlpatterns = [
 
     # USER PROFILE
     path('user/', r.goto_user_profile, name='redirect-to-profile'),
-    path('user/profile/', r.show_user_profile, name='show-user'),
+    # path('user/profile/', r.show_user_profile, name='show-user'),
     path('user/enrollments/', r.user_enrollments, name='user-enrollments'),              # <---- for the signed-in
     path('user/settings/', r.user_settings, name='user-settings'),              # <---- for the signed-in
 
