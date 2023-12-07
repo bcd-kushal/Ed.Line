@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{ tab_title }}</title>
+
+
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- GET WISHLIST, NOTIFICATIONS, STREAK -->
+    <link rel="stylesheet" href="{% static 'css/home/containers/learn_streak.css' %} ">
+    
+    
+    <!-- GET HEADER FOOTER -->
+    <link rel="stylesheet" href="{% static 'css/universal/header.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/universal/footer.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/universal/hamburger.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/universal/rightPage.css' %} ">
+
+    
+    <link rel="stylesheet" href="{% static 'css/settings/settings.css' %} ">
+    
+    
+    <!-- LOAD REST OF PAGES AS NEEDED -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
+        
+</head>
+<body>
+<!-- 
+    <div class="parentContainer" onscroll="keepItSticky()">
+ -->
+
+        <div class="headerSection">
+            {% include 'src/universal/header.html' %}
+        </div>
+    
+        <div class="mainSection">
+            {% if homepage %}
+                {% include 'src/home/pages/home.html' %}
+            {% endif %}
+        
+            {% if enrollments %}
+                {% include 'src/home/pages/enrolled.html' %}
+            {% endif %}
+        
+            {% if courses %}
+                {% include 'src/home/pages/courses.html' %}
+            {% endif %}
+        
+            <!-- {% if user_profile %}
+                {% include 'src/home/pages/profile.html' %}
+            {% endif %} -->
+        
+            {% if settings %}
+                {% include 'src/settings/settings.html' %}
+            {% endif %}
+        </div>
+    
+    
+        <div class="footerSection">
+            {% include 'src/universal/footer.html' %}
+        </div>
+
+
+
+
+
+
+        <!--======= HAMBURGER MENU ===================================-->
+        <div class="burgerFullPane">
+            <div class="hamburgerSection">
+                {% include 'src/universal/hamburger.html' %}
+            </div>
+            <div class="goBackButtonBurger">
+                <i class="fa-solid fa-xmark crossB"></i>
+            </div>
+        </div>
+
+
+
+        <!--===== LEARNING STREAK PAGE =========================================-->
+        <div class="learnStreakPane">
+            {% include 'src/home/containers/learn_streak.html' %}
+        </div>
+
+
+    <!-- </div> -->
+
+
+
+
+    <script>
+
+        function rotateIcon(){
+            document.getElementsByClassName("crossB")[0].animate({
+                rotate: "90deg"
+            }, {duration: 225, fill: "forwards"});
+        }
+
+        
+        document.getElementsByClassName("goBackButtonBurger")[0].addEventListener( "mouseenter", () => {
+            document.getElementsByClassName("crossB")[0].animate({
+                rotate: "90deg"
+            }, {duration: 225, fill: "forwards"});
+        });
+
+        document.getElementsByClassName("goBackButtonBurger")[0].addEventListener( "mouseleave", () => {
+            document.getElementsByClassName("crossB")[0].animate({
+                rotate: "-90deg"
+            }, {duration: 225, fill: "forwards"});
+        });
+
+
+
+
+
+        document.getElementsByClassName("goBackButtonBurger")[0].addEventListener("click", () => {
+            const PANE = document.getElementsByClassName("burgerFullPane")[0];
+            PANE.animate({
+                left: "-100vw",
+                opacity: "0"
+            }, { duration: 200, fill: "forwards" });
+        });
+        
+        document.querySelector(".hamburgerContainer .hamburger").addEventListener("click", () => {
+            const PANE = document.getElementsByClassName("burgerFullPane")[0];
+            PANE.animate({
+                left: "0vw",
+                opacity: "1"
+            }, { duration: 200, fill: "forwards" });
+        });
+        
+        window.addEventListener( "scroll", () => {
+            document.querySelector(".lssec").style.top = window.scrollY + "px";
+        });
+
+
+
+    </script>
+    
+</body>
+</html>
