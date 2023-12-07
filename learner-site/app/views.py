@@ -294,19 +294,19 @@ def goto_user_profile(req):
             
             
 
-# @user/profile/
-def show_user_profile(req):
-    if req.method == "GET":
-        if req.user.username == None or req.user.username == "":
-            return redirect('/')
-        else:
-            CONTEXT = {
-                "fname": req.user.first_name,
-                "tab_title": f"{req.user.first_name} {req.user.last_name}|Ed.Line",
-                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
-                "user_profile": 1
-            }
-            return render(req,"src/home/_base_structure.html",CONTEXT)
+# @user/settings/
+# def show_user_settings(req):
+#     if req.method == "GET":
+#         if req.user.username == None or req.user.username == "":
+#             return redirect('/')
+#         else:
+#             CONTEXT = {
+#                 "fname": req.user.first_name,
+#                 "tab_title": f"{req.user.first_name} {req.user.last_name}|Ed.Line",
+#                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
+#                 "settings": 1
+#             }
+#             return render(req,"src/home/_base_structure.html",CONTEXT)
     
 
 
@@ -339,7 +339,8 @@ def user_settings(req):
             return redirect('/')
         else:
             CONTEXT = {
-                "tab_title": "Settings|Ed.Line",
+                "fname": req.user.first_name,
+                "tab_title": f"{req.user.first_name} {req.user.last_name}|Ed.Line",
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
                 "settings": 1
             }
