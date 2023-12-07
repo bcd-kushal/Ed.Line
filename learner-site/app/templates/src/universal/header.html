@@ -1,0 +1,201 @@
+
+    
+<div class="header">
+
+    <div class="miniScreen">
+
+        <div class="hamburgerContainer">
+            <div class="hamburger">
+                <i class="fa-solid fa-bars fa-lg" style="color: #545454;"></i>
+            </div>
+        </div>
+
+        <div class="titleContainer">
+            <div class="title" style="font-size: 140%;">
+                <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;scale: 1.22;"></i>&nbsp;Ed.Line
+            </div>
+        </div>
+
+        <div class="searchContainerM">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #545454;"></i>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="largeScreen">
+
+        <div class="mainBar">
+
+            <div class="leftSection">
+
+                <div class="titleContainer" style="margin-left: 4px;">
+                    <div class="title">
+                        <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;scale: 1.22;"></i>&nbsp;Ed.Line
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rightSection">
+
+                <div class="searchContainer" style="margin-right: 25px;">
+                    
+                    <div class="search_placeholder">
+                        <i class="fa-solid fa-magnifying-glass fa-xs" style="color: #545454;margin-right: 8px;margin-bottom: -2px;"></i> <div>Search</div>
+                    </div>
+                    <div class="searchField">
+                        <input type="text" name="searchvalue" id="searchbar" >
+                    </div>
+
+                </div>
+                
+                <div class="myLearningContainer" style="width: 120px;">
+                    <a href="/user/enrollments/">My Learning</a>
+                </div>
+
+                <div class="wishlistContainer">
+                    <i class="fa-regular fa-heart fa-lg" style="color: #545454;"></i>
+                </div>
+
+                <div class="notificationContainer" style="width: 170px;">
+                    <div class="streakShow">
+                        <div class="streakSection">
+                            <div class="streakImg"><img src="https://static.uacdn.net/production/_next/static/images/layout/header/current_streak.svg?q=75&auto=format%2Ccompress&w=48" alt="" class="yess" style="padding-right: 0;"></div>
+                            <div class="streakTime">10min</div>
+                        </div>
+                        <div class="streakSection">
+                            <div class="streakImg"><img src="https://static.uacdn.net/production/_next/static/images/layout/header/current_streak.svg?q=75&auto=format%2Ccompress&w=48" alt="" style="padding-right: 0;"></div>
+                            <div class="streakTime">4 days</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profileContainer" style="width: 60px;">
+                    <div class="profile">{{ username }}</div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="fieldsBar">
+
+            <div class="categoriesSection">
+                <div class="fieldContainer a"><a href="/home/">Development</a></div>
+                <div class="fieldContainer b"><a href="/home/">Business</a></div>
+                <div class="fieldContainer c"><a href="/home/">Finance & Accounting</a></div>
+                <div class="fieldContainer d"><a href="/home/">IT & Software</a></div>
+                <div class="fieldContainer e"><a href="/home/">Office Productivity</a></div>
+                <div class="fieldContainer f"><a href="/home/">Personal Development</a></div>
+                <div class="fieldContainer g"><a href="/home/">Design</a></div>
+                <div class="fieldContainer h"><a href="/home/">Marketing</a></div>
+                <div class="fieldContainer i"><a href="/home/">Health & Fitness</a></div>
+                <div class="fieldContainer j"><a href="/home/">Music</a></div>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    /* HIDE TAGS OF SECOND HEADER ROW ON RESIZE --------------------------------- */
+    document.querySelector(".rightSection .profileContainer").addEventListener("click",() => {
+        window.location.href = "/user/settings/";
+    })
+
+
+    document.querySelector(".leftSection .titleContainer").addEventListener("click",() => {
+        window.location.href = "/home/";
+    })
+
+
+
+
+
+
+
+
+
+
+
+    /* HIDE TAGS OF SECOND HEADER ROW ON RESIZE --------------------------------- */
+    // window.addEventListener("resize", hideTagsPerhaps);
+
+   /*  function hideTagsPerhaps(){
+        
+        const homeTags = document.getElementsByClassName("fieldContainer");
+        const w = window.innerWidth;
+
+        if(w<1310){
+            document.getElementsByClassName("j")[0].style.display = "none";
+            if(w<1240){
+                document.getElementsByClassName("i")[0].style.display = "none";
+                if(w<1080){
+                    document.getElementsByClassName("h")[0].style.display = "none";
+                    if(w<980){
+                        document.getElementsByClassName("g")[0].style.display = "none";
+                        if(w<910){
+                            document.getElementsByClassName("f")[0].style.display = "none";
+                        }
+                    }
+                }
+            }
+
+        }
+        
+        if(w>910){
+            document.getElementsByClassName("f")[0].style.display = "flex";
+            if(w>980){
+                document.getElementsByClassName("g")[0].style.display = "flex";
+                if(w>1080){
+                    document.getElementsByClassName("h")[0].style.display = "flex";
+                    if(w>1240){
+                        document.getElementsByClassName("i")[0].style.display = "flex";
+                        if(w>1310){
+                            document.getElementsByClassName("j")[0].style.display = "flex";
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+        if(w>1310){
+            document.getElementsByClassName("j")[0].style.display = "flex";
+
+            if(w>1230){
+                document.getElementsByClassName("i")[0].style.display = "flex";
+
+                if(w>1080){
+                    document.getElementsByClassName("h")[0].style.display = "flex";
+
+                    if(w>980){
+                        document.getElementsByClassName("g")[0].style.display = "flex";
+
+
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+ */
+
+
+</script>
