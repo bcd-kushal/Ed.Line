@@ -105,12 +105,12 @@
             }, { duration: 200, fill: "forwards" });
         })
         
-        document.querySelector(".notificationContainer").addEventListener("click", () => {
+        document.querySelectorAll(".notificationContainer").forEach( streak => streak.addEventListener("click", () => {
             const PANE = document.getElementsByClassName("learnStreakPane")[0];
             PANE.animate({
                 right: "0vw",
                 opacity: "1"
             }, { duration: 310, fill: "forwards" });
-        })
+        }));
         
 </script>

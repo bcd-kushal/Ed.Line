@@ -4,11 +4,11 @@
 
     <div class="miniScreen">
 
-        <div class="hamburgerContainer">
+        <!-- <div class="hamburgerContainer">
             <div class="hamburger">
                 <i class="fa-solid fa-bars fa-lg" style="color: #545454;"></i>
             </div>
-        </div>
+        </div> -->
 
         <div class="titleContainer">
             <div class="title" style="font-size: 140%;">
@@ -16,10 +16,29 @@
             </div>
         </div>
 
-        <div class="searchContainerM">
-            <div class="search">
-                <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #545454;"></i>
+        <div class="miniRightContainer" style="display: flex;gap: 7px;align-items: center;justify-content: flex-end;padding: 0;">
+            
+            <!-- STREAK BUTTON -->
+            <div class="notificationContainer" style="width: auto;">
+                <div class="streakShow" style="background: var(--mini-streak-light);">
+                    <div class="streakSection" style="padding: 0 9px 0 0;">
+                        <div class="streakImg"><img src="https://static.uacdn.net/production/_next/static/images/layout/header/current_streak.svg?q=75&auto=format%2Ccompress&w=48" alt="" class="yess" style="padding-right: 0;"></div>
+                        <div class="streakTime">10m</div>
+                    </div>
+                    <div class="streakSection" style="padding: 0;">
+                        <div class="streakImg" style="padding: 0;"><img src="https://static.uacdn.net/production/_next/static/images/layout/header/current_streak.svg?q=75&auto=format%2Ccompress&w=48" alt="" style="padding-right: 0;"></div>
+                        <div class="streakTime"></div>
+                    </div>
+                </div>
             </div>
+
+            <!-- SHOW PROFILE -->
+            <div class="profileContainer" style="width: 50px;aspect-ratio: 1;padding-right: 0;">
+                <div class="profile">{{ username }}</div>
+            </div>
+
+
+
         </div>
 
     </div>
@@ -42,6 +61,7 @@
 
             <div class="rightSection">
 
+                <!-- SEARCH BAR -->
                 <div class="searchContainer" style="margin-right: 25px;">
                     
                     <div class="search_placeholder">
@@ -53,14 +73,19 @@
 
                 </div>
                 
-                <div class="myLearningContainer" style="width: 120px;">
-                    <a href="/user/enrollments/">My Learning</a>
+                <!-- MY COURSES -->
+                <div class="wishlistContainer" style="height:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;width: 65px;margin-bottom: -18px;" onclick="location.href = '/home/courses/';">
+                    <i class="fa-solid fa-icons fa-lg pqr"></i>
+                    <div class="abcd" style="padding-top: 12px;font-size: .65rem;">Courses</div>
+                </div>
+                
+                <!-- MY LEAERNING -->
+                <div class="myLearningContainer" style="height:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;width: 65px;margin-bottom: -18px;" onclick="location.href = '/home/my-learning/enrolled/';">
+                    <i class="fa-solid fa-folder-tree fa-lg pqr"></i>
+                    <div class="abcd" style="padding-top: 12px;font-size: .65rem;">My Learning</div>
                 </div>
 
-                <div class="wishlistContainer">
-                    <i class="fa-regular fa-heart fa-lg" style="color: #545454;"></i>
-                </div>
-
+                <!-- LEARNING STREAK -->
                 <div class="notificationContainer" style="width: 170px;">
                     <div class="streakShow">
                         <div class="streakSection">
@@ -74,6 +99,7 @@
                     </div>
                 </div>
 
+                <!-- SHOW PROFILE -->
                 <div class="profileContainer" style="width: 60px;">
                     <div class="profile">{{ username }}</div>
                 </div>
@@ -87,16 +113,16 @@
         <div class="fieldsBar">
 
             <div class="categoriesSection">
-                <div class="fieldContainer a"><a href="/home/">Development</a></div>
-                <div class="fieldContainer b"><a href="/home/">Business</a></div>
-                <div class="fieldContainer c"><a href="/home/">Finance & Accounting</a></div>
-                <div class="fieldContainer d"><a href="/home/">IT & Software</a></div>
-                <div class="fieldContainer e"><a href="/home/">Office Productivity</a></div>
-                <div class="fieldContainer f"><a href="/home/">Personal Development</a></div>
-                <div class="fieldContainer g"><a href="/home/">Design</a></div>
-                <div class="fieldContainer h"><a href="/home/">Marketing</a></div>
-                <div class="fieldContainer i"><a href="/home/">Health & Fitness</a></div>
-                <div class="fieldContainer j"><a href="/home/">Music</a></div>
+                <div class="fieldContainer a"><a href="/home/courses/development/">Development</a></div>
+                <div class="fieldContainer b"><a href="/home/courses/business/">Business</a></div>
+                <div class="fieldContainer c"><a href="/home/courses/finance-and-accounting/">Finance & Accounting</a></div>
+                <div class="fieldContainer d"><a href="/home/courses/it-and-software/">IT & Software</a></div>
+                <div class="fieldContainer e"><a href="/home/courses/office-productivity/">Office Productivity</a></div>
+                <div class="fieldContainer f"><a href="/home/courses/personal-development/">Personal Development</a></div>
+                <div class="fieldContainer g"><a href="/home/courses/design/">Design</a></div>
+                <div class="fieldContainer h"><a href="/home/courses/marketing/">Marketing</a></div>
+                <div class="fieldContainer i"><a href="/home/courses/health-and-fitness/">Health & Fitness</a></div>
+                <div class="fieldContainer j"><a href="/home/courses/music/">Music</a></div>
             </div>
             
 
@@ -109,10 +135,6 @@
 <script>
 
     /* HIDE TAGS OF SECOND HEADER ROW ON RESIZE --------------------------------- */
-    document.querySelector(".rightSection .profileContainer").addEventListener("click",() => {
-        window.location.href = "/user/settings/";
-    })
-
 
     document.querySelector(".leftSection .titleContainer").addEventListener("click",() => {
         window.location.href = "/home/";
@@ -129,9 +151,12 @@
 
 
     /* HIDE TAGS OF SECOND HEADER ROW ON RESIZE --------------------------------- */
-    // window.addEventListener("resize", hideTagsPerhaps);
+    window.addEventListener("resize", () => { hideTags(); } );
 
-   /*  function hideTagsPerhaps(){
+    (() => { hideTags(); })();
+
+
+    function hideTags(){
         
         const homeTags = document.getElementsByClassName("fieldContainer");
         const w = window.innerWidth;
@@ -193,9 +218,6 @@
 
     }
 
-
-
- */
 
 
 </script>

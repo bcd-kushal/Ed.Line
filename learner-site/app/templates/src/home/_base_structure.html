@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- GET WISHLIST, NOTIFICATIONS, STREAK -->
     <link rel="stylesheet" href="{% static 'css/home/containers/learn_streak.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/home/containers/profile.css' %} ">
     
     
     <!-- GET HEADER FOOTER -->
@@ -23,6 +24,12 @@
 
     
     <link rel="stylesheet" href="{% static 'css/settings/settings.css' %} ">
+
+
+    
+    <link rel="stylesheet" href="{% static 'css/home/pages/courses.css' %} ">
+    
+    <link rel="stylesheet" href="{% static 'css/home/courses/specific_course.css' %} ">
     
     
     <!-- LOAD REST OF PAGES AS NEEDED -->
@@ -30,9 +37,9 @@
         
 </head>
 <body>
-<!-- 
+
     <div class="parentContainer" onscroll="keepItSticky()">
- -->
+
 
         <div class="headerSection">
             {% include 'src/universal/header.html' %}
@@ -51,9 +58,9 @@
                 {% include 'src/home/pages/courses.html' %}
             {% endif %}
         
-            <!-- {% if user_profile %}
-                {% include 'src/home/pages/profile.html' %}
-            {% endif %} -->
+            {% if specific_course %}
+                {% include 'src/home/courses/specific_course.html' %}
+            {% endif %}
         
             {% if settings %}
                 {% include 'src/settings/settings.html' %}
@@ -71,14 +78,14 @@
 
 
         <!--======= HAMBURGER MENU ===================================-->
-        <div class="burgerFullPane">
+        <!-- <div class="burgerFullPane">
             <div class="hamburgerSection">
                 {% include 'src/universal/hamburger.html' %}
             </div>
             <div class="goBackButtonBurger">
                 <i class="fa-solid fa-xmark crossB"></i>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -88,7 +95,15 @@
         </div>
 
 
-    <!-- </div> -->
+
+        
+        <!--===== PROFILE PAGE =========================================-->
+        <div class="profilePane">
+            {% include 'src/home/containers/profile.html' %}
+        </div>
+
+
+    </div>
 
 
 
@@ -134,8 +149,14 @@
             }, { duration: 200, fill: "forwards" });
         });
         
+
+
+
+
+
         window.addEventListener( "scroll", () => {
-            document.querySelector(".lssec").style.top = window.scrollY + "px";
+            if(document.querySelector(".lssec"))
+                document.querySelector(".lssec").style.top = window.scrollY + "px";
         });
 
 

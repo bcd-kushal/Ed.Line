@@ -1,0 +1,679 @@
+<div class="profileWrapper">
+
+
+
+
+    <div class="closeButtonPFP">
+        <i class="fa-solid fa-xmark crossBPFP" style="scale: 1.4;"></i>
+    </div>
+    
+    <div class="headerSectionPFP">
+
+        <div class="profileBigImg">
+            {% if user.image is None %}
+                <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+            {% else %}
+                HI
+            {% endif %}
+            
+        </div>
+        <div class="namePlates">
+            <div class="headerTitlePFP">{{full_name}}</div>
+            <div class="headerDescPFP" style="color: var(--footer-btn-hover-light);">Joined {{join_date}}</div>
+            <div class="badgeArea">
+                <div class="badge1">
+                    <img src="https://static.uacdn.net/thumbnail/learner_hat_icon/green-hat.png" alt="">
+                </div>
+                {% if badge2 %}
+                    <div class="badge2">Y</div>
+                {% endif %}
+                {% if badge3 %}
+                    <div class="badge3">Z</div>
+                {% endif %}
+                {% if remainder_badges %}
+                    <div class="otherBadges">+{{remainder_badges}}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="profileInsights">
+        <div class="watchMinsPFP">
+            <div class="wmn" >{{total_watch_mins | default:'9h 16m'}}</div>
+            <div class="wmt">Total Watch Time</div>
+        </div>
+
+        
+        <div class="followedPFP">
+            <div class="fn">{{total_followed | default:'78'}}</div>
+            <div class="ft">Educators Followed</div>
+        </div>
+
+        
+        <div class="xPFP">
+            <div class="xn">{{x | default:'...'}}</div>
+            <div class="xt">...</div>
+        </div>
+    </div>
+
+
+
+
+    
+    <div class="linksPFP">
+        <div class="settingsBarPFP">
+            <div class="themeMode">
+                {% if theme == 'light' %}
+                    L
+                {% elif theme == 'dark' %}
+                    D
+                {% else %}
+                <i class="fa-regular fa-sun" style="rotate: 22.5deg;"></i> <div class="themeNamePFP">&nbsp; &nbsp; Light</div>
+                {% endif %}
+            </div>
+
+            <div class="settingsPFPbar">
+                <div class="settingsIconPFP">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="settingsNamePFP">
+                    Settings &nbsp; &nbsp; <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="preferredCourses">
+
+            <div class="goToBtn">
+                <div class="goToA">
+                    Courses
+                </div>
+                <div class="goToB">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+
+
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-code fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_1 | default:'Development'}}</div>
+            </div>
+
+
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'Business'}}</div>
+            </div>
+
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-code fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_1 | default:'Finance & Accounting'}}</div>
+            </div>
+
+
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'IT & Software'}}</div>
+            </div>
+
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-code fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_1 | default:'Office Productivity'}}</div>
+            </div>
+
+
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'Perosnal Development'}}</div>
+            </div>
+
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-code fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_1 | default:'Design'}}</div>
+            </div>
+
+
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'Marketing'}}</div>
+            </div>
+
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-code fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_1 | default:'Lifestyle'}}</div>
+            </div>
+
+
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'Photography & Video'}}</div>
+            </div>
+
+
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'Music'}}</div>
+            </div>
+
+
+            
+            
+            <div class="courseTab">
+                <div class="courseImg">
+                    <i class="fa-solid fa-palette fa-lg"></i>
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_2 | default:'Teaching & Academics'}}</div>
+            </div>
+
+
+            
+            
+
+            {% if course_preference_3 %}
+            <div class="courseTab">
+                <div class="courseImg">
+                    {{course_img3 | default:'DEV'}}
+                </div>
+                <div class="courseNamePFPpreference">{{course_preference_3 | default:'Health & Fitness'}}</div>
+            </div>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="linksPFP historyTab">
+
+        <div class="courseHeaders">
+            <div class="headerL">
+                <i class="fa-solid fa-clock-rotate-left"></i> &nbsp; History
+            </div>
+            <div class="headerR">
+                Go to My Learning
+            </div>
+        </div>
+
+        <div class="preferredCourses videoHistory" style="background: none;">
+
+            <!-- <div class="goToBtn">
+                <div class="goToA">
+                    History
+                </div>
+                <div class="goToB">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+            </div> -->
+
+
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; Regression Trees
+                        </div>
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+
+                    <div class="vidTags">
+                        <div class="languageTag">EN</div>
+                        <div class="courseTypeTag">DEVELOPMENT</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        Artificial Intelligence: The Complete Course
+                    </div>
+<!-- 
+                    <div class="vidSubTitle">
+                        Regression Trees
+                    </div> -->
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">4.4</div>
+                            <div class="ratingTotal"></div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if user.image is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    HI
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                Rudra Kumar Mishra
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            210 lectures | 4 PDFs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; Regression Trees
+                        </div>
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+
+                    <div class="vidTags">
+                        <div class="languageTag">EN</div>
+                        <div class="courseTypeTag">DEVELOPMENT</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        Artificial Intelligence: The Complete Course
+                    </div>
+<!-- 
+                    <div class="vidSubTitle">
+                        Regression Trees
+                    </div> -->
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">4.4</div>
+                            <div class="ratingTotal"></div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if user.image is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    HI
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                Rudra Kumar Mishra
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            210 lectures | 4 PDFs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; Regression Trees
+                        </div>
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+
+                    <div class="vidTags">
+                        <div class="languageTag">EN</div>
+                        <div class="courseTypeTag">DEVELOPMENT</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        Artificial Intelligence: The Complete Course
+                    </div>
+<!-- 
+                    <div class="vidSubTitle">
+                        Regression Trees
+                    </div> -->
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">4.4</div>
+                            <div class="ratingTotal"></div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if user.image is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    HI
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                Rudra Kumar Mishra
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            210 lectures | 4 PDFs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; Regression Trees
+                        </div>
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+
+                    <div class="vidTags">
+                        <div class="languageTag">EN</div>
+                        <div class="courseTypeTag">DEVELOPMENT</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        Artificial Intelligence: The Complete Course
+                    </div>
+<!-- 
+                    <div class="vidSubTitle">
+                        Regression Trees
+                    </div> -->
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">4.4</div>
+                            <div class="ratingTotal"></div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if user.image is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    HI
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                Rudra Kumar Mishra
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            210 lectures | 4 PDFs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; Regression Trees
+                        </div>
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+
+                    <div class="vidTags">
+                        <div class="languageTag">EN</div>
+                        <div class="courseTypeTag">DEVELOPMENT</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        Artificial Intelligence: The Complete Course
+                    </div>
+<!-- 
+                    <div class="vidSubTitle">
+                        Regression Trees
+                    </div> -->
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">4.4</div>
+                            <div class="ratingTotal"></div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if user.image is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    HI
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                Rudra Kumar Mishra
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            210 lectures | 4 PDFs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+    
+    <div class="burgerFooterSection">
+        <div class="burgerSectionMainBoxContainer burgerBottom">
+            <div class="bbr1">
+                <a href="/">Terms & Conditions</a> &nbsp; • &nbsp;<a href="/">Privacy Policy</a>
+            </div>
+            <div class="bbr2">
+                <a href="/">About</a> &nbsp; • &nbsp; <a href="/">Careers</a> &nbsp; • &nbsp; <a href="/">Blog</a>
+            </div>
+            <div class="bbr3">
+            
+                <div class="instaContainer" style="display: flex;align-items: center;justify-content: center;">
+                    <i class="fa-brands fa-instagram fa-sm" style="color: var(--burger-subtitle-light);"></i>
+                </div>
+                <div class="youtubeContainer" style="display: flex;align-items: center;justify-content: center;">
+                    <i class="fa-brands fa-youtube fa-sm" style="color: var(--burger-subtitle-light);"></i>
+                </div>
+                <div class="facebookContainer" style="display: flex;align-items: center;justify-content: center;">
+                    <i class="fa-brands fa-meta fa-sm" style="color: var(--burger-subtitle-light);"></i>
+                </div>
+                <div class="twitterContainer" style="display: flex;align-items: center;justify-content: center;">
+                    <i class="fa-brands fa-x-twitter fa-sm" style="color: var(--burger-subtitle-light);"></i>
+                </div>
+                <div class="linkedinContainer" style="display: flex;align-items: center;justify-content: center;">
+                    <i class="fa-brands fa-linkedin fa-sm" style="color: var(--burger-subtitle-light);"></i>
+                </div>
+
+            </div>
+            <div class="bbr4">
+                © {{year | default:'2023'}} RK Group Learning Pvt Ltd
+            </div>
+        </div>  
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    
+        document.getElementsByClassName("closeButtonPFP")[0].addEventListener("click", () => {
+            const PANE = document.getElementsByClassName("profilePane")[0];
+
+            PANE.animate({
+                right: "-100vw",
+                opacity: "0"
+            }, { duration: 200, fill: "forwards" });
+        });
+        
+
+
+        document.querySelectorAll(".profileContainer").forEach( profile => profile.addEventListener("click", () => {
+            const PANE = document.getElementsByClassName("profilePane")[0];
+            PANE.animate({
+                right: "0vw",
+                opacity: "1"
+            }, { duration: 310, fill: "forwards" });
+        }));
+
+
+        
+</script>

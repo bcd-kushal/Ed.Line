@@ -1,0 +1,238 @@
+<div class="specificCourse">
+
+
+
+    
+    <div class="courseTitleContainer">
+        Learn {{specific_course}}
+    </div>
+
+    <div class="mostPopularVideosTab">
+        
+        <div class="preferredCourses popularCourses">
+
+            <div class="goToBtn">
+                <div class="goToA" style="color: rgba(58, 3, 3, .65);">
+                    <b>Popular Courses</b>
+                </div>
+            </div>
+
+            
+            {% for x in popular_courses %}
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="{{x.thumbnail | default:'https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg'}}" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+
+                    <div class="vidTags">
+                        <div class="languageTag">{{x.language}}</div>
+                        <div class="courseTypeTag">{{x.courseType}}</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        {{x.title}}
+                    </div>
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">{{x.rating}}</div>
+                            <div class="ratingTotal">({{x.total_ratings}})</div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if x.educator_pfp is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    <img src="{{x.educator_pfp}}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                {{x.educator_name}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            {{x.footer_course_details}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+
+        </div>
+    </div>
+
+    <div class="courseFilterSpace">
+        
+        <div class="courseFilterPane">
+
+
+            <div class="courseFilterPane2">
+
+
+
+                <div class="courseFilterTab">
+                    <div class="allCourseSection" style="font-size: 1.42rem;display:flex;gap: 0;">
+                        All courses <div id="aege">&nbsp;in {{specific_course}}</div> 
+                    </div> 
+                    <div class="filterSortButtonSection">
+                        <div class="filterButtonContainer">
+                            <button type="button" class="filterButton">
+                                Filter
+                            </button>
+                        </div>
+                        <div class="sortByOptionTitle">
+                            Sort By: 
+                            <select name="sortByOption" id="sortByOption">
+                                <option value="Relevance">Relevance</option>
+                                <option value="Highest">Highest</option>
+                                <option value="Lowest">Lowest</option>
+                            </select> 
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="allCoursesList">
+                    
+
+
+
+
+
+                    
+            {% for x in popular_courses %}
+            <div class="courseTab2 videoTab2">
+                <div class="vidThumbnailPFP2">
+                    <div class="thumbnailImgBox2">
+                        <img src="{{x.thumbnail | default:'https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg'}}" alt="" style="object-fit: cover;height: 100%;">
+                    </div>
+                    <!-- <div class="thumbnailOtherBox2">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="vidDetails">
+
+                    {% if progress %}
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+                    {% endif %}
+
+                    <div class="vidTags">
+                        <div class="languageTag">{{x.language}}</div>
+                        <div class="courseTypeTag">{{x.courseType}}</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        {{x.title}}
+                    </div>
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">{{x.rating}}</div>
+                            <div class="ratingTotal">({{x.total_ratings}})</div>
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                {% if x.educator_pfp is None %}
+                                    <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                {% else %}
+                                    <img src="{{x.educator_pfp}}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="creatorName">
+                                {{x.educator_name}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        <div class="typeTags"></div>
+                        <div class="otherVidDetails">
+                            {{x.footer_course_details}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <div class="coursePagesNavigatorBar">
+                    <div class="goLeftPage"><i class="fa-solid fa-chevron-left fa-2xs"></i></div>
+                    <div class="numberFieldOfGoto" style="letter-spacing: .4px;">{{curr_page | default:'1'}} of {{total_pages | default:'566'}}</div>
+                    <div class="goRightPage"><i class="fa-solid fa-chevron-right fa-2xs"></i></div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        {% if subcourse_names %}
+            <div class="subCoursesBox">
+
+                <div class="stfb">Subcategories:</div>
+
+                <div class="subCourseContainer">
+                    {% for subcourse in subcourse_names %}
+                        <div class="subCoursePill">{{subcourse}}</div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+
+
