@@ -10,7 +10,9 @@ from django.contrib.auth.models import User as RegisteredUsers
 from django.contrib.auth.views import LoginView
 from django.views.decorators.csrf import csrf_exempt
 
-from .utils import get_date_time_rn, initials_of_name
+from .utils import *
+from .courses import all_courses
+
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -91,6 +93,8 @@ def homepage(req):
         else:
             CONTEXT = {
                 "tab_title": "Home|Ed.Line",
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "join_date": req.user.date_joined,
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
                 "homepage": 1
             }
@@ -114,6 +118,9 @@ def courses(req):
         else:
             CONTEXT = {
                 "fname": req.user.first_name,
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
+                "join_date": req.user.date_joined,
                 "tab_title": "Courses|Ed.Line",
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
                 "courses": 1
@@ -122,6 +129,94 @@ def courses(req):
 
 
 
+
+
+# @home/courses/*
+def show_specific_course_page(req,course_type):
+    print(course_type)
+    if req.method != "GET":
+        return send_bad_request()
+    else:
+        if req.user.username == "" or req.user.username == None:
+            return redirect('/')
+        else:
+
+
+            subcourses = all_courses()
+
+
+            CONTEXT = {
+                "fname": req.user.first_name,
+                "tab_title": f"{course_type}|Courses|Ed.Line",
+                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "join_date": req.user.date_joined,
+                
+                "subcourse_names": subcourses[course_type],
+                "popular_courses": [
+                    {
+                        "title":"NextJS: The Complete Guide",
+                        "thumbnail": "https://img-b.udemycdn.com/course/240x135/3873464_403c_3.jpg",
+                        "language": "EN",
+                        "courseType": "DEVELOPMENT",
+                        "rating": "4.4",
+                        "total_ratings": "6.6K",
+                        "educator_name": "Rudra Kumar Mishra",
+                        "educator_pfp": "https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256",
+                        "footer_course_details": "210 lectures • 4 PDFs • 2 Tests"
+                    },
+                    
+                    {
+                        "title":"TypeScript and JavaScript: A Deep Dive",
+                        "thumbnail": "https://img-c.udemycdn.com/course/240x135/986406_89c5_3.jpg",
+                        "language": "EN",
+                        "courseType": "Development",
+                        "rating": "4.2",
+                        "total_ratings": "2.1K",
+                        "educator_name": "Kushal Kumar",
+                        "educator_pfp": "https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256",
+                        "footer_course_details": "426 lectures • 23 PDFs • 56 Tests"
+                    },
+                    
+                    {
+                        "title":"Machine Learning A-Z: AI, Python + ChatGPT Bonus",
+                        "thumbnail": "https://img-c.udemycdn.com/course/240x135/950390_270f_3.jpg",
+                        "language": "ES",
+                        "courseType": "DEVELOPMENT",
+                        "rating": "4.5",
+                        "total_ratings": "178K",
+                        "educator_name": "Kyle Perkins",
+                        "educator_pfp": "https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256",
+                        "footer_course_details": "82 lectures • 1 PDF"
+                    },
+                    
+                    {
+                        "title":"Complete C# Unity Game Developer 2D",
+                        "thumbnail": "https://img-c.udemycdn.com/course/240x135/2514486_c4e0.jpg",
+                        "language": "EN",
+                        "courseType": "Development",
+                        "rating": "4.7",
+                        "total_ratings": "101K",
+                        "educator_name": "Gary Pettie",
+                        "educator_pfp": "https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256",
+                        "footer_course_details": "103 lectures • 9 Tests"
+                    },
+                    
+                    {
+                        "title":"Networking in a Gist",
+                        "thumbnail": "https://img-c.udemycdn.com/course/240x135/751094_fb27_2.jpg",
+                        "language": "EN",
+                        "courseType": "Development",
+                        "rating": "4.6",
+                        "total_ratings": "369",
+                        "educator_name": "Rudra Kumar Mishra",
+                        "educator_pfp": "https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256",
+                        "footer_course_details": "26 lectures • 1 Tests"
+                    }
+                ],
+                "specific_course": format_change_title(course_type),
+            }
+            return render(req,"src/home/_base_structure.html",CONTEXT)
 
 
 
@@ -310,7 +405,21 @@ def goto_user_profile(req):
     
 
 
-# @user/enrollments/
+
+# @user/my-learning/
+def goto_user_enrollments(req):
+    if req.method != "GET":
+        return send_bad_request()
+    else:
+        if req.user.username == "" or req.user.username == None:
+            return redirect('/')
+        else:
+            return redirect('/user/my-learning/enrolled/')
+
+
+
+
+# @user/my-learning/enrolled/
 def user_enrollments(req):
     if req.method != "GET":
         return send_bad_request()
@@ -320,7 +429,9 @@ def user_enrollments(req):
         else:
             CONTEXT = {
                 "tab_title": "Enrollments|Ed.Line",
-                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
+                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],  
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "join_date": req.user.date_joined,  
                 "enrollments": 1
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
@@ -341,7 +452,9 @@ def user_settings(req):
             CONTEXT = {
                 "fname": req.user.first_name,
                 "tab_title": f"{req.user.first_name} {req.user.last_name}|Ed.Line",
-                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
+                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2], 
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "join_date": req.user.date_joined,   
                 "settings": 1
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
