@@ -15,3 +15,38 @@ def initials_of_name(name):
     result = ''.join(initials)
 
     return result
+
+
+
+
+def format_change_title(str:str=""):
+    arr = str.split('-')
+    print(arr)
+    for i in range(len(arr)):
+        if arr[i]=="and":
+            arr[i] = "&"
+            continue
+        if arr[i]=="it":
+            arr[i] = "IT"
+            continue
+        arr[i] = arr[i].capitalize()
+    
+    print(arr)
+
+    
+    return '"' + " ".join(arr) + '"'
+
+
+
+
+
+def format_date(d:str=""):
+    month = d[0:3]
+    
+    date_time_obj = datetime.strptime(d, "%b. %d, %Y, %I:%M %p")
+
+    print(date_time_obj)
+
+    formatted_date = date_time_obj.strftime("%d %b %Y")
+    formatted_date = formatted_date.replace(" 0", " ")  # Remove leading zero in day
+    return formatted_date
