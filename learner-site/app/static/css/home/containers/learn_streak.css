@@ -203,4 +203,14 @@
 }
 
 
+@media (max-width: 370px){
+    
+    .streakDays{
+        flex-direction: column;
+    }
+
+    .streakDaysSection, .x{
+        height: 200px;
+    }
+}
 

@@ -1,0 +1,586 @@
+.profileWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+.closeButtonPFP{
+    position: absolute;
+    justify-self: flex-start;
+    align-self: flex-start;
+    height: 50px;
+    width: 50px;
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    top: 15px;
+    left: 15px;
+}
+
+.closeButtonPFP:hover{
+    background: var(--burger-link-light);
+}
+
+/* MAIN STREAK CSS ========================== */
+
+.headerSectionPFP{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 35px;
+    padding-bottom: 10px;
+}
+
+.profileBigImg img{
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.namePlates{
+    width: calc( 100% - 135px );
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.headerTitlePFP{
+    font-weight: 990;
+    font-size: 2rem;
+}
+
+.badgeArea{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.badgeArea > *, .badgeArea > * img{
+    border-radius: 300px;
+    width: 25px;
+    cursor: pointer;
+}
+
+
+
+
+.profileInsights{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.profileInsights > *{
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);
+    background: var(--bgcolor1-light);
+    border-radius: 10px;
+}
+
+.wmn,.fn,.xn{
+    font-weight: 990;
+    font-size: 1.5rem;
+}
+
+.wmt,.ft,.xt{
+    font-size: .8rem;
+}
+
+.linksPFP{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-left: 10px;
+    flex-direction: column;
+}
+
+.linksPFP > *{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.themeMode{
+    padding: 15px 20px;
+    box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);
+    background: var(--bgcolor1-light);
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settingsPFPbar{
+    padding: 15px 30px 15px 20px;
+    box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);
+    background: var(--bgcolor1-light);
+    border-radius: 10px;
+    justify-self: flex-start;
+    display: flex;
+    min-width: 300px;
+    gap: 15px;
+}
+
+
+.preferredCourses{
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    border-radius: 15px;
+    background: var(--footer-hover-light);
+    overflow-x: scroll;
+}
+
+.goToBtn{
+    height: 85px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.goToBtn > *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goToA, .goToB{ font-size: .85rem; }
+
+
+.courseTab{
+    padding: 7px 15px;
+    box-shadow: 0px 5px 10px 0px var(--color-shadow-light);
+    background: var(--bgcolor1-light);
+    border-radius: 10px;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.courseImg{
+    padding: 10px 0;
+}
+.courseNamePFPpreference{
+    white-space: nowrap;
+    font-size: .7rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+.historyTab{
+    background: var(--footer-hover2-light);
+    margin-bottom: 70px;
+    border-radius: 15px;
+    margin-left: 10px;
+    width: calc( 100% - 10px );
+    gap: 0;
+}
+
+
+.videoHistory{
+    padding: 15px;
+}
+
+/* VIDEO TAB HERE =========================== */
+.videoTab{
+    height: 210px;
+    padding: 0;
+    width: 200px;
+    min-width: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between ;
+    overflow-y: scroll;
+}
+
+
+.vidThumbnailPFP{
+    width: 100%;
+    aspect-ratio: 2;
+    overflow: hidden;
+    display: grid;
+}
+
+.vidThumbnailPFP > *{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+.thumbnailImgBox,
+.thumbnailImgBox img{
+    width: 100%;
+} 
+
+.thumbnailImgBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.thumbnailOtherBox{
+    width: 100%;
+    height: 100%;
+    z-index: 23;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: linear-gradient(18deg,rgba(0,0,0,0.75),transparent,transparent);
+}
+
+.vidDetails{
+    height: calc( 100% - calc( 0.5 * 200px ) );
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+    gap: 2.5px;
+}
+
+.vidDetails > *{ width: 100%; }
+
+.vidProgressBar{
+    height: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vidProgressBar > *{
+    height: 100%;
+    color: transparent;
+}
+
+.vidProgressed{
+    width: calc( 100% * 0.35 );
+    background: var(--blue);
+}
+
+.vidUnprogressed{
+    width: calc( 100% - calc( 100% * 0.35 ) );
+    background: var(--footer-text1-light);
+}
+
+
+.vidTags,.vidCreatorRow{
+    height: 22px;
+    padding: 2px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1px;
+}
+
+.vidTags > *{
+    height: 100%;
+    padding: 1.2px 3px;
+    font-size: .58rem;
+    font-weight: 990;
+    display: flex;
+    align-items: center;
+    letter-spacing: .1px;
+}
+
+.languageTag{
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    color: var(--blue);
+    background: rgba(64, 247, 247, 0.1);
+}
+
+.courseTypeTag{
+    color: var(--purple);
+}
+
+.vidTitle{
+    font-weight: 990;
+    font-size: .9rem;
+    padding: 0 7px;
+}
+
+.vidCreatorRow{
+    gap: 5px;
+}
+
+.vidRatings,.vidCreatorAbout{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1px;
+}
+
+.vidRatings > *,.vidCreatorAbout > *{ 
+    font-size: .62rem;
+    font-weight: 990;
+    color: var(--footer-text1-light);
+}
+
+.creatorIconXS{ padding: 2px 2.5px 2px 4px;}
+.creatorIconXS img{
+    width: 12px;
+    border-radius: 300px;
+    aspect-ratio: 1;
+    justify-self: flex-end;
+}
+
+.otherVidDetailsRow{
+    display: flex;
+    align-items: center;
+    padding: 2px 7px 5px;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.otherVidDetailsRow > *{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--footer-text1-light);
+    font-size: .55rem;
+}
+
+
+.courseHeaders{
+    width: 100%;
+    padding: 15px 0 0;
+    font-weight: 990;
+    padding: 15px 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerL{
+    font-size: .9rem;
+}
+.headerR{
+    font-size: .7rem;
+    padding: 8px 15px;
+    background: rgba(0, 133, 126, 0.08);
+    border-radius: 15px;
+}
+
+.thumbnailDotBox:hover{
+    background: rgba(255,255,255,.3);
+    border-radius: 300px;
+}
+
+.courseTab, .thumbnailDotBox{
+    cursor: pointer;
+}
+
+
+.courseTab:hover, .thumbnailDotBox:hover{
+    scale: 1.05;
+}
+
+
+
+
+
+
+
+.burgerBottom{
+    background: transparent;
+    box-shadow: none;
+    color: var(--footer-text1-light);
+    background: transparent;
+    margin-top: -12px;
+    border-radius: 0;
+    padding: 0;
+    font-size: .9rem;
+}
+
+.burgerBottom > *{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+}
+
+.bbr1 a, .bbr2 a{
+    font-size: .7rem;
+    text-decoration: none;
+    color: var(--footer-text1-light);
+}
+
+.bbr3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    height: 35px;
+}
+
+.bbr3 > *{
+    padding: 4px;
+    background: var(--burger-link-light);
+    border-radius: 4px;
+    height: 20px;
+}
+
+.bbr4{
+    font-size: .7rem;
+    color: var(--color-shadow1-light);
+}
+.burgerFooterSection{
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+
+
+@media (max-width: 500px){
+    .settingsPFPbar{
+        min-width: calc(100% - 85px);
+    }
+
+    
+    .profileBigImg img{
+        width: 85px;
+    }
+
+    .headerSectionPFP{
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .headerSectionPFP > *{
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    .namePlates{
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .linksPFP{ margin-left: 0; padding-left: 0; }
+
+    .themeMode{
+        margin-left: 15px;
+    }
+
+    .profileInsights{
+        gap: 5px;
+        padding-right: 10px;
+    }
+
+    
+    .profileInsights > *{
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .headerDescPFP{ scale: .85; }
+
+    .settingsPFPbar{
+        justify-content: center;
+    }
+
+    .badgeArea{
+        justify-content: center;
+    }
+
+    .profileInsights{
+        flex-direction: column;
+    }
+    
+    .profileInsights > *{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    
+    .wmn,.fn,.xn{
+        font-weight: 990;
+        width: 45%;
+        font-size: 1.1rem;
+        justify-content: flex-end;
+        display: flex;
+    }
+
+    .wmt,.ft,.xt{
+        font-size: 1rem;
+        justify-content: flex-start;
+        width: 55%;
+        display: flex;
+    }
+
+
+}
+
+@media (max-width: 400px){
+    
+    .wmn,.fn,.xn{
+        font-weight: 990;
+        width: 30%;
+        font-size: 1.1rem;
+        justify-content: flex-end;
+        display: flex;
+    }
+
+    .wmt,.ft,.xt{
+        font-size: 1rem;
+        justify-content: flex-start;
+        width: 70%;
+        display: flex;
+    }
+}

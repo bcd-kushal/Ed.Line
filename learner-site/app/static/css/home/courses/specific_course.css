@@ -1,0 +1,450 @@
+.specificCourse {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+@media (max-width: 60000px) {
+  .courseFilterSpace {
+    width: 1080px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 85px;
+  }
+
+  .subCoursesBox {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+    justify-content: flex-start;
+    border-radius: 15px;
+    background: var(--footer-hover-light);
+  }
+
+  .stfb {
+    font-weight: 990;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .subCourseContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .subCourseContainer > * {
+    width: fit-content;
+    margin: 2px;
+    padding: 4px 10.5px;
+    border: 1.2px solid var(--footer-btn-hover-light);
+    border-radius: 300px;
+    font-size: 0.75rem;
+  }
+
+  .courseFilterPane {
+    width: calc(100% - 235px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .courseFilterPane2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0 0;
+  }
+
+  .courseFilterPane2 > * {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .courseFilterPane2 > * > * {
+    display: flex;
+    gap: 10px;
+  }
+
+  .courseFilterTab {
+    padding: 0 0 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .filterButton,
+  #sortByOption {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    font-size: 0.88rem;
+    outline: none;
+    color: var(--text1-light);
+  }
+
+  .filterSortButtonSection {
+    color: var(--text1-light);
+  }
+
+  .filterSortButtonSection > * {
+    background: rgba(30, 30, 30, 0.06);
+    padding: 5px 11.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 300px;
+    font-size: 0.88rem;
+  }
+
+  .mostPopularVideosTab {
+    width: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .popularCourses {
+    background: rgba(255, 89, 89, 0.12);
+  }
+
+  .allCourseSection {
+    font-weight: 990;
+  }
+
+  .allCoursesList {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 17px;
+  }
+
+  .coursePagesNavigatorBar {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0.9;
+  }
+
+  .goLeftPage,
+  .goRightPage {
+    padding: 2px 12px 0;
+  }
+
+  .allCoursesList > * {
+    width: 100%;
+  }
+
+  /* BIGGER COURSE TAB */
+
+  .courseTab2 {
+    padding: 7px 15px;
+    box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);
+    background: var(--bgcolor1-light);
+    border-radius: 10px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+  }
+
+  .courseImg {
+    padding: 10px 0;
+  }
+  .courseNamePFPpreference {
+    white-space: nowrap;
+    font-size: 0.7rem;
+  }
+
+  .historyTab {
+    background: var(--footer-hover2-light);
+    margin-bottom: 70px;
+    border-radius: 15px;
+    margin-left: 10px;
+    width: calc(100% - 10px);
+    gap: 0;
+  }
+
+  .videoHistory {
+    padding: 15px;
+  }
+
+  /* VIDEO TAB HERE =========================== */
+  .videoTab2 {
+    height: 210px;
+    padding: 0;
+    min-width: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .vidThumbnailPFP2 {
+    width: 40%;
+    aspect-ratio: 2;
+    overflow: hidden;
+    background: forestgreen;
+    display: grid;
+  }
+
+  .vidThumbnailPFP2 > * {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    justify-self: stretch;
+    align-self: stretch;
+  }
+
+  .thumbnailImgBox2,
+  .thumbnailImgBox2 img {
+    width: auto;
+  }
+
+  .thumbnailImgBox2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .thumbnailOtherBox2 {
+    width: 100%;
+    height: 100%;
+    z-index: 23;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: linear-gradient(
+      18deg,
+      rgba(0, 0, 0, 0.75),
+      transparent,
+      transparent
+    );
+  }
+
+  .vidDetails {
+    height: calc(100% - calc(0.5 * 200px));
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+    gap: 2.5px;
+  }
+
+  .vidDetails > * {
+    width: 100%;
+  }
+
+  .vidProgressBar {
+    height: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .vidProgressBar > * {
+    height: 100%;
+    color: transparent;
+  }
+
+  .vidProgressed {
+    width: calc(100% * 0.35);
+    background: var(--blue);
+  }
+
+  .vidUnprogressed {
+    width: calc(100% - calc(100% * 0.35));
+    background: var(--footer-text1-light);
+  }
+
+  .vidTags,
+  .vidCreatorRow {
+    height: 22px;
+    padding: 2px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1px;
+  }
+
+  .vidTags > * {
+    height: 100%;
+    padding: 1.2px 3px;
+    font-size: 0.58rem;
+    font-weight: 990;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1px;
+  }
+
+  .languageTag {
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    color: var(--blue);
+    background: rgba(64, 247, 247, 0.1);
+  }
+
+  .courseTypeTag {
+    color: var(--purple);
+  }
+
+  .vidTitle {
+    font-weight: 990;
+    font-size: 0.9rem;
+    padding: 0 7px;
+  }
+
+  .vidCreatorRow {
+    gap: 5px;
+  }
+
+  .vidRatings,
+  .vidCreatorAbout {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1px;
+  }
+
+  .vidRatings > *,
+  .vidCreatorAbout > * {
+    font-size: 0.62rem;
+    font-weight: 990;
+    color: var(--footer-text1-light);
+  }
+
+  .creatorIconXS {
+    padding: 2px 2.5px 2px 4px;
+  }
+  .creatorIconXS img {
+    width: 12px;
+    border-radius: 300px;
+    aspect-ratio: 1;
+    justify-self: flex-end;
+  }
+
+  .otherVidDetailsRow {
+    display: flex;
+    align-items: center;
+    padding: 2px 7px 5px;
+    gap: 5px;
+    justify-content: flex-start;
+  }
+
+  .otherVidDetailsRow > * {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--footer-text1-light);
+    font-size: 0.55rem;
+  }
+
+  .courseHeaders {
+    width: 100%;
+    padding: 15px 0 0;
+    font-weight: 990;
+    padding: 15px 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headerL {
+    font-size: 0.9rem;
+  }
+  .headerR {
+    font-size: 0.7rem;
+    padding: 8px 15px;
+    background: rgba(0, 133, 126, 0.08);
+    border-radius: 15px;
+  }
+
+  .thumbnailDotBox:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 300px;
+  }
+
+  .courseTab,
+  .thumbnailDotBox {
+    cursor: pointer;
+  }
+
+  .courseTab:hover,
+  .thumbnailDotBox:hover {
+    scale: 1.05;
+  }
+}
+
+@media (max-width: 1080px) {
+  .specificCourse {
+    gap: 5px;
+  }
+
+  .courseFilterSpace {
+    width: 100vw;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+
+  .subCoursesBox {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: scroll;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .subCourseContainer {
+    flex-wrap: nowrap;
+  }
+  .subCourseContainer > * {
+    margin: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .courseFilterPane {
+    width: 100%;
+  }
+
+  .mostPopularVideosTab {
+    width: 100%;
+    padding: 0 20px 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  #aege {
+    display: none;
+  }
+}

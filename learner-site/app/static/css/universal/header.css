@@ -247,6 +247,10 @@
     opacity: .7;
 }
 
+.pqr{ color: #545454; }
+
+.wishlistContainer:hover, .myLearningContainer:hover{ color: var(--orange); transition: .05s; }
+
 
 /* MEDIA QUERIES ################################################# */
 
