@@ -1,0 +1,136 @@
+$color_1: var(--footer-text1-light);
+$color_2: var(--btn);
+$color_3: var(--footer-text0-light);
+$color_4: inherit;
+
+/* ======= LEFT SECTION ============================ */
+/* ======= RIGHT SECTION ============================ */
+/* ======= MEDIA QUERIES ============================ */
+.settings {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	overflow: scroll;
+}
+.lssec {
+	height: 100%;
+	width: 270px;
+	padding: 8px 16px;
+	display: flex;
+	position: sticky;
+	top: 0;
+	align-items: flex-start;
+	justify-content: flex-end;
+	padding-bottom: 150px;
+}
+.lsbox {
+	padding-top: 70px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 2px;
+	>* {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 7.5px;
+		font-size: 1.1rem;
+		cursor: pointer;
+		color: $color_1;
+	}
+}
+.lsSubBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 7px;
+	margin-left: 25px;
+	padding-top: 0;
+	font-size: 1rem;
+}
+.lsTopic {
+	font-size: 1.66rem;
+	font-weight: 990;
+	color: $color_2;
+	&:hover {
+		color: $color_2;
+	}
+}
+.lsSubTitle {
+	&:hover {
+		color: $color_3;
+		font-weight: 990;
+	}
+}
+.lsTitle {
+	&:hover {
+		color: $color_3;
+		font-weight: 990;
+	}
+}
+.rssec {
+	width: 750px;
+	margin-bottom: 80px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 20px;
+	padding-top: 20px;
+	>* {
+		padding: 8px 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 100%;
+	}
+}
+.rsGrpTitle {
+	font-weight: 990;
+	font-size: 1.5rem;
+	padding: 15px 0 0;
+	width: 100%;
+}
+.rsGrpSubTitle {
+	width: 100%;
+	font-weight: bold;
+	font-size: 1.075rem;
+	padding: 30px 0 9px;
+	color: $color_4;
+}
+.rsBox {
+	width: 100%;
+	background: var(--bgcolor1-light);
+	box-shadow: 0px 16px 32px 0px var(--color-shadow-light);
+	padding: 30px;
+	border-radius: 20px;
+	overflow: hidden;
+	height: 200px;
+}
+@media (max-width: 1030px) {
+	.lssec {
+		width: 200px;
+	}
+	.rssec {
+		width: calc( 100% - 200px );
+	}
+}
+@media (max-width: 750px) {
+	.lssec {
+		display: none;
+	}
+	.rssec {
+		width: 100%;
+		padding: 50px 50px 0;
+	}
+}
+@media (max-width: 600px) {
+	.rssec {
+		padding: 50px 20px 0;
+	}
+}
