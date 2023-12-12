@@ -8,16 +8,90 @@
 </head>
 <body>
     
-    <h2>
-        {% if login %}
-            Login Form
-        {% endif %}
-        
-        {% if signup %}
-            SignUp Form
-        {% endif %}
-    </h2>
-    <hr>
+
+
+
+
+    <div class="authContainer">
+
+
+
+
+
+
+
+        <div class="leftPrettyAuthSection">
+
+
+            <div class="authBackButton">
+                <a href="/">Go Home</a>
+            </div>
+
+            <div class="actualPrettyAuthBox">
+
+
+                <div class="authPic">
+
+                </div>
+
+
+
+                <div class="authBlaBla">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium beatae libero ab, ipsa iure sequi ad reprehenderit suscipit dicta, sint, laboriosam cum recusandae corrupti! Ut tempora iste et rerum!
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+        <div class="rightPrettyAuthSection">
+
+
+            <div class="authTitle">
+                {% if login %}
+                    Login
+                {% endif %}
+            
+                {% if signup %}
+                    Join Ed.Line
+                {% endif %}
+            </div>
+
+
+            <div class="authSubtitle">
+                {% if login %}
+                    or <a href="/signup/">create a free account</a>
+                {% endif %}
+            
+                {% if signup %}
+                    Already have an account? <a href="/login/">Log in</a>
+                {% endif %}
+            </div>
+            
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
     {% if login %}
     <form action="/login/" method="post">
         {% csrf_token %}
@@ -27,10 +101,53 @@
         <br>
         <button type="submit" onclick="return isSignAllowed()">Log In</button> <div class="errMsgTotal"></div>
     </form>
-    <hr>
-    <a href="/signup/">SignUp?</a>
-    <a href="/">Go Home</a>
-    
+    {% endif %}
+
+
+
+
+    {% if signup %}
+    <form action="/signup/" method="post">
+        {% csrf_token %}
+        Mobile: <input type="text" name="{{ SF.user.name }}" id="{{ SF.user.id_for_label }}" value="{{ SF.user.value | default:'' }}"> <div class="errMsgMobile"></div>
+        <br>
+        First Name: <input type="text" name="{{ SF.fname.name }}" id="{{ SF.fname.id_for_label }}" value="{{ SF.fname.value | default:'' }}"> <div class="errMsgFName"></div>
+        <br>
+        Last Name: <input type="text" name="{{ SF.lname.name }}" id="{{ SF.lname.id_for_label }}" value="{{ SF.lname.value | default:'' }}"> <div class="errMsgLName"></div>
+        <br>
+        Email: <input type="email" name="{{ SF.email.name }}" id="{{ SF.email.id_for_label }}" value="{{ SF.email.value | default:'' }}"> <div class="errMsgEmail"></div>
+        <br>
+        Password: <input type="password" name="{{ SF.pass1.name }}" id="{{ SF.pass1.id_for_label }}" value="{{ SF.pass1.value | default:'' }}"> <div class="errMsgPass"></div>
+        <br>
+        Re-enter Password: <input type="password" name="pass2" id="pass2"> <div class="errMsgConfirmPass"></div>
+        <br>
+        
+        <button type="submit" onclick="return isSignAllowed()">Sign Up</button> <div class="errMsgTotal"></div>
+    </form>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% if login %}
     <script>
         const MOBILE_FIELD_VALUE_FROM_BACKEND_FOR_LOGIN = "{{ given_mobile }}";
         document.getElementById("{{ LF.username.id_for_label }}").value = MOBILE_FIELD_VALUE_FROM_BACKEND_FOR_LOGIN;
@@ -65,53 +182,18 @@
 
             if(LOGIN_ALLOWED){
                 ERR_MOB.textContent = "";
-                LOGIN_ALLOWED = true;
             } else {
                 ERR_MOB.style.color = "red";
                 ERR_MOB.textContent = "Invalid mobile number";
-                LOGIN_ALLOWED = false;
             }
-            return (LOGIN_ALLOWED)? true : false;
+            return LOGIN_ALLOWED;
         }
 
     </script>
     {% endif %}
     
 
-
-
-
-
-
-
-
-
-
-
-
-
     {% if signup %}
-    <form action="/signup/" method="post">
-        {% csrf_token %}
-        Mobile: <input type="text" name="{{ SF.user.name }}" id="{{ SF.user.id_for_label }}" value="{{ SF.user.value | default:'' }}"> <div class="errMsgMobile"></div>
-        <br>
-        First Name: <input type="text" name="{{ SF.fname.name }}" id="{{ SF.fname.id_for_label }}" value="{{ SF.fname.value | default:'' }}"> <div class="errMsgFName"></div>
-        <br>
-        Last Name: <input type="text" name="{{ SF.lname.name }}" id="{{ SF.lname.id_for_label }}" value="{{ SF.lname.value | default:'' }}"> <div class="errMsgLName"></div>
-        <br>
-        Email: <input type="email" name="{{ SF.email.name }}" id="{{ SF.email.id_for_label }}" value="{{ SF.email.value | default:'' }}"> <div class="errMsgEmail"></div>
-        <br>
-        Password: <input type="password" name="{{ SF.pass1.name }}" id="{{ SF.pass1.id_for_label }}" value="{{ SF.pass1.value | default:'' }}"> <div class="errMsgPass"></div>
-        <br>
-        Re-enter Password: <input type="password" name="pass2" id="pass2"> <div class="errMsgConfirmPass"></div>
-        <br>
-        
-        <button type="submit" onclick="return isSignAllowed()">Sign Up</button> <div class="errMsgTotal"></div>
-    </form>
-    <hr>
-    <a href="/login/">Login?</a>
-    <a href="/">Go Home</a>
-    
     <script>
         const MOBILE_FIELD_VALUE_FROM_BACKEND_FOR_SIGNUP = "{{ given_mobile }}";
         document.getElementById("{{ SF.user.id_for_label }}").value = MOBILE_FIELD_VALUE_FROM_BACKEND_FOR_SIGNUP;
@@ -251,8 +333,6 @@
     
     </script>
     {% endif %}
-
-    </h2>
 
 
 </body>
