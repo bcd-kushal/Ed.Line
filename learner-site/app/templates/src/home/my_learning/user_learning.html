@@ -1,0 +1,344 @@
+<div class="enrolled">
+
+    <div class="lssecENR">
+
+        <div class="lsboxENR">
+
+            <div class="lsTitleENR lsTopicENR">My Learning</div>
+            
+            <div class="lsTabBoxENR">
+                <a class="lsTitleENR" href="/user/my-learning/enrolled/" {% if enrollments %} style="font-weight: 990;color: var(--footer-text0-light); border-bottom: 3px solid var(--footer-text0-light);" {% endif %}>Enrolled</a>
+                <a class="lsTitleENR" href="/user/my-learning/my-lists/" {% if user_lists %} style="font-weight: 990;color: var(--footer-text0-light); border-bottom: 3px solid var(--footer-text0-light);" {% endif %}>My Lists</a>   
+                <a class="lsTitleENR" href="/user/my-learning/ongoing/" {% if user_ongoing_tag %} style="font-weight: 990;color: var(--footer-text0-light); border-bottom: 3px solid var(--footer-text0-light);" {% endif %}>Ongoing</a> 
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="rssecENR" style="padding: 20px 20px 0;">
+        
+        {% if user_enrolled %}
+        {% if user_enrolled|length > 0 %}
+                <div class="rsGroupENR" style="padding: 0; background: transparent;">
+                    <div class="rsGrpTitleENR"></div>
+                    <div class="rsGrpSubTitleENR" style="margin-bottom: 15px;">
+                        <div class="filterSortButtonSection" style="flex-direction: row; gap: 10px;display: flex;width: 100%;align-items: flex-start;justify-content: center;">
+                            <div class="filterButtonContainer">
+                                <button type="button" class="filterButton" style="font-size: .88rem;">
+                                    Filter
+                                </button>
+                            </div>
+                            <div class="sortByOptionTitle" style="font-size: .88rem;">
+                                Sort By: 
+                                <select name="sortByOption" id="sortByOption" style="font-size: .88rem;">
+                                    <option value="Enroll Date" selected>Enroll Date</option>
+                                    <option value="Ascending">Ascending</option>
+                                    <option value="Descending">Descending</option>
+                                    <option value="Least Watched">Most Watched</option>
+                                    <option value="Least Watched">Least Watched</option>
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allEnrolledBox" style="width: 100%; display: flex; gap: 15px; flex-wrap: wrap;height: auto;padding: 0;">
+                        {% for x in user_enrolled %}
+
+                        <div class="courseTab videoTab allEnrolledTab" style="box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);">
+                            <div class="vidThumbnailPFP">
+                                <div class="thumbnailImgBox">
+                                    <img src="{{x.thumbnail | default:'https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg'}}" alt="">
+                                </div>
+                                <div class="thumbnailOtherBox">
+                                    <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vidDetails" style="padding: 3px 0;justify-content: center;gap: 0;">
+            
+                                {% if progress %}
+                                <div class="vidProgressBar">
+                                    <div class="vidProgressed">w</div>
+                                    <div class="vidUnprogressed">w</div>
+                                </div>
+                                {% endif %}
+            
+                                <div class="vidTags">
+                                    <div class="languageTag" style="font-size: .6rem;">{{x.language | default:'JP'}}</div>
+                                    <div class="courseTypeTag" style="font-size: .6rem;">{{x.courseType | default:'YES'}}</div>
+                                </div>
+            
+                                <div class="vidTitle" style="font-size: 1rem;">
+                                    The Complete C# Unity Crash Course
+                                </div>
+            
+                                <div class="vidCreatorRow">
+            
+                                    <div class="vidRatings">
+                                        <div class="ratingStarIcon">
+                                            <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                                        </div>
+                                        <div class="ratingRate" style="font-size: .65rem;">{{x.rating | default:'3.9'}}</div>
+                                        <div class="ratingTotal" style="font-size: .65rem;">({{x.total_ratings | default:'3.9'}})</div>
+                                    </div>
+            
+                                    <div class="vidCreatorAbout">
+                                        <div class="creatorIconXS">
+                                            {% if x.educator_pfp is None %}
+                                                <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                            {% else %}
+                                                <img src="{{x.educator_pfp}}" alt="">
+                                            {% endif %}
+                                        </div>
+                                        <div class="creatorName" style="font-size: .65rem;">
+                                            {{x.educator_name | default:'lorem ipsum'}}
+                                        </div>
+                                    </div>
+            
+                                </div>
+            
+                                <div class="otherVidDetailsRow">
+                                    <div class="typeTags"></div>
+                                    <div class="otherVidDetails" style="font-size: .65rem;">
+                                        {{x.footer_course_details | default:'lorem ipsum'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+        {% else %}
+            <div style="width: 100%;display: flex;justify-content: center;padding: 65px 0 0 0;height:100%;align-items: center;">No enrollments made</div>
+        {% endif %}
+        {% endif %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        {% if user_ongoing %}
+        {% if user_ongoing|length > 0 %}
+                <div class="rsGroupENR" style="padding: 0; background: transparent;">
+                    <div class="rsGrpTitleENR"></div>
+                    <div class="rsGrpSubTitleENR" style="margin-bottom: 15px;">
+                        <div class="filterSortButtonSection" style="flex-direction: row; gap: 10px;display: flex;width: 100%;align-items: flex-start;justify-content: center;">
+                            <div class="filterButtonContainer">
+                                <button type="button" class="filterButton" style="font-size: .88rem;">
+                                    Filter
+                                </button>
+                            </div>
+                            <div class="sortByOptionTitle" style="font-size: .88rem;">
+                                Sort By: 
+                                <select name="sortByOption" id="sortByOption" style="font-size: .88rem;">
+                                    <option value="Enroll Date" selected>Enroll Date</option>
+                                    <option value="Ascending">Ascending</option>
+                                    <option value="Descending">Descending</option>
+                                    <option value="Least Watched">Most Watched</option>
+                                    <option value="Least Watched">Least Watched</option>
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allEnrolledBox" style="width: 100%; display: flex; gap: 15px; flex-wrap: wrap;height: auto;padding: 0;">
+                        {% for x in user_ongoing %}
+
+                        <div class="courseTab videoTab allEnrolledTab" style="box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);">
+                            <div class="vidThumbnailPFP">
+                                <div class="thumbnailImgBox">
+                                    <img src="{{x.thumbnail | default:'https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg'}}" alt="">
+                                </div>
+                                <div class="thumbnailOtherBox">
+                                    <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vidDetails" style="padding: 3px 0;justify-content: center;gap: 0;">
+            
+                                {% if progress %}
+                                <div class="vidProgressBar">
+                                    <div class="vidProgressed">w</div>
+                                    <div class="vidUnprogressed">w</div>
+                                </div>
+                                {% endif %}
+            
+                                <div class="vidTags">
+                                    <div class="languageTag" style="font-size: .6rem;">{{x.language | default:'JP'}}</div>
+                                    <div class="courseTypeTag" style="font-size: .6rem;">{{x.courseType | default:'YES'}}</div>
+                                </div>
+            
+                                <div class="vidTitle" style="font-size: 1rem;">
+                                    The Complete C# Unity Crash Course
+                                </div>
+            
+                                <div class="vidCreatorRow">
+            
+                                    <div class="vidRatings">
+                                        <div class="ratingStarIcon">
+                                            <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                                        </div>
+                                        <div class="ratingRate" style="font-size: .65rem;">{{x.rating | default:'3.9'}}</div>
+                                        <div class="ratingTotal" style="font-size: .65rem;">({{x.total_ratings | default:'3.9'}})</div>
+                                    </div>
+            
+                                    <div class="vidCreatorAbout">
+                                        <div class="creatorIconXS">
+                                            {% if x.educator_pfp is None %}
+                                                <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                            {% else %}
+                                                <img src="{{x.educator_pfp}}" alt="">
+                                            {% endif %}
+                                        </div>
+                                        <div class="creatorName" style="font-size: .65rem;">
+                                            {{x.educator_name | default:'lorem ipsum'}}
+                                        </div>
+                                    </div>
+            
+                                </div>
+            
+                                <div class="otherVidDetailsRow">
+                                    <div class="typeTags"></div>
+                                    <div class="otherVidDetails" style="font-size: .65rem;">
+                                        {{x.footer_course_details | default:'lorem ipsum'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+        {% else %}
+            <div style="width: 100%;display: flex;justify-content: center;padding: 65px 0 0 0;height:100%;align-items: center;">No enrollments made</div>
+        {% endif %}
+        {% endif %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {% if user_made_lists %}
+        {% if user_made_lists|length > 0 %}
+            {% for index, each_list in user_made_lists.items %}
+                <div class="rsGroupENR" style="border: .5px solid {{ index1 | default:'var(--list-black-light)'}}; background: linear-gradient(-45deg,{{ index1 | default:'var(--list-black-light)'}},transparent);box-shadow: 0px 5px 10px 0px var(--color-shadow-light);">
+                    <div class="rsGrpTitleENR">{{each_list.name}}</div>
+                    <div class="rsGrpSubTitleENR">{{each_list.desc}}</div>
+
+                    <div class="rsBoxENR">
+                        {% for x in each_list.list_items %}
+
+                        <div class="courseTab videoTab" style="box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);">
+                            <div class="vidThumbnailPFP">
+                                <div class="thumbnailImgBox">
+                                    <img src="{{x.thumbnail | default:'https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg'}}" alt="">
+                                </div>
+                                <div class="thumbnailOtherBox">
+                                    <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vidDetails" style="padding: 3px 0;">
+            
+                                {% if progress %}
+                                <div class="vidProgressBar">
+                                    <div class="vidProgressed">w</div>
+                                    <div class="vidUnprogressed">w</div>
+                                </div>
+                                {% endif %}
+            
+                                <div class="vidTags">
+                                    <div class="languageTag">{{x.language | default:'JP'}}</div>
+                                    <div class="courseTypeTag">{{x.courseType | default:'YES'}}</div>
+                                </div>
+            
+                                <div class="vidTitle">
+                                    {{x.title}}
+                                </div>
+            
+                                <div class="vidCreatorRow">
+            
+                                    <div class="vidRatings">
+                                        <div class="ratingStarIcon">
+                                            <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                                        </div>
+                                        <div class="ratingRate">{{x.rating | default:'3.9'}}</div>
+                                        <div class="ratingTotal">({{x.total_ratings | default:'3.9'}})</div>
+                                    </div>
+            
+                                    <div class="vidCreatorAbout">
+                                        <div class="creatorIconXS">
+                                            {% if x.educator_pfp is None %}
+                                                <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+                                            {% else %}
+                                                <img src="{{x.educator_pfp}}" alt="">
+                                            {% endif %}
+                                        </div>
+                                        <div class="creatorName">
+                                            {{x.educator_name | default:'lorem ipsum'}}
+                                        </div>
+                                    </div>
+            
+                                </div>
+            
+                                <div class="otherVidDetailsRow">
+                                    <div class="typeTags"></div>
+                                    <div class="otherVidDetails">
+                                        {{x.footer_course_details | default:'lorem ipsum'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        {% else %}
+            <div style="width: 100%;display: flex;justify-content: center;padding: 65px 0 0 0;height:100%;align-items: center;">No lists created... YET.</div>
+        {% endif %}
+        {% endif %}   
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+
+</script>

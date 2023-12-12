@@ -22,9 +22,9 @@
     <link rel="stylesheet" href="{% static 'css/universal/hamburger.css' %} ">
     <link rel="stylesheet" href="{% static 'css/universal/rightPage.css' %} ">
 
-    
-    <link rel="stylesheet" href="{% static 'css/settings/settings.css' %} ">
-
+    {% if settings %}
+        <link rel="stylesheet" href="{% static 'css/settings/settings.css' %} ">
+    {% endif %}
 
     
     <link rel="stylesheet" href="{% static 'css/home/pages/courses.css' %} ">
@@ -34,6 +34,14 @@
     
     <!-- LOAD REST OF PAGES AS NEEDED -->
     <link rel="stylesheet" href="{% static 'css/global.css' %} ">
+
+
+    
+    {% if enrollments or user_lists or user_ongoing_tag %}
+        <link rel="stylesheet" href="{% static 'css/home/my_learning/user_learning.css' %} ">
+    {% endif %}
+
+
         
 </head>
 <body>
@@ -50,10 +58,10 @@
                 {% include 'src/home/pages/home.html' %}
             {% endif %}
         
-            {% if enrollments %}
-                {% include 'src/home/pages/enrolled.html' %}
+            {% if enrollments or user_lists or user_ongoing_tag %}
+                {% include 'src/home/my_learning/user_learning.html' %}
             {% endif %}
-        
+
             {% if courses %}
                 {% include 'src/home/pages/courses.html' %}
             {% endif %}

@@ -30,12 +30,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="vidDetails">
+                <div class="vidDetails" style="padding: 3px 0;">
 
+                    {% if progress %}
                     <div class="vidProgressBar">
                         <div class="vidProgressed">w</div>
                         <div class="vidUnprogressed">w</div>
                     </div>
+                    {% endif %}
 
                     <div class="vidTags">
                         <div class="languageTag">{{x.language}}</div>
@@ -138,7 +140,7 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="vidDetails">
+                <div class="vidDetails2">
 
                     {% if progress %}
                     <div class="vidProgressBar">
@@ -152,7 +154,7 @@
                         <div class="courseTypeTag">{{x.courseType}}</div>
                     </div>
 
-                    <div class="vidTitle">
+                    <div class="vidTitle2">
                         {{x.title}}
                     </div>
 
