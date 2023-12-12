@@ -200,10 +200,9 @@
   }
 
   .vidThumbnailPFP2 {
-    width: 40%;
-    aspect-ratio: 2;
+    height: 100%;
     overflow: hidden;
-    background: forestgreen;
+    background: black;
     display: grid;
   }
 
@@ -242,20 +241,28 @@
     );
   }
 
-  .vidDetails {
-    height: calc(100% - calc(0.5 * 200px));
+
+  .thumbnailImgBox2 img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100%;
+  }
+
+  .vidDetails2 {
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     overflow: hidden;
     overflow-y: scroll;
-    gap: 2.5px;
+    gap: 3px;
   }
 
-  .vidDetails > * {
+  .vidDetails2 > * {
     width: 100%;
+    font-size: 1rem;
   }
 
   .vidProgressBar {
@@ -311,9 +318,9 @@
     color: var(--purple);
   }
 
-  .vidTitle {
+  .vidTitle2 {
     font-weight: 990;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     padding: 0 7px;
   }
 
@@ -398,6 +405,12 @@
   .thumbnailDotBox:hover {
     scale: 1.05;
   }
+
+  
+  .vidThumbnailPFP2 {
+    width: 60%;
+  }
+
 }
 
 @media (max-width: 1080px) {
@@ -441,10 +454,40 @@
     width: 100%;
     padding: 0 20px 15px;
   }
+  
+  .vidThumbnailPFP2 {
+    width: 65%;
+  }
 }
 
 @media (max-width: 800px) {
   #aege {
     display: none;
   }
+
+  .vidThumbnailPFP2 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 425px){
+    .videoTab2{
+        flex-direction: column;
+        height: auto;
+    }
+    .videoTab2 > *{
+        width: 100%;
+    }
+    .vidDetails2{
+        margin-bottom: 7px;
+    }
+    .courseTitleContainer{
+        align-items: center;
+        justify-content: center;
+    }
+    .courseFilterTab{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 }

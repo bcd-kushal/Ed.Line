@@ -1,0 +1,247 @@
+.enrolled{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.lsTabBoxENR > a{ text-decoration: none; color: var(--footer-text1-light); }
+
+/* ======= LEFT SECTION ============================ */
+.lssecENR{
+    height: 100%;
+    width: 270px;
+    padding: 8px 16px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 150px;
+}
+
+.lsboxENR{
+    padding-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2px;
+}
+
+.lsboxENR > *{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 7.5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--footer-text1-light);
+}
+
+.lsTabBoxENR{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lsSubBoxENR{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 7px;
+    margin-left: 25px;
+    padding-top: 0;
+    font-size: 1rem;
+}
+
+.lsTopicENR{
+    font-size: 1.66rem;
+    font-weight: 990;
+    color: var(--btn);
+}
+
+.lsTitleENR:hover { 
+    color: var(--footer-text0-light);
+    font-weight: 990;
+}
+
+
+
+.lsTopicENR:hover{
+    color: var(--btn);
+}
+
+
+
+/* ======= RIGHT SECTION ============================ */
+.rssecENR{
+    width: 750px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px 20px 0 0;
+}
+
+.rssecENR > *{
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.rsGroupENR{
+    background: var(--bgcolor1-light);
+    box-shadow: 0px 16px 32px 0px var(--color-shadow-light);
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.rsGroupENR > *{
+    padding: 20px;
+}
+
+.rsGrpTitleENR{
+    font-weight: 990;
+    font-size: 1.5rem;
+    padding: 15px 20px 0;
+    width: 100%;
+}
+
+.rsGrpSubTitleENR{
+    width: 100%;
+    font-size: .9rem;
+    padding: 3px 20px 9px;
+    color: var(--footer-text1-light);
+}
+
+.rsBoxENR{
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+
+.allEnrolledTab{
+    width: calc( calc( 100% * 0.33333 ) - 10px );
+}
+
+
+
+
+
+
+/* ======= MEDIA QUERIES ============================ */
+
+@media (max-width: 1030px){
+    .lssecENR{ width: 200px; }
+    .rssecENR{ width: calc( 100% - 200px ); }
+}
+
+@media (max-width: 870px){
+    
+    .allEnrolledTab{
+        width: calc( calc( 100% * 0.5 ) - 10px );
+    }
+
+}
+
+@media (max-width: 800px){
+
+    .enrolled{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .lsboxENR{
+        padding: 0;
+    }
+
+    .lsTitleENR{ font-size: 1rem; }
+    
+    .lsTopicENR{ 
+        width: 100%;
+        font-size: 1.66rem;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .lsTabBoxENR{
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .lsTabBoxENR > *{
+        padding: 2px 12px 6px;
+    }
+
+    .lssecENR,.rssecENR{ 
+        width: 100%;
+        padding: 15px 50px 0;
+    }
+    
+    .lssecENR{
+        padding-top: 45px;
+        background: var(--footer-hover-light);
+    }
+    
+    .allEnrolledTab{
+        width: calc( calc( 100% * 0.33333 ) - 10px );
+    }
+
+}
+
+@media (max-width: 670px){
+
+    .allEnrolledTab{
+        width: calc( calc( 100% * 0.5 ) - 10px );
+    }
+
+}
+
+
+
+@media (max-width: 600px){
+    .lssecENR,.rssecENR{ 
+        padding: 15px 20px 0; 
+    }
+    .lssecENR{
+        padding-top: 45px;
+    }
+}
+
+
+
+@media (max-width: 460px){
+
+    .allEnrolledTab{
+        width: 100%;
+        min-height: 270px;
+    }
+
+    .rssecENR > *{
+        justify-content: center;
+    }
+
+    .rsGrpSubTitleENR, .rsGrpTitleENR{
+        justify-content: center;
+        display: flex;
+    }
+
+}

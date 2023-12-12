@@ -279,6 +279,8 @@
 @media (max-width: 800px){
     .miniScreen{
         display: flex;
+        z-index: 201;
+        background: var(--bgcolor1-light);
     }
     .largeScreen{
         display: none;

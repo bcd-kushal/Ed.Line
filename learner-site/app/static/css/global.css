@@ -19,6 +19,11 @@
     --streak-light: linear-gradient(-71deg,#2d81f720, #2d81f720 50%, #ffb54e27 50%,  #ffb54e27) ;
     --mini-streak-light: linear-gradient(-71deg,#2d81f720, #2d81f720 35%, #ffb54e27 35%,  #ffb54e27) ;
     --streak-hover-light: linear-gradient(-71deg,#2d81f728, #2d81f728 50%, #ffb54e35 50%,  #ffb54e35) ;
+    --list-red-light: rgba(235, 147, 147, 0.135);
+    --list-blue-light: rgba(147, 185, 235, 0.135);
+    --list-green-light: rgba(147, 235, 215, 0.135);
+    --list-purple-light: rgba(181, 147, 235, 0.135);
+    --list-black-light: rgba(136, 136, 136, 0.135);
 
     
     --bgcolor0-dark: #fcfcfc;
@@ -39,7 +44,11 @@
     --streak-dark: #2d81f735;
     --mini-streak-dark: linear-gradient(-71deg,#2d81f720, #2d81f720 35%, #ffb54e27 35%,  #ffb54e27) ;
     --streak-hover-dark: linear-gradient(-71deg,#2d81f728, #2d81f728 50%, #ffb54e35 50%,  #ffb54e35) ;
-
+    --list-red-dark: rgba(147, 235, 215, 0.135);
+    --list-blue-dark: rgba(147, 235, 215, 0.135);
+    --list-green-dark: rgba(147, 235, 215, 0.135);
+    --list-purple-dark: rgba(147, 235, 215, 0.135);
+    --list-black-dark: rgba(147, 235, 215, 0.135);
 
 
     --green: #08bd80;
