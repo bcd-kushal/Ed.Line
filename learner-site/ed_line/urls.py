@@ -25,7 +25,9 @@ urlpatterns = [
     path('user/', r.goto_user_profile, name='redirect-to-profile'),
     # path('user/profile/', r.show_user_profile, name='show-user'),
     path('user/my-learning/', r.goto_user_enrollments, name='goto-user-enrollments'), 
-    path('user/my-learning/enrolled/', r.user_enrollments, name='user-enrollments'),              # <---- for the signed-in
+    path('user/my-learning/enrolled/', r.user_enrollments, name='user-enrollments'), 
+    path('user/my-learning/my-lists/', r.user_lists, name='user-lists'),                  # <---- for the signed-in
+    path('user/my-learning/ongoing/', r.user_ongoing, name='user-ongoing'),
     path('user/settings/', r.user_settings, name='user-settings'),              # <---- for the signed-in
 
 
