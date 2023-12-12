@@ -50,3 +50,229 @@ def format_date(d:str=""):
     formatted_date = date_time_obj.strftime("%d %b %Y")
     formatted_date = formatted_date.replace(" 0", " ")  # Remove leading zero in day
     return formatted_date
+
+
+
+
+def get_user_created_list_data(user_id:str="", user_fname:str=""):
+    x = {
+        "App Development": {
+            "name": "App Development",
+            "desc": "Kotlin or Flutter?? Meh..",
+            "list_items": [
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+            ]
+        },
+
+
+        "JSP & JDBC": {
+            "name": "JSP & JDBC",
+            "desc": "For the Sem 5",
+            "list_items": [
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+            ]
+        },
+
+
+
+        "Web Dev": {
+            "name": "Web Dev",
+            "desc": "For the love of it",
+            "list_items": [
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+            ]
+        },
+
+
+
+        "ML/AI": {
+            "name": "ML/AI",
+            "desc": "For the heck of it",
+            "list_items": [
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+            ]
+        },
+
+    }
+    
+    return x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def get_all_user_enrollments(user_id:str="", user_fname:str=""):
+    x = [
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "Rajesh Verma"
+                },
+        ]
+    
+    return x
+
+
+
+
+
+
+
+def get_user_ongoing_courses(user_id:str="", user_fname:str=""):
+    x = [
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "DiscordJS"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "AnimeJS"
+                },
+                {
+                    "name": "The Complete Android Q Developer Course",
+                    "title": "YES"
+                },
+        ]
+    
+    return x
