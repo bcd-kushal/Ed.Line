@@ -1,0 +1,231 @@
+$color_1: var(--orange);
+$color_2: var(--blue);
+$color_3: var(--footer-btn-hover-light);
+$color_4: white;
+
+/* MAIN STREAK CSS ========================== */
+.closeButtonRP {
+	position: absolute;
+	justify-self: flex-start;
+	align-self: flex-start;
+	height: 50px;
+	width: 50px;
+	border-radius: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	top: 15px;
+	left: 15px;
+}
+.closeButton {
+	&:hover {
+		background: var(--burger-link-light);
+	}
+}
+.headerSectionRP {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding-bottom: 40px;
+	.headerTitle {
+		font-weight: 990;
+		font-size: 1.41rem;
+		margin-bottom: 8px;
+	}
+}
+.x {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.streakDaysSection {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0 0 24px;
+	border: 1.5px solid var(--footer-btn-hover-light);
+	border-radius: 10px;
+	overflow: hidden;
+	.streakDays {
+		width: 60%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		>* {
+			width: 100%;
+			height: 100%;
+			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-start;
+		}
+	}
+}
+.currStreakDays {
+	font-weight: bold;
+	font-size: 1.65rem;
+	color: $color_1;
+}
+.longestStreakDays {
+	font-weight: bold;
+	font-size: 1.65rem;
+	color: $color_2;
+}
+.streakImage {
+	align-self: flex-end;
+	img {
+		scale: 1.2;
+	}
+}
+.statsSection {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 8px;
+	.statsTitle {
+		margin: 62px 0 40px;
+		font-size: 1.22rem;
+		font-weight: 990;
+	}
+	.statsGrid {
+		display: grid;
+		gap: 24px;
+		align-items: center;
+		justify-content: center;
+		grid-row: 1fr 1fr;
+		grid-column: 1fr 1fr;
+		width: 100%;
+		grid-template-areas: "a b" "a b";
+		padding-bottom: 15px;
+		>* {
+			height: 125px;
+			width: 225px;
+			padding: 16px 24px;
+			box-shadow: 0px 16px 32px 0px var(--color-shadow-light);
+			background: var(--bgcolor1-light);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
+		.statsGridNumber {
+			font-size: 1.45rem;
+			font-weight: 990;
+			padding-top: 5px;
+		}
+	}
+}
+.badgesSection {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 8px;
+	.badgesTitle {
+		margin: 62px 0 40px;
+		font-size: 1.22rem;
+		font-weight: 990;
+	}
+	.badgesGrid {
+		display: grid;
+		gap: 24px;
+		align-items: center;
+		justify-content: center;
+		grid-row: 1fr 1fr;
+		grid-column: 1fr 1fr;
+		width: 100%;
+		grid-template-areas: "a b" "a b";
+		padding-bottom: 15px;
+		padding-bottom: 75px;
+		>* {
+			height: 125px;
+			width: 225px;
+			padding: 16px 24px;
+			box-shadow: 0px 16px 32px 0px var(--color-shadow-light);
+			background: var(--bgcolor1-light);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			height: 225px;
+			overflow: hidden;
+			justify-content: flex-start;
+			position: relative;
+		}
+		.badgeContainer {
+			>* {
+				padding: 8px;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+			}
+			.badgeName {
+				font-size: 1.3rem;
+				font-weight: 990;
+				margin-top: 4px;
+				padding-bottom: 4px;
+			}
+			.badgeAbout {
+				padding: 0 8px;
+				color: $color_3;
+				font-size: .83rem;
+				align-self: flex-start;
+			}
+			.badgeDate {
+				padding: 0 8px;
+				color: $color_3;
+				font-size: .83rem;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: var(--green);
+				color: $color_4;
+				padding: 5px 8px;
+				margin-left: 8px;
+				border-radius: 4px;
+				margin-top: 12px;
+			}
+		}
+	}
+}
+.badgeImg {
+	img {
+		scale: .3;
+		margin-top: -170px;
+		margin-left: -110px;
+	}
+}
+@media (max-width: 566px) {
+	.streakDaysSection {
+		.streakDays {
+			width: 75%;
+		}
+	}
+}
+@media (max-width: 370px) {
+	.streakDays {
+		flex-direction: column;
+	}
+	.streakDaysSection {
+		height: 200px;
+	}
+	.x {
+		height: 200px;
+	}
+}
