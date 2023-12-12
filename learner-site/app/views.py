@@ -385,7 +385,7 @@ def goto_user_profile(req):
         if req.user.username == "" or req.user.username == None:
             return redirect('/')
         else:
-            return redirect('/user/profile')
+            return redirect('/user/settings/')
             
             
 
@@ -428,13 +428,82 @@ def user_enrollments(req):
             return redirect('/')
         else:
             CONTEXT = {
-                "tab_title": "Enrollments|Ed.Line",
+                "tab_title": f"{req.user.first_name}'s Enrollments | Ed.Line",
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],  
                 "full_name": req.user.first_name + " " + req.user.last_name,
-                "join_date": req.user.date_joined,  
+                "join_date": req.user.date_joined,
+
+                "user_enrolled": get_all_user_enrollments(req.user.username,req.user.first_name),  
                 "enrollments": 1
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
+
+
+
+
+
+
+
+
+# @user/my-learning/my-lists/
+def user_lists(req):
+    if req.method != "GET":
+        return send_bad_request()
+    else:
+        if req.user.username == "" or req.user.username == None:
+            return redirect('/')
+        else:
+
+            LIST_DATA_DICT = get_user_created_list_data(req.user.username, req.user.first_name)
+
+
+            CONTEXT = {
+                "tab_title": f"{req.user.first_name}'s Lists: My Learning | Ed.Line",
+                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],  
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "join_date": req.user.date_joined,  
+
+                "user_made_lists": LIST_DATA_DICT,
+                "user_lists": 1
+            }
+            return render(req,"src/home/_base_structure.html",CONTEXT)
+        
+
+
+
+
+
+
+
+
+# @user/my-learning/ongoing/
+def user_ongoing(req):
+    if req.method != "GET":
+        return send_bad_request()
+    else:
+        if req.user.username == "" or req.user.username == None:
+            return redirect('/')
+        else:
+
+            LIST_DATA_DICT = get_user_ongoing_courses(req.user.username, req.user.first_name)
+
+
+            CONTEXT = {
+                "tab_title": f"{req.user.first_name}'s Ongoing Courses | Ed.Line",
+                "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],  
+                "full_name": req.user.first_name + " " + req.user.last_name,
+                "join_date": req.user.date_joined,  
+
+                "user_ongoing": LIST_DATA_DICT,
+                "user_ongoing_tag": 1
+            }
+            return render(req,"src/home/_base_structure.html",CONTEXT)
+        
+
+
+
+
+
 
 
 
@@ -451,7 +520,7 @@ def user_settings(req):
         else:
             CONTEXT = {
                 "fname": req.user.first_name,
-                "tab_title": f"{req.user.first_name} {req.user.last_name}|Ed.Line",
+                "tab_title": f"{req.user.first_name} {req.user.last_name} | Ed.Line",
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2], 
                 "full_name": req.user.first_name + " " + req.user.last_name,
                 "join_date": req.user.date_joined,   
