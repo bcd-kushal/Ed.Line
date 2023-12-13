@@ -27,7 +27,7 @@ def careers_edline():
 
 
 
-def terms_edline():
+def privacy_edline():
     return '''
     <h1>Ed.Line: Privacy Policy</h1>
     <hr>
