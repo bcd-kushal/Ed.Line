@@ -1,6 +1,8 @@
 import json
 import time
 import threading
+
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.conf import settings
@@ -11,7 +13,9 @@ from django.contrib.auth.views import LoginView
 from django.views.decorators.csrf import csrf_exempt
 
 from .utils import *
+from .side_data import *
 from .courses import all_courses
+
 
 
 from pymongo.mongo_client import MongoClient
@@ -305,10 +309,16 @@ def signup(req):
             # first get all the data from signup form ---------------
             phone = form.cleaned_data["user"]
             fname = form.cleaned_data["fname"]
-            lname = form.cleaned_data["lname"]
             email = form.cleaned_data["email"]
             pass1 = form.cleaned_data["pass1"]
             # TIME_RN = get_date_time_rn()
+
+            print("--------------------------------------------")
+            user_names = fname.split()
+            lname = user_names[1] if len(user_names)>1 else ""
+            fname = user_names[0]
+
+            print("fname:",fname,"| lname:",lname)
 
             LogoutUser(req)
 
@@ -487,6 +497,7 @@ def user_ongoing(req):
 
             LIST_DATA_DICT = get_user_ongoing_courses(req.user.username, req.user.first_name)
 
+            print("-------------------------------->",req.user.first_name," |", req.user.last_name)
 
             CONTEXT = {
                 "tab_title": f"{req.user.first_name}'s Ongoing Courses | Ed.Line",
@@ -550,3 +561,18 @@ def bad_route(req):
             "bad_route": 1
         }
     return render(req,"src/error/error_page.html",CONTEXT)
+
+
+
+
+
+
+
+# @/careers/
+def careers(req):
+    return render(req,'src/others/others.html',{
+        "tab_title": "Careers: Ed.Line",
+        "company_data": careers_edline()
+    })
+
+
