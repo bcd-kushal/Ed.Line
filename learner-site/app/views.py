@@ -568,11 +568,53 @@ def bad_route(req):
 
 
 
+
+
+
+# =======================================================================
+# =======================================================================
+
+
+
+
 # @/careers/
 def careers(req):
     return render(req,'src/others/others.html',{
         "tab_title": "Careers: Ed.Line",
         "company_data": careers_edline()
     })
+
+
+
+
+# @/about-us/
+def about_us(req):
+    return render(req,'src/others/others.html',{
+        "tab_title": "About Us: Ed.Line",
+        "company_data": about_edline()
+    })
+
+
+
+
+
+
+# @/terms/
+def terms(req):
+    return render(req,'src/others/others.html',{
+        "tab_title": "Terms: Ed.Line",
+        "company_data": terms_edline()
+    })
+
+
+
+
+# @/privacy/
+def privacy(req):
+    return render(req,'src/others/others.html',{
+        "tab_title": "Privacy: Ed.Line",
+        "company_data": privacy_edline()
+    })
+
 
 
