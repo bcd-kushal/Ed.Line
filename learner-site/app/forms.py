@@ -14,7 +14,7 @@ class LoginForm(forms.Form):
 class SignupForm(forms.Form): 
     user = forms.CharField(max_length=100)   # mobile number: PK
     fname = forms.CharField(max_length=100)
-    lname = forms.CharField(max_length=100)
+    # lname = forms.CharField(max_length=100)
     email = forms.CharField(
                             max_length=100, 
                             widget=forms.EmailInput()
