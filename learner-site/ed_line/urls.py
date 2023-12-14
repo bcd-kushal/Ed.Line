@@ -31,6 +31,12 @@ urlpatterns = [
     path('user/settings/', r.user_settings, name='user-settings'),              # <---- for the signed-in
 
 
+    path('careers/', r.careers, name='careers'),     
+    path('privacy/', r.privacy, name='privacy'),     
+    path('terms/', r.terms, name='terms'),     
+    path('about-us/', r.about_us, name='about-us'),          
+
+
     # REST UNDEFINED PATTERNS
     re_path(r'^.*/$', r.bad_route, name='bad-route'),
 
