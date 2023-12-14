@@ -14,6 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from .utils import *
 from .side_data import *
+from .dashboard_data import *
 from .courses import all_courses
 
 
@@ -95,11 +96,21 @@ def homepage(req):
         if req.user.username == None or req.user.username == '':
             return redirect('/')
         else:
+            SLIDERS = slider_pics(req.user.username,req.user.first_name)
+
             CONTEXT = {
                 "tab_title": "Home|Ed.Line",
                 "full_name": req.user.first_name + " " + req.user.last_name,
                 "join_date": req.user.date_joined,
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
+
+                "slider_pics": SLIDERS,
+                "slider_pics_total": len(SLIDERS),
+
+                "dash_relearn": get_start_learning(req.user.username,req.user.first_name),
+                "dash_quick_links": get_quick_links(req.user.username,req.user.first_name),
+                "dash_top_pick": get_top_pick(req.user.username,req.user.first_name),
+                "dash_course_ribbons": fetch_dashboard_ribbons(req.user.username,req.user.first_name),
                 "homepage": 1
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
