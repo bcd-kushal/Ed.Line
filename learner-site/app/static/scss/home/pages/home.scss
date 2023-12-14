@@ -1,0 +1,457 @@
+$color_1: white;
+$color_2: azure;
+$color_3: #333333;
+$color_4: transparent;
+$color_5: var(--blue);
+$color_6: var(--purple);
+$color_7: var(--footer-text1-light);
+$color_8: rgba(181, 115, 115, 0.77);
+$background-color_1: var(--list-purple-light);
+
+@keyframes photoSlide {
+	0%,20.4% {
+		transform: translateX(-400vw);
+	}
+	21%,40.4% {
+		transform: translateX(-300vw);
+	}
+	41%,60.4% {
+		transform: translateX(-200vw);
+	}
+	61%,80.4% {
+		transform: translateX(-100vw);
+	}
+	81%,100% {
+		transform: translateX(0vw);
+	}
+}
+.dashboard_home {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 30px;
+	padding-bottom: 30px;
+	>* {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		min-height: 270px;
+		z-index: 2;
+		+ {
+			* {
+				padding-left: 30px;
+			}
+		}
+	}
+}
+.photo_slider {
+	height: 480px;
+	background: black;
+	color: $color_1;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+	width: 100vw;
+	top: 0;
+	z-index: -4;
+	position: sticky;
+	z-index: 1;
+}
+.sliderDiv {
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	overflow-x: scroll;
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+}
+.sliderImg {
+	height: 100%;
+	width: 100vw !important;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	transition: transform 1s step-end;
+	animation: photoSlide 30s infinite alternate-reverse;
+}
+.slideHeader {
+	font-size: 3.5rem;
+	font-weight: 990;
+	width: 70%;
+}
+.slideInfo {
+	width: 100vw;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 2px;
+	padding: 25px;
+	color: $color_2;
+	text-align: right;
+	height: 100%;
+	background: linear-gradient(-100deg,rgba(0,0,0,.9),transparent);
+}
+.slideShort {
+	width: 42%;
+}
+.slideHREF {
+	text-decoration: none;
+	color: $color_3;
+	padding: 14px 16px;
+	font-weight: 990;
+	background: azure;
+	margin-top: 13px;
+	border-radius: 6px;
+	font-size: .8rem;
+	cursor: pointer;
+	&:hover {
+		letter-spacing: .15px;
+		scale: 1.02;
+		transition: .4s scale ease;
+	}
+}
+.dashRowVids {
+	width: 100%;
+	display: flex;
+	gap: 17px;
+	overflow-x: scroll;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.dashTypeTitle {
+	font-weight: 990;
+	font-size: 1.3rem;
+	padding-bottom: 5px;
+}
+.courseTab2 {
+	padding: 7px 15px;
+	box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);
+	background: var(--bgcolor1-light);
+	border-radius: 10px;
+	height: 85px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 120px;
+}
+.videoTab2 {
+	height: 210px;
+	padding: 0;
+	min-width: 200px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+.vidThumbnailPFP2 {
+	height: 100%;
+	overflow: hidden;
+	background: black;
+	display: grid;
+	width: 60%;
+	>* {
+		grid-row-start: 1;
+		grid-column-start: 1;
+		justify-self: stretch;
+		align-self: stretch;
+	}
+}
+.thumbnailImgBox2 {
+	width: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	img {
+		width: auto;
+		width: 100% !important;
+		height: auto !important;
+		min-height: 100%;
+	}
+}
+.thumbnailOtherBox2 {
+	width: 100%;
+	height: 100%;
+	z-index: 23;
+	color: $color_1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	background: linear-gradient( 18deg, rgba(0, 0, 0, 0.75), transparent, transparent );
+}
+.vidDetails2 {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+	overflow-y: scroll;
+	gap: 3px;
+	>* {
+		width: 100%;
+		font-size: 1rem;
+	}
+}
+.vidProgressBar {
+	height: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	>* {
+		height: 100%;
+		color: $color_4;
+	}
+}
+.vidProgressed {
+	width: calc(100% * 0.35);
+	background: var(--blue);
+}
+.vidUnprogressed {
+	width: calc(100% - calc(100% * 0.35));
+	background: var(--footer-text1-light);
+}
+.vidTags {
+	height: 22px;
+	padding: 2px 7px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1px;
+	>* {
+		height: 100%;
+		padding: 1.2px 3px;
+		font-size: 0.58rem;
+		font-weight: 990;
+		display: flex;
+		align-items: center;
+		letter-spacing: 0.1px;
+	}
+}
+.vidCreatorRow {
+	height: 22px;
+	padding: 2px 7px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1px;
+	gap: 5px;
+}
+.languageTag {
+	border: 1px solid var(--blue);
+	border-radius: 3px;
+	color: $color_5;
+	background: rgba(64, 247, 247, 0.1);
+}
+.courseTypeTag {
+	color: $color_6;
+}
+.vidTitle2 {
+	font-weight: 990;
+	font-size: 1.3rem;
+	padding: 0 7px;
+}
+.vidRatings {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1px;
+	>* {
+		font-size: 0.62rem;
+		font-weight: 990;
+		color: $color_7;
+	}
+}
+.vidCreatorAbout {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1px;
+	>* {
+		font-size: 0.62rem;
+		font-weight: 990;
+		color: $color_7;
+	}
+}
+.creatorIconXS {
+	padding: 2px 2.5px 2px 4px;
+	img {
+		width: 12px;
+		border-radius: 300px;
+		aspect-ratio: 1;
+		justify-self: flex-end;
+	}
+}
+.otherVidDetailsRow {
+	display: flex;
+	align-items: center;
+	padding: 2px 7px 5px;
+	gap: 5px;
+	justify-content: flex-start;
+	>* {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: flex-start;
+		color: $color_7;
+		font-size: 0.55rem;
+	}
+}
+.courseHeaders {
+	width: 100%;
+	padding: 15px 0 0;
+	font-weight: 990;
+	padding: 15px 15px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.headerL {
+	font-size: 0.9rem;
+}
+.headerR {
+	font-size: 0.7rem;
+	padding: 8px 15px;
+	background: rgba(0, 133, 126, 0.08);
+	border-radius: 15px;
+}
+.thumbnailDotBox {
+	&:hover {
+		background: rgba(255, 255, 255, 0.3);
+		border-radius: 300px;
+		scale: 1.05;
+	}
+	cursor: pointer;
+}
+.courseTab {
+	cursor: pointer;
+	&:hover {
+		scale: 1.05;
+	}
+}
+.topPicksBar {
+	padding: 0;
+	background-color: $background-color_1;
+	padding: 30px;
+	width: fit-content;
+	border-radius: 15px;
+}
+.specialDashRibbon {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	padding-right: 30px;
+	justify-content: space-between;
+}
+.LSD {
+	height: 100%;
+	padding: 20px;
+	background: var(--list-red-light);
+	border-radius: 15px;
+	width: fit-content;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	gap: 20px;
+}
+.quickLink {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 8px;
+	align-items: flex-start;
+	justify-content: center;
+}
+.quickHref {
+	background: rgba(181, 115, 115, 0.07);
+	padding: 15px 30px;
+	width: 100%;
+	border-radius: 332px;
+	text-decoration: none;
+	font-weight: 990;
+	color: $color_8;
+}
+@media (max-width: 1080px) {
+	.vidThumbnailPFP2 {
+		width: 65%;
+	}
+	.slideInfo {
+		justify-content: flex-end;
+		background: linear-gradient(342deg,rgba(0,0,0,.9),transparent);
+	}
+}
+@media (max-width: 950px) {
+	.specialDashRibbon {
+		flex-direction: column-reverse;
+		>* {
+			width: 100%;
+		}
+	}
+	.LSD {
+		flex-direction: row;
+		gap: 0;
+		padding-right: 0;
+		.dashTypeTitle {
+			padding: 0 15px 0 0;
+			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.quickLink {
+		flex-direction: row;
+		overflow-x: scroll;
+		justify-content: flex-start;
+		padding-right: 20px;
+	}
+	.quickHref {
+		width: fit-content;
+		white-space: nowrap;
+	}
+}
+@media (max-width: 800px) {
+	.vidThumbnailPFP2 {
+		width: 80%;
+	}
+}
+@media (max-width: 745px) {
+	.sliderDiv {
+		img {
+			height: 100%;
+			width: auto;
+			transform: translateX(-200px);
+			z-index: -7;
+		}
+	}
+}
+@media (max-width: 425px) {
+	.videoTab2 {
+		flex-direction: column;
+		height: auto;
+		>* {
+			width: 100%;
+		}
+	}
+	.vidDetails2 {
+		margin-bottom: 7px;
+	}
+}
