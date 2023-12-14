@@ -139,6 +139,30 @@
 }
 
 
+.filterButton,
+#sortByOption {
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  outline: none;
+  color: var(--text1-light);
+}
+
+.filterSortButtonSection {
+  color: var(--text1-light);
+}
+
+.filterSortButtonSection > * {
+  background: rgba(30, 30, 30, 0.06);
+  padding: 5px 11.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 300px;
+  font-size: 0.88rem;
+}
+
 
 
 

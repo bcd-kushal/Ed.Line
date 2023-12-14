@@ -141,6 +141,10 @@ body{
 
 /* .profilePane{ right: 0 ; } */
 
+.filterButtonContainer *, .sortByOptionTitle, .sortByOptionTitle *, .subCoursePill, .videoTab2 *, .goLeftPage *, .goRightPage *, .headerR, .themeMode, .settingsPFPbar, .profileInsights > *, .bbr3 > *{
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 60000px){

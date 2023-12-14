@@ -1,174 +1,151 @@
-.specificCourse {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
+.dashboard_home{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-bottom: 30px;
 }
 
-@media (max-width: 60000px) {
-  .courseFilterSpace {
-    width: 1080px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 85px;
-  }
 
-  .courseTitleContainer{
-    width: 1080px;
-    margin-bottom: 20px;
+
+.dashboard_home > *{
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    flex-direction: column;
-    margin-top: 40px;
-    font-size: 1.76rem;
-    color: var(--footer-play-btn-light);
-    letter-spacing: .3px;
-    font-weight: 990;
+    min-height: 270px;
 }
 
-  .subCoursesBox {
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-    justify-content: flex-start;
-    border-radius: 15px;
-    background: var(--footer-hover-light);
-  }
+.dashboard_home > *  + *{
+    padding-left: 30px;
+}
 
-  .stfb {
-    font-weight: 990;
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
-
-  .subCourseContainer {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .subCourseContainer > * {
-    width: fit-content;
-    margin: 2px;
-    padding: 4px 10.5px;
-    border: 1.2px solid var(--footer-btn-hover-light);
-    border-radius: 300px;
-    font-size: 0.75rem;
-  }
-
-  .courseFilterPane {
-    width: calc(100% - 235px);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .courseFilterPane2 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px 0 0;
-  }
-
-  .courseFilterPane2 > * {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .courseFilterPane2 > * > * {
-    display: flex;
-    gap: 10px;
-  }
-
-  .courseFilterTab {
-    padding: 0 0 10px 0;
-    font-size: 0.95rem;
-  }
-
-  .filterButton,
-  #sortByOption {
-    text-decoration: none;
-    background: transparent;
-    border: none;
-    font-size: 0.88rem;
-    outline: none;
-    color: var(--text1-light);
-  }
-
-  .filterSortButtonSection {
-    color: var(--text1-light);
-  }
-
-  .filterSortButtonSection > * {
-    background: rgba(30, 30, 30, 0.06);
-    padding: 5px 11.5px;
-    display: flex;
+.photo_slider{
+    height: 480px;
+    background: black;
+    color: white;
     align-items: center;
     justify-content: center;
-    border-radius: 300px;
-    font-size: 0.88rem;
-  }
-
-  .mostPopularVideosTab {
-    width: 1080px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-
-  .popularCourses {
-    background: rgba(255, 89, 89, 0.12);
-  }
-
-  .allCourseSection {
-    font-weight: 990;
-  }
-
-  .allCoursesList {
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
+    justify-content: stretch;
     align-items: stretch;
-    justify-content: flex-start;
-    gap: 17px;
-  }
+    width: 100vw;
+    top: 0;
+    z-index: -4;
+    position: sticky;
 
-  .coursePagesNavigatorBar {
-    padding: 15px 0;
+}
+
+.sliderDiv{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+
+.sliderImg{
+    height: 100%;
+    width: 100vw !important;
     display: flex;
     align-items: center;
-    justify-content: center;
-    scale: 0.9;
-  }
+    overflow: hidden;
+    position: relative;
+    transition: transform 1s step-end;
+    animation: photoSlide 30s infinite alternate-reverse;
+}
 
-  .goLeftPage,
-  .goRightPage {
-    padding: 2px 12px 0;
-  }
+@keyframes photoSlide{
+      0%,20.4% {
+        transform: translateX(-400vw);
+      }
+      21%,40.4% {
+        transform: translateX(-300vw);
+      }
+      41%,60.4% {
+        transform: translateX(-200vw);
+      }
+      61%,80.4% {
+        transform: translateX(-100vw);
+      }
+      81%, 100% {
+        transform: translateX(0vw);
+      }
+}
 
-  .allCoursesList > * {
+.slideHeader{
+    font-size: 3.5rem;
+    font-weight: 990;
+
+}
+
+.sliderDiv img{
     width: 100%;
-  }
+    object-fit: cover;
+}
 
-  /* BIGGER COURSE TAB */
+.slideInfo{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    padding: 25px;
+    color: azure;
+    text-align: right;
+    height: 100%;
+    background: linear-gradient(-100deg,rgba(0,0,0,.9),transparent);
+}
 
-  .courseTab2 {
+.slideHeader{width: 70%;}
+.slideShort{width: 42%;}
+.slideHREF{
+    text-decoration: none;
+    color: #333333;
+    padding: 14px 16px;
+    font-weight: 990;
+    background: azure;
+    margin-top: 13px;
+    border-radius: 6px;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.slideHREF:hover{
+    letter-spacing: .15px;
+    scale: 1.02;
+    transition: .4s scale ease;
+}
+
+.dashboard_home > *{ z-index: 2;}
+.photo_slider{z-index: 1;}
+
+
+.dashRowVids{
+    width: 100%;
+    display: flex;
+    gap: 17px;
+    overflow-x: scroll;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.dashTypeTitle{
+    font-weight: 990;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+}
+
+.courseTab2 {
     padding: 7px 15px;
     box-shadow: 0px 5px 10px 0px var(--color-shadow1-light);
     background: var(--bgcolor1-light);
@@ -180,28 +157,9 @@
     min-width: 120px;
   }
 
-  .courseImg {
-    padding: 10px 0;
-  }
-  .courseNamePFPpreference {
-    white-space: nowrap;
-    font-size: 0.7rem;
-  }
 
-  .historyTab {
-    background: var(--footer-hover2-light);
-    margin-bottom: 70px;
-    border-radius: 15px;
-    margin-left: 10px;
-    width: calc(100% - 10px);
-    gap: 0;
-  }
 
-  .videoHistory {
-    padding: 15px;
-  }
 
-  /* VIDEO TAB HERE =========================== */
   .videoTab2 {
     height: 210px;
     padding: 0;
@@ -425,82 +383,130 @@
     width: 60%;
   }
 
+.topPicksBar{
+    padding: 0;
+    background-color: var(--list-purple-light);
+    padding: 30px;
+    width: fit-content;
+    border-radius: 15px;
 }
 
-@media (max-width: 1080px) {
-  .specificCourse {
-    gap: 5px;
-  }
 
-  .courseFilterSpace {
-    width: 100vw;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 20px;
-  }
-
-  .subCoursesBox {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: scroll;
-    align-items: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .subCourseContainer {
-    flex-wrap: nowrap;
-  }
-  .subCourseContainer > * {
-    margin: 2px 4px;
+.specialDashRibbon{
     display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-right: 30px;
+    justify-content: space-between;
+}
+
+
+.LSD{
+    height: 100%;
+    padding: 20px;
+    background: var(--list-red-light);
+    border-radius: 15px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row-reverse;
     align-items: center;
+    gap: 20px;
+}
+
+.quickLink{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    align-items: flex-start;
     justify-content: center;
-    white-space: nowrap;
-  }
+}
 
-  .courseFilterPane {
+.quickHref{
+    background:  rgba(181, 115, 115, 0.07);
+    padding: 15px 30px;
     width: 100%;
-  }
+    border-radius: 332px;
+    text-decoration: none;
+    font-weight: 990;
+    color: rgba(181, 115, 115, 0.77);
+}
 
-  .mostPopularVideosTab {
-    width: 100%;
-    padding: 0 20px 15px;
-  }
-  
+
+
+
+
+
+  @media (max-width: 1080px){
+    
   .vidThumbnailPFP2 {
     width: 65%;
   }
+
+  .slideInfo{
+    justify-content: flex-end;
+    background: linear-gradient(342deg,rgba(0,0,0,.9),transparent);
 }
-
-
-@media (max-width:1000px){
-  .courseTitleContainer{
-      width: 100%;
-      padding: 0 20px;
-      margin-bottom: 32px;
   }
-}
 
+
+  @media (max-width: 950px){
+    
+    .specialDashRibbon {
+      flex-direction: column-reverse;
+    }
+
+    
+    .specialDashRibbon > * {
+        width: 100%;
+      }
+
+      .LSD{
+        flex-direction: row;
+        gap: 0;
+        padding-right: 0;
+      }
+
+      .LSD .dashTypeTitle{
+        padding: 0 15px 0 0;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .quickLink{
+        flex-direction: row;
+        overflow-x: scroll;
+        justify-content: flex-start;
+        padding-right: 20px;
+      }
+      
+      .quickHref{
+        width: fit-content;
+        white-space: nowrap;
+      }
+    }
+
+    
 @media (max-width: 800px) {
-  #aege {
-    display: none;
+    .vidThumbnailPFP2 {
+      width: 80%;
+    }
   }
 
-  .vidThumbnailPFP2 {
-    width: 80%;
+  
+@media (max-width: 745px) {
+    .sliderDiv img{
+        height: 100%;
+        width: auto;
+        transform: translateX(-200px);
+        z-index: -7;
+    }
   }
-}
 
 
-@media (max-width:590px){
-  .courseTitleContainer{
-      margin-bottom: 20px;
-      margin-top: 55px;
-  }
-}
-
+  
 @media (max-width: 425px){
     .videoTab2{
         flex-direction: column;
@@ -511,14 +517,5 @@
     }
     .vidDetails2{
         margin-bottom: 7px;
-    }
-    .courseTitleContainerSP{
-        align-items: center;
-        justify-content: center;
-    }
-    .courseFilterTab{
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
     }
 }
