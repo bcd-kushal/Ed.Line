@@ -136,15 +136,9 @@
 
     /* HIDE TAGS OF SECOND HEADER ROW ON RESIZE --------------------------------- */
 
-    document.querySelector(".leftSection .titleContainer").addEventListener("click",() => {
+    document.querySelectorAll(".titleContainer").forEach(el => el.addEventListener("click",() => {
         window.location.href = "/home/";
-    })
-
-
-
-
-
-
+    }));
 
 
 

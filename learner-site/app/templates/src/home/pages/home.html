@@ -1,6 +1,288 @@
-dashboard home
+<div class="dashboard_home">
 
-    <a href="/user/">{{ username }}</a>
+    {% if slider_pics %}
+    <div class="photo_slider">
+        <div class="sliderDiv" style="width: calc( 100vw * {{slider_pics_total | default:5}} );">
+            {% for x in slider_pics %}
+            <div class="sliderImg" style="filter: contrast(.8);">
+                <div class="slideInfo">
+                    <div class="slideHeader">{{x.title}}</div>
+                    <div class="slideShort">{{x.short}}</div>
+                    <a href="{{x.href}}" class="slideHREF">{{x.btn}}</a>
+                </div>
+                <img src="{{x.banner}}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
 
-    <hr>
-    <a href="/logout/">Logout</a>
+    <!--------------------------------------------------------------------->
+
+    {% if dash_relearn %}
+    <div class="startLearningDash">
+
+        <div class="dashTypeTitle">{{dash_relearn.title | default:'Lets start learning'}}</div>
+        <div class="dashRowVids">
+
+            {% for x in dash_relearn.data %}
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="{{x.thumbnail}}" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        {% if x.last_lesson %}
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; {{x.last_lesson}}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    {% if x.progress %}
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+                    {% endif %}
+
+                    <div class="vidTags">
+                        <div class="languageTag">{{x.language}}</div>
+                        <div class="courseTypeTag">{{x.courseType}}</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        {{x.title}}
+                    </div>
+                    
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">{{x.rating}}</div>
+                            {% if total_ratings %}
+                            <div class="ratingTotal">({{total_ratings}})</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                <img src="{{x.educator_pfp | default:'https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256' }}" alt="">
+                            </div>
+                            <div class="creatorName">
+                                {{x.educator_name}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        {% if x.tags %}
+                        <div class="typeTags">
+                            {% for t in x.tags %}
+                            <div class="courseTag">{{t}}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="otherVidDetails">
+                            {{x.footer_course_details}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        
+        </div>
+
+    </div>
+    {% endif %}
+
+
+    <div class="specialDashRibbon">
+        <div class="LSD">
+            <div class="dashTypeTitle" style="color: rgba(107, 65, 65, 0.87);text-align: center; display: flex; justify-content: center;">Quick Links</div>
+            <div class="quickLink" >
+                {% for r in dash_quick_links %}
+                <a href="{{r.path}}" class="quickHref">{{r.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div class="RSD">
+
+    {% if dash_top_pick %}
+    <div class="topPicksBar">
+        <div class="dashTypeTitle" style="padding-bottom: 25px;color: rgb(97, 59, 97);">{{dash_top_pick.title}}</div>
+        <div class="courseTab2 videoTab2">
+            <div class="vidThumbnailPFP2">
+                <div class="thumbnailImgBox2">
+                    <img src="{{dash_top_pick.data.thumbnail | default:'https://img-c.udemycdn.com/course/240x135/1219332_bdd7.jpg'}}" alt="" style="object-fit: cover;height: 100%;">
+                </div>
+            </div>
+            <div class="vidDetails2">
+
+                {% if dash_top_pick.data.progress %}
+                <div class="vidProgressBar">
+                    <div class="vidProgressed">w</div>
+                    <div class="vidUnprogressed">w</div>
+                </div>
+                {% endif %}
+
+                <div class="vidTags">
+                    <div class="languageTag">{{dash_top_pick.data.language}}</div>
+                    <div class="courseTypeTag">{{dash_top_pick.data.courseType}}</div>
+                </div>
+
+                <div class="vidTitle2">
+                    {{dash_top_pick.data.title}}
+                </div>
+
+                <div class="vidCreatorRow">
+
+                    <div class="vidRatings">
+                        <div class="ratingStarIcon">
+                            <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                        </div>
+                        <div class="ratingRate">{{dash_top_pick.data.rating}}</div>
+                        <div class="ratingTotal">({{dash_top_pick.data.total_ratings}})</div>
+                    </div>
+
+                    <div class="vidCreatorAbout">
+                        <div class="creatorIconXS">
+                            <img src="{{dash_top_pick.data.educator_pfp | default:'https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256'}}" alt="">
+                        </div>
+                        <div class="creatorName">
+                            {{dash_top_pick.data.educator_name}}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="otherVidDetailsRow">
+                    {% if dash_top_pick.data.tags %}
+                    <div class="typeTags">
+                        {% for t in dash_top_pick.data.tags %}
+                        <div class="courseTag">{{t}}</div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="otherVidDetails">
+                        {{dash_top_pick.data.footer_course_details}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    
+    {% if dash_course_ribbons %}
+    {% for s in dash_course_ribbons %}
+    <div class="startLearningDash">
+
+        <div class="dashTypeTitle">{{s.title | default:'More from Ed.Line'}}</div>
+        <div class="dashRowVids">
+
+            {% for x in s.data %}
+            <div class="courseTab videoTab" style="box-shadow: 0px 5px 10px 0px var(--color-shadow-light);">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="{{x.thumbnail}}" alt="">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        {% if x.last_lesson %}
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; {{x.last_lesson}}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    {% if x.progress %}
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+                    {% endif %}
+
+
+                    <div class="vidTags">
+                        <div class="languageTag">{{x.language}}</div>
+                        <div class="courseTypeTag">{{x.courseType}}</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        {{x.title}}
+                    </div>
+                    
+
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">{{x.rating}}</div>
+                            {% if total_ratings %}
+                            <div class="ratingTotal">({{total_ratings}})</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                <img src="{{x.educator_pfp | default:'https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256' }}" alt="">
+                            </div>
+                            <div class="creatorName">
+                                {{x.educator_name}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        {% if x.tags %}
+                        <div class="typeTags">
+                            {% for t in x.tags %}
+                            <div class="courseTag">{{t}}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="otherVidDetails">
+                            {{x.footer_course_details}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+    {% endfor %}
+    {% endif %}
+
+</div>

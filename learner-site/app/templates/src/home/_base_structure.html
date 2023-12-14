@@ -7,42 +7,42 @@
     
     <title>{{ tab_title }}</title>
 
-
-
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- GET WISHLIST, NOTIFICATIONS, STREAK -->
     <link rel="stylesheet" href="{% static 'css/home/containers/learn_streak.css' %} ">
     <link rel="stylesheet" href="{% static 'css/home/containers/profile.css' %} ">
-    
-    
+    <!-- LOAD REST OF PAGES AS NEEDED -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
     <!-- GET HEADER FOOTER -->
     <link rel="stylesheet" href="{% static 'css/universal/header.css' %} ">
     <link rel="stylesheet" href="{% static 'css/universal/footer.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/hamburger.css' %} ">
     <link rel="stylesheet" href="{% static 'css/universal/rightPage.css' %} ">
+    <!--------------------------------------------------------------------->
+    {% if courses %}
+    <link rel="stylesheet" href="{% static 'css/home/pages/courses.css' %} ">
+    {% endif %}
+
+    {% if homepage %}
+        <link rel="stylesheet" href="{% static 'css/home/pages/home.css' %} ">
+    {% endif %}
+
+    {% if specific_course %}
+    <link rel="stylesheet" href="{% static 'css/home/courses/specific_course.css' %} ">
+    {% endif %}
+
+    {% if enrollments or user_lists or user_ongoing_tag %}
+        <link rel="stylesheet" href="{% static 'css/home/my_learning/user_learning.css' %} ">
+    {% endif %}
 
     {% if settings %}
         <link rel="stylesheet" href="{% static 'css/settings/settings.css' %} ">
     {% endif %}
 
-    
-    <link rel="stylesheet" href="{% static 'css/home/pages/courses.css' %} ">
-    
-    <link rel="stylesheet" href="{% static 'css/home/courses/specific_course.css' %} ">
-    
-    
-    <!-- LOAD REST OF PAGES AS NEEDED -->
-    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
-
-
-    
-    {% if enrollments or user_lists or user_ongoing_tag %}
-        <link rel="stylesheet" href="{% static 'css/home/my_learning/user_learning.css' %} ">
+    {% if video_player %}
+        <link rel="stylesheet" href="{% static 'css/play/player.css' %} ">
     {% endif %}
 
-
-        
 </head>
 <body>
 
@@ -72,6 +72,10 @@
         
             {% if settings %}
                 {% include 'src/settings/settings.html' %}
+            {% endif %}
+
+            {% if video_player %}
+                {% include 'src/play/player.css' %}
             {% endif %}
         </div>
     
@@ -149,13 +153,13 @@
             }, { duration: 200, fill: "forwards" });
         });
         
-        document.querySelector(".hamburgerContainer .hamburger").addEventListener("click", () => {
+        /* document.querySelector(".hamburgerContainer .hamburger").addEventListener("click", () => {
             const PANE = document.getElementsByClassName("burgerFullPane")[0];
             PANE.animate({
                 left: "0vw",
                 opacity: "1"
             }, { duration: 200, fill: "forwards" });
-        });
+        }); */
         
 
 
