@@ -13,7 +13,9 @@ from django.contrib.auth.views import LoginView
 from django.views.decorators.csrf import csrf_exempt
 
 from .utils import *
+from .profile_data import *
 from .side_data import *
+from .footer import *
 from .dashboard_data import *
 from .courses import all_courses
 
@@ -30,6 +32,10 @@ MOBILE = ""
 
 ATLAS_URI = ""
 
+FOOTER_LINKS = {
+    "LINKS": footer_data(),
+    "SOCIALS": footer_socials()
+}
 
 def helper():
     global MOBILE
@@ -71,7 +77,7 @@ def goto_homepage_or_landing(req):
             CONTEXT = {
                 "tab_title": "Ed.Line - Your Right, Our Website"
             }
-            return render(req,"src/landing/landing.html",CONTEXT)
+            return render(req,"src/landing/landing2.html",CONTEXT)
         else:
             return redirect('home/')
 
@@ -82,8 +88,10 @@ def goto_homepage_or_landing(req):
 
 
 
-# @home/
+# @/home/
 def homepage(req):
+    global FOOTER_LINKS
+
     if req.method not in ["GET","POST"]:
         return send_bad_request(req)
     
@@ -107,6 +115,11 @@ def homepage(req):
                 "slider_pics": SLIDERS,
                 "slider_pics_total": len(SLIDERS),
 
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
                 "dash_relearn": get_start_learning(req.user.username,req.user.first_name),
                 "dash_quick_links": get_quick_links(req.user.username,req.user.first_name),
                 "dash_top_pick": get_top_pick(req.user.username,req.user.first_name),
@@ -125,6 +138,8 @@ def homepage(req):
 
 # @home/courses/
 def courses(req):
+    global FOOTER_LINKS
+
     if req.method != "GET":
         return send_bad_request()
     else:
@@ -137,6 +152,13 @@ def courses(req):
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
                 "join_date": req.user.date_joined,
                 "tab_title": "Courses|Ed.Line",
+
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
                 "courses": 1
             }
@@ -148,6 +170,8 @@ def courses(req):
 
 # @home/courses/*
 def show_specific_course_page(req,course_type):
+    global FOOTER_LINKS
+
     print(course_type)
     if req.method != "GET":
         return send_bad_request()
@@ -166,6 +190,13 @@ def show_specific_course_page(req,course_type):
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],    
                 "full_name": req.user.first_name + " " + req.user.last_name,
                 "join_date": req.user.date_joined,
+
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
                 
                 "subcourse_names": subcourses[course_type],
                 "popular_courses": [
@@ -442,6 +473,8 @@ def goto_user_enrollments(req):
 
 # @user/my-learning/enrolled/
 def user_enrollments(req):
+    global FOOTER_LINKS
+
     if req.method != "GET":
         return send_bad_request()
     else:
@@ -453,6 +486,13 @@ def user_enrollments(req):
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],  
                 "full_name": req.user.first_name + " " + req.user.last_name,
                 "join_date": req.user.date_joined,
+
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+
 
                 "user_enrolled": get_all_user_enrollments(req.user.username,req.user.first_name),  
                 "enrollments": 1
@@ -468,6 +508,8 @@ def user_enrollments(req):
 
 # @user/my-learning/my-lists/
 def user_lists(req):
+    global FOOTER_LINKS
+
     if req.method != "GET":
         return send_bad_request()
     else:
@@ -484,6 +526,13 @@ def user_lists(req):
                 "full_name": req.user.first_name + " " + req.user.last_name,
                 "join_date": req.user.date_joined,  
 
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+
+
                 "user_made_lists": LIST_DATA_DICT,
                 "user_lists": 1
             }
@@ -499,6 +548,8 @@ def user_lists(req):
 
 # @user/my-learning/ongoing/
 def user_ongoing(req):
+    global FOOTER_LINKS
+
     if req.method != "GET":
         return send_bad_request()
     else:
@@ -515,6 +566,13 @@ def user_ongoing(req):
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2],  
                 "full_name": req.user.first_name + " " + req.user.last_name,
                 "join_date": req.user.date_joined,  
+
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
 
                 "user_ongoing": LIST_DATA_DICT,
                 "user_ongoing_tag": 1
@@ -534,6 +592,8 @@ def user_ongoing(req):
 
 # @user/settings/
 def user_settings(req):
+    global FOOTER_LINKS
+
     if req.method != "GET":
         return send_bad_request()
     else:
@@ -545,7 +605,14 @@ def user_settings(req):
                 "tab_title": f"{req.user.first_name} {req.user.last_name} | Ed.Line",
                 "username": initials_of_name(req.user.first_name+" "+req.user.last_name)[0:2], 
                 "full_name": req.user.first_name + " " + req.user.last_name,
-                "join_date": req.user.date_joined,   
+                "join_date": req.user.date_joined, 
+
+
+                "history": get_user_history(req.user.username,req.user.first_name),
+
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
+  
                 "settings": 1
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
