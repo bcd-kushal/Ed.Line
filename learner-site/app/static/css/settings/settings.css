@@ -113,11 +113,44 @@
     padding: 30px;
     border-radius: 20px;
     overflow: hidden;
-
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 25px;
+    align-items: stretch;
+    justify-content: space-evenly;
 }
 
 
+
+.rsBox > *{
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: .5px solid rgba(30,30,30,.07);
+}
+
+.rsBox button{
+    text-decoration: none;
+    cursor: pointer;
+    inset: none;
+    border: none;
+    outline: none;
+    background: var(--footer-text0-light);
+    font-weight: 990;
+    color: aliceblue;
+    padding: 12px 20px;
+    border-radius: 9px;
+}
+
+.rsBox button:hover{
+    scale: 1.06;
+}
+
+.rsLSide{
+    font-size: 1.1rem;
+}
 
 
 

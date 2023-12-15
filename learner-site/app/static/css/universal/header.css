@@ -17,12 +17,13 @@
     font-size: 165%;
 }
 
+
 /* MINI SCREEN ################################################# */
 .miniScreen{
     justify-content: space-between;
     align-items: center;
     padding: 5px 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.02);
+    box-shadow: 0 2px 4px rgba(0,0,0,.01), 0 4px 12px rgba(0,0,0,.01);
 }
 
 .miniScreen > *{
@@ -48,7 +49,7 @@
     align-items: stretch;
     justify-content: "center";
     flex-direction: column;
-    box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.02);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.1);
 }
 
 .largeScreen > *{

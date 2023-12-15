@@ -194,6 +194,9 @@
     margin-left: -110px;
 }
 
+.notificationContainer, .profileContainer{
+    cursor: pointer;
+}
 
 @media (max-width: 566px){
     

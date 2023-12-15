@@ -148,6 +148,13 @@
 }
 
 
+
+.settingsBarPFP .settingsPFPbar:hover,
+.settingsBarPFP .themeMode:hover{
+    scale: 1.013;
+  }
+
+
 .preferredCourses{
     width: 100%;
     display: flex;

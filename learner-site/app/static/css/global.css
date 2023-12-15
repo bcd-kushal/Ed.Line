@@ -146,6 +146,26 @@ body{
 }
 
 
+.searchMini{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 70px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(60, 61, 62, 0.77);
+    z-index: 1900;
+    border-radius: 300px;
+    
+    background: #3c4852;
+    box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: none;
+}
+
+
 
 @media (max-width: 60000px){
     .hamburgerSection{
@@ -247,6 +267,9 @@ body{
         z-index: 203;
         box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.6);
         cursor: pointer;
+    }
+
+    .searchMini{
     }
 }
 

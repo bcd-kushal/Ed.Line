@@ -1,0 +1,23 @@
+<svg width="284" height="180" viewBox="0 0 284 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="284" height="180">
+<rect width="284" height="180" rx="8" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M156 89.5078H283.852C286.052 89.5078 287.836 91.2915 287.836 93.4919V176.015C287.836 178.215 286.052 179.999 283.852 179.999H156V89.5078Z" fill="#FCB5B5"/>
+<circle cx="187.593" cy="120.717" r="21.0625" fill="white" fill-opacity="0.2"/>
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="166" y="98" width="44" height="44">
+<ellipse cx="187.59" cy="120.128" rx="21.4526" ry="21.6476" fill="white"/>
+</mask>
+<g mask="url(#mask1)">
+<ellipse cx="187.785" cy="116.39" rx="8.77872" ry="8.85853" fill="#F9A2A2"/>
+<path d="M187.592 127.35C173.805 127.35 162.629 138.628 162.629 152.54H212.555C212.555 138.628 201.379 127.35 187.592 127.35Z" fill="#F9A2A2"/>
+</g>
+<path d="M219.876 138.48H263.524V143.803H219.876V138.48Z" fill="white" fill-opacity="0.5"/>
+<path d="M176.229 150.191H263.526V155.514H176.229V150.191Z" fill="white" fill-opacity="0.5"/>
+<circle cx="249.507" cy="111.347" r="5.97777" fill="#EB5757"/>
+<path d="M241.665 116.39C238.462 113.417 238.463 108.613 242.122 105.867" stroke="#EB5757" stroke-opacity="0.5" stroke-width="2.39042"/>
+<path d="M236.651 118.89C231.777 114.365 231.778 107.054 237.347 102.877" stroke="#EB5757" stroke-opacity="0.2" stroke-width="2.39042"/>
+<path d="M263.075 118.89C267.948 114.365 267.947 107.054 262.378 102.877" stroke="#EB5757" stroke-opacity="0.2" stroke-width="2.39042"/>
+<path d="M257.628 116.39C260.831 113.417 260.83 108.613 257.171 105.867" stroke="#EB5757" stroke-opacity="0.5" stroke-width="2.39042"/>
+</g>
+</svg>

@@ -34,9 +34,9 @@
     justify-content: stretch;
     align-items: stretch;
     width: 100vw;
-    top: 0;
+    /* top: 0; */
     z-index: -4;
-    position: sticky;
+    /* position: sticky; */
 
 }
 
@@ -431,8 +431,6 @@
     font-weight: 990;
     color: rgba(181, 115, 115, 0.77);
 }
-
-
 
 
 
