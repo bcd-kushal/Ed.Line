@@ -21,36 +21,14 @@
     
     <img src="https://static.uacdn.net/production/_next/static/images/compete/compete-banner-bg-shade.svg?q=75&auto=format%2Ccompress&w=1920" alt="" class="bgimg">
 
-
-
     <div class="authContainer">
-
-
-
-
-
-
-
         <div class="leftPrettyAuthSection">
-
-
             <div class="authBackButton">
                 <a href="/"><i class="fa-solid fa-chevron-left fa-2xs" style="scale: .9;"></i> Go Home</a>
             </div>
-
-
-
-
-
         </div>
 
-
-
-
-
         <div class="rightPrettyAuthSection">
-
-
             <div class="authTitle">
                 {% if login %}
                     Login
@@ -60,8 +38,6 @@
                     Join Ed.Line
                 {% endif %}
             </div>
-
-
             <div class="authSubtitle">
                 {% if login %}
                     or <a href="/signup/">create an account</a>
@@ -87,10 +63,6 @@
                         </form>
                         {% endif %}
             
-
-
-
-                        
                         {% if signup %}
                         <form action="/signup/" method="post">
                             {% csrf_token %}
@@ -116,21 +88,12 @@
                         {% endif %}
             </div>
 
-
-
             {% if login %}
             <div class="authTroubleBox">
                 Having trouble? Write us on <a href="mailto:help.edline@gmail.com">help.edline@gmail.com</a>
             </div>
             {% endif %}
-            
-
-
-
         </div>
-
-
-
 
     </div>
 
@@ -180,7 +143,6 @@
     </script>
     {% endif %}
     
-
     {% if signup %}
     <script>
         const MOBILE_FIELD_VALUE_FROM_BACKEND_FOR_SIGNUP = "{{ given_mobile }}";
@@ -232,8 +194,6 @@
             return SIGNIN_ALLOWED;
         }
     
-
-
 
         function checkOneWord(n){
             let NAME = "";
@@ -318,12 +278,9 @@
                 SIGNIN_ALLOWED = false;
             }
         });
-    
-    
-    
+
     </script>
     {% endif %}
-
 
 </body>
 </html>

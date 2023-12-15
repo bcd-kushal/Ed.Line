@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{tab_title}}</title>
+
+    <link rel="stylesheet" href="{% static 'css/home/landing/landing.css' %}">
+
+
+  </head>
+  <body>
+    <div class="landingContainer">
+      <div class="landingMain">
+
+
+        <div class="landingHeader">
+            <div class="LLS">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M418.4 157.9c35.3-8.3 61.6-40 61.6-77.9c0-44.2-35.8-80-80-80c-43.4 0-78.7 34.5-80 77.5L136.2 151.1C121.7 136.8 101.9 128 80 128c-44.2 0-80 35.8-80 80s35.8 80 80 80c12.2 0 23.8-2.7 34.1-7.6L259.7 407.8c-2.4 7.6-3.7 15.8-3.7 24.2c0 44.2 35.8 80 80 80s80-35.8 80-80c0-27.7-14-52.1-35.4-66.4l37.8-207.7zM156.3 232.2c2.2-6.9 3.5-14.2 3.7-21.7l183.8-73.5c3.6 3.5 7.4 6.7 11.6 9.5L317.6 354.1c-5.5 1.3-10.8 3.1-15.8 5.5L156.3 232.2z"/></svg>&nbsp;<div id="tt">Ed.Line</div>
+            </div>
+            <div class="LRS">
+                <button type="button">Log in</button>
+                <button type="button" id="js">Join Us</button>
+            </div>
+        </div>
+
+
+        <div class="container">
+          <div class="container1">
+            <h1 class="heading">Crack your goal with India’s top educators</h1>
+
+            <div class="para">
+
+                Over <font color="#08BD80"> 10 crore </font>learners trust us
+                for their preparation
+
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" class="contact" name="landing_mobile" id="landing_mobile">
+                <p class="confirm">We’ll send an OTP for verification</p>
+                <button type="submit" class="btn">Join for free</button>
+            </form>
+
+          </div>
+          <div class="container2">
+            <img src="{% static 'svg/landing/home-illustration.png' %}" alt="" />
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="h2">Select Your Goal/Exam</h2>
+          <h5>
+            <font color="#08BD80"> 200+ </font> exams available for your
+            preparation
+          </h5>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="main-card">
+              <img src="{% static 'svg/landing/upsc.svg' %}" alt="" />
+              <h4>UPSC CSE - GS</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="iit_jee.svg" alt="" />
+              <h4>IIT JEE</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="neet_ug.svg" alt="" />
+              <h4>NEET UG</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="bank_exams.svg" alt="" />
+              <h4>Bank Exam</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="ssc.svg" alt="" />
+              <h4>SSC JE & State AE exams</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="cat.svg" alt="" />
+              <h4>CAT & Other MBA Tests</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="class_12.svg" alt="" />
+              <h4>CBSE Class 12</h4>
+            </div>
+          </div>
+          <div class="card">
+            <div class="main-card">
+              <img src="ca.svg" alt="" />
+              <h4>CA Intermediate</h4>
+            </div>
+          </div>
+        </div>
+        <div class="section2">
+          <div class="left">
+            <div class="leftmain">
+              <h2>Start learning with Ed.Line</h2>
+              <h3>
+                Get unlimited access to structured courses & doubt clearing
+                sessions
+              </h3>
+              <button class="submit">Start Learning</button>
+            </div>
+          </div>
+          <div class="right">
+            <div class="div1">
+              <div class="div-card">
+                <h5>Exam Categories</h5>
+                <h1>60<font color="#08BD80">+</font></h1>
+                <img src="highlightgoals_96d24a04e7_a8e8de225d.svg" alt="" />
+              </div>
+
+              <div class="div-card">
+                <h5>Daily Live Categories</h5>
+                <h1>1.5K<font color="#08BD80">+</font></h1>
+                <img src="highlightlive_b05ed1f073_a8042bd7a8.svg" alt="" />
+              </div>
+
+              <div class="div-card">
+                <h5>Mins. Watched</h5>
+                <h1>3.5B<font color="#08BD80">+</font></h1>
+                <img
+                  src="highlightminswatched_fe52bc4026_ca82eba8b0.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="div2">
+              <div class="div-card">
+                <h5>Educators</h5>
+                <h1>14k<font color="#08BD80">+</font></h1>
+
+                <img
+                  src="hightlighteducators_c894789a76_58c2a07e52.svg"
+                  alt=""
+                />
+              </div>
+              <div class="div-card">
+                <h5>Video Lessons</h5>
+                <h1>1M<font color="#08BD80">+</font></h1>
+                <img
+                  src="highlightfreecourses_bb697dbd44_47fe832f07.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,17 +1,8 @@
 <div class="footer">
-
     <div class="mainFooterContainer">
-
         <div class="mainFooterChunk">
-
-
             <div class="contact_aboutSection">
-
-
-
                 <div class="aboutEdLineContainer">
-
-
                     <div class="titleContainer" style="cursor: pointer;">
                         <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;"></i>&nbsp;Ed.Line
                     </div>
@@ -38,24 +29,17 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
                 <div class="seperator">
                     <div class="SLINE"></div>
                 </div>
-
                 <div class="contactBar">
-
                     <div class="reachOutToUs footerBoldWords">
                         Reach out to us
                     </div>
-
                     <div class="reachOutDesc footerSubWords">
                         Get your questions answered about learning with Ed.Line
                     </div>
-
                     <div class="callContainer" style="margin-top: 12px;">
                         <div class="callIcon">
                             <div class="iconOfCall">
@@ -69,140 +53,34 @@
                             <a href="tel:+91 9123686897">+91 9123686897</a>
                         </div>
                     </div>
-
                 </div>
-
-
-
             </div>
-
-
             <div class="linksSection">
-
-
-
-
-                <div class="companyGrid">
-
-                    <div class="miniLink footerBoldWords">Company</div>
-                    <div class="miniLink footerSubWords"><a href="/about-us/">About Us</a></div>
-                    <div class="miniLink footerSubWords"><a href="/careers/">Careers</a></div>
-                    <div class="miniLink footerSubWords"><a href="/blogs/">Blogs</a></div>
-                    <div class="miniLink footerSubWords"><a href="/privacy/">Privacy Policy</a></div>
-                    <div class="miniLink footerSubWords"><a href="/terms/">Terms & Conditions</a></div>
-
+                {% for className, footerData in footer.items %}
+                <div class="{{className}}">
+                    <div class="miniLink footerBoldWords">{{footerData.title}}</div>
+                    {% for x in footerData.data %}
+                        {% for key, val in x.items %}
+                        <div class="miniLink footerSubWords"><a href="{{val}}">{{key|safe}}</a></div>
+                        {% endfor %}
+                    {% endfor %}
                 </div>
-
-
-
-                <div class="helpSupportGrid">
-
-                    <div class="miniLink footerBoldWords">Help & Support</div>
-                    <div class="miniLink footerSubWords"><a href="/home/">User Guidelines</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Site Map</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Refund Policy</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Takedown Policy</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Grievance Redressal</a></div>
-
-                </div>
-
-
-
-                <div class="checkOut">
-
-                    <div class="miniLink footerBoldWords">Products</div>
-                    <div class="miniLink footerSubWords"><a href="/home/"><i class="fa-solid fa-square-up-right fa-lg" style="color: rgb(83, 140, 215);"></i> &nbsp;Educator App</a></div>
-
-                </div>
-
-
-
-                <div class="popularGoals">
-
-                    <div class="miniLink footerBoldWords">Popular goals</div>
-                    <div class="miniLink footerSubWords"><a href="/home/">ML/AI</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Web Development</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Digital Marketing</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Graphic Design</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Digital Art</a></div>
-
-                </div>
-
-
-
-                <div class="EdLineCentre">
-
-                    <div class="miniLink footerBoldWords">Ed.Line Centre</div>
-                    <div class="miniLink footerSubWords"><a href="/home/">BHU Web Dev</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Delhi Foundation</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Gurgaon HR</a></div>
-
-                </div>
-
-
-
-                <div class="studyMaterial">
-
-                    <div class="miniLink footerBoldWords">Study material</div>
-                    <div class="miniLink footerSubWords"><a href="/home/">Web Study Material</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">AI/ML Study Material</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">CSX Study Material</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">SEO Study Material</a></div>
-                    <div class="miniLink footerSubWords"><a href="/home/">HR Study Material</a></div>
-
-                </div>
-
-
-
-
+                {% endfor %}
             </div>
-
-
-
         </div>
-
-
-
-
-
-
-
         <div class="bottomLine">
-            
             <div class="copyrightContainer">
                 © {{year | default:'2023'}} RK Group Learning Pvt Ltd
             </div>
-
             <div class="linksContainer">
-
-
-                <div class="instaContainer" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('https://www.instagram.com/edline_devs/', '_blank')">
-                    <i class="fa-brands fa-instagram fa-sm" style="color: var(--footer-text0-light);"></i>
+                {% for key,val in social.items %}
+                <div class="{{key}}Container" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('{{val.link}}', '_blank')">
+                    <i class="{{val.icon}}" style="color: var(--footer-text0-light);"></i>
                 </div>
-                <div class="youtubeContainer" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('https://www.youtube.com/channel/UCl0oLctFKRfSLf6OLrjOKRw', '_blank')">
-                    <i class="fa-brands fa-youtube fa-sm" style="color: var(--footer-text0-light);"></i>
-                </div>
-                <div class="facebookContainer" style="display: flex;align-items: center;justify-content: center;" onclick="window.open('https://www.facebook.com/profile.php?id=61554715046017/', '_blank')">
-                    <i class="fa-brands fa-meta fa-sm" style="color: var(--footer-text0-light);"></i>
-                </div>
-                <div class="twitterContainer" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('https://twitter.com/edline_devs', '_blank')">
-                    <i class="fa-brands fa-x-twitter fa-sm" style="color: var(--footer-text0-light);"></i>
-                </div>
-                <div class="linkedinContainer" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('https://www.linkedin.com/in/edline-devs/', '_blank')">
-                    <i class="fa-brands fa-linkedin fa-sm" style="color: var(--footer-text0-light);"></i>
-                </div>
-
-
+                {% endfor %}
             </div>
-
-
         </div>
-
-
-
     </div>
-
-
 </div>
 
 
