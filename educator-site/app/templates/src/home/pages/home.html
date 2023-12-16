@@ -1,0 +1,8 @@
+<div class="dashboard_home">
+
+    <form action="{% url 'add-course' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">ADD NEW COURSE</button>
+    </form>
+
+</div>

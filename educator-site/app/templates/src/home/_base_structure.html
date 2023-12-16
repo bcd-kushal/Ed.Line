@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{ tab_title }}</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- LOAD REST OF PAGES AS NEEDED -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
+    <!-- GET HEADER FOOTER -->
+    <link rel="stylesheet" href="{% static 'css/universal/header.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/universal/footer.css' %} ">
+    <!--------------------------------------------------------------------->
+
+    {% if homepage %}
+        <link rel="stylesheet" href="{% static 'css/home/pages/home.css' %} ">
+    {% endif %}
+
+</head>
+<body>
+
+    <div class="parentContainer">
+
+
+        <div class="headerSection">
+            {% include 'src/universal/header.html' %}
+        </div>
+        
+        <div class="rightMainPanel">
+
+            <div class="mainSection">
+                {% if homepage %}
+                    {% include 'src/home/pages/home.html' %}
+                {% endif %}
+            
+            </div>
+        
+        
+            <div class="footerSection">
+                {% include 'src/universal/footer.html' %}
+            </div>
+
+        </div>
+
+
+        
+        <!--===== PROFILE PAGE =========================================-->
+        
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<div class="footer">
+    <div class="mainFooterContainer">
+        <div class="mainFooterChunk">
+            <div class="contact_aboutSection">
+                <div class="aboutEdLineContainer">
+                    <div class="titleContainer" style="cursor: pointer;">
+                        <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;"></i>&nbsp;Ed.Teach
+                    </div>
+                    <div class="descContainer footerSubWords">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, iure quaerat ipsum laudantium aperiam incidunt soluta obcaecati quos debitis vel atque praesentium reiciendis modi cumque facere enim? Sed, consequuntur esse!
+                    </div>
+                    <div class="getOnSiteContainer">
+                        <div class="appStoreContainer">
+                            <div class="iconOfBlack">
+                                <i class="fa-brands fa-apple" style="color: var(--footer-light);"></i>
+                            </div>
+                            <div class="infoOfBlack">
+                                <div class="getON" style="color: var(--footer-light);font-size: .53rem;">Download on the</div>
+                                <div class="storeName" style="color: var(--footer-light);font-size: .95rem;">App Store</div>
+                            </div>
+                        </div>
+                        <div class="playStoreContainer">
+                            <div class="iconOfBlack">
+                                <i class="fa-brands fa-google-play" style="color: var(--footer-light);"></i>
+                            </div>
+                            <div class="infoOfBlack">
+                                <div class="getON" style="color: var(--footer-light);font-size: .53rem;">GET IT ON</div>
+                                <div class="storeName" style="color: var(--footer-light);font-size: .95rem;">Google Play</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="seperator">
+                    <div class="SLINE"></div>
+                </div>
+                <div class="contactBar">
+                    <div class="reachOutToUs footerBoldWords">
+                        Reach out to us
+                    </div>
+                    <div class="reachOutDesc footerSubWords">
+                        Get your questions answered about learning with Ed.Teach
+                    </div>
+                    <div class="callContainer" style="margin-top: 12px;">
+                        <div class="callIcon">
+                            <div class="iconOfCall">
+                                <i class="fa-solid fa-phone-volume" style="color: var(--footer-text0-light);"></i>
+                            </div>
+                            <div class="callOfCall">
+                                Call
+                            </div>
+                        </div>
+                        <div class="callNumber">
+                            <a href="tel:+91 9123686897">+91 9123686897</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="linksSection">
+                {% for className, footerData in footer.items %}
+                <div class="{{className}}">
+                    <div class="miniLink footerBoldWords">{{footerData.title}}</div>
+                    {% for x in footerData.data %}
+                        {% for key, val in x.items %}
+                        <div class="miniLink footerSubWords"><a href="{{val}}">{{key|safe}}</a></div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bottomLine">
+            <div class="copyrightContainer">
+                © {{year | default:'2023'}} RK Group Learning Pvt Ltd
+            </div>
+            <div class="linksContainer">
+                {% for key,val in social.items %}
+                <div class="{{key}}Container" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('{{val.link}}', '_blank')">
+                    <i class="{{val.icon}}" style="color: var(--footer-text0-light);"></i>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.querySelector(".aboutEdLineContainer .titleContainer").addEventListener("click", () => {
+        window.location.href = "/home/";
+    });
+</script>
