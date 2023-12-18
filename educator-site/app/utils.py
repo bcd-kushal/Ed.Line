@@ -16,3 +16,9 @@ def initials_of_name(name):
 
     return result
 
+
+
+
+def instantaneous_time():
+    now = datetime.now()
+    return now.strftime("%d%m%Y%H%M%S%f")
