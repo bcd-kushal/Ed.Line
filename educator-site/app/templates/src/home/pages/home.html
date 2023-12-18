@@ -1,8 +1,40 @@
 <div class="dashboard_home">
 
-    <form action="{% url 'add-course' %}" method="post">
+    <form action="{% url 'add-pfp' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <button type="submit">ADD NEW COURSE</button>
+        <div class="profileImage">
+            Profile Image: <input type="file" name="{{picform.picture.name}}" id="{{picform.picture.id_for_label}}" value="{{picform.picture.value | default:''}}">
+        </div>
+        
+        <button type="submit">Add Profile Image</button>
+    </form>
+
+
+    
+    <form action="{% url 'add-course' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="profileImage">
+            title <input type="text" name="course_title" id="course_title">
+        </div>
+        <div class="profileImage">
+            thumbnail <input type="file" name="course_thumbnail" id="course_thumbnail">
+        </div>
+        <div class="profileImage">
+            difficulty 
+            <select name="course_level" id="course_level">
+                <option value="beginner">beginner</option>
+                <option value="beginner">intermediate</option>
+                <option value="beginner">expert</option>
+            </select>
+        </div>
+        <div class="profileImage">
+            description <input type="text" name="course_desc" id="course_description">
+        </div>
+        <div class="profileImage">
+            prerequisites <input type="text" name="course_prerequisites" id="course_prerequisites">
+        </div>
+        
+        <button type="submit">Add Course</button>
     </form>
 
 </div>
