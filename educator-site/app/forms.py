@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import FileExtensionValidator
 
 class LoginForm(forms.Form):
     username = forms.CharField(
@@ -24,3 +25,17 @@ class SignupForm(forms.Form):
                         )
 
 
+
+
+
+class ProfilePicForm(forms.Form):
+    picture = forms.FileField(validators=[FileExtensionValidator(['jpg','jpeg','png','webp','svg'])])
+
+
+
+
+
+
+class CourseOverviewForm(forms.Form):
+    thumbnail = forms.FileField(validators=[FileExtensionValidator(['jpg','jpeg','png','webp','svg'])])
+    title = forms.CharField(max_length=100)
