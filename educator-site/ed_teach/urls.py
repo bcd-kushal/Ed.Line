@@ -21,7 +21,8 @@ urlpatterns = [
     path('logout/', r.logout, name='user-logout'),
 
     #ADD COURSE
-    path('add-course/', r.new_course, name='add-course'),
+    path('add-pfp/', r.user_pfp, name='add-pfp'),
+    path('add-course/', r.add_course, name='add-course'),
 
 
 
