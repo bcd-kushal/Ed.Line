@@ -1,0 +1,36 @@
+<div class="rsGroup" style="display: flex;align-items: center;justify-content: center;font-weight: 990;font-size: 2rem;padding-bottom: 50px;padding-top:150px;letter-spacing: 2.7px;">
+    {{first_name}}'S PROFILE PIC UPDATE
+</div>
+
+
+
+<div class="rsGroup">
+    <div class="rsGrpTitle">Profile Update</div>
+    <div class="rsGrpSubTitle"></div>
+    <div class="rsBox">
+        
+
+        <form action="{% url 'profile-pic-update' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="rsSubBox"  style="border: none;">
+            <div class="rsLSide">Upload Picture<br>
+            <div class="abcd" style="padding: 15px 0;">
+                <input type="file" name="{{picform.picture.name}}" id="{{picform.picture.id_for_label}}" value="{{picform.picture.value | default:''}}"></div>
+            </div>
+            <div class="rsRSide" style="display: flex;flex-direction: row;gap: 15px;">
+                    <button type="submit" style="border: 1.3px solid rgba(86, 86, 86, 0.55); color: var(--green); background: transparent;">Add Profile Image</button>
+                    <div class="updateStatus" style="display: flex;align-items: center;padding: px 10px;font-weight: 990;opacity: .55;color: var(--green);">
+                        {% if update_status %}
+                            Profile picture updated!
+                        {% endif %}
+                    </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+

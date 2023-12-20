@@ -1,0 +1,54 @@
+<div class="rsGroup" style="display: flex;align-items: center;justify-content: center;font-weight: 990;font-size: 2rem;padding-bottom: 50px;padding-top:150px;letter-spacing: 2.7px;">
+    ADD COURSE
+</div>
+
+
+
+<div class="rsGroup">
+    <div class="rsGrpTitle" style="max-width: 700px;">Let's start with the very basic information</div>
+    <div class="rsGrpSubTitle"></div>
+    <div class="rsBox" style="max-width: 700px;">
+        
+
+        <form action="{% url 'add-course' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="rsSubBox"  style="border: none;display: flex;flex-direction: column;gap: 15px;width: 100%;">
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Title</div>
+                <div class="RR"><input type="text" name="course_title" id="course_title"></div>
+                
+            </div>
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Thumbnail</div>
+                <div class="RR"><input type="file" name="course_thumbnail" id="course_thumbnail"></div>
+            </div>
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Difficulty</div>
+                <div class="RR">
+                    <select name="course_level" id="course_level">
+                        <option value="beginner">beginner</option>
+                        <option value="beginner">intermediate</option>
+                        <option value="beginner">expert</option>
+                    </select>
+                </div>
+            </div>
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Description</div>
+                <div class="RR">
+                    <input type="text" name="course_desc" id="course_description">
+                </div>
+            </div>
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Prerequisites</div>
+                <div class="RR">
+                    <input type="text" name="course_prerequisites" id="course_prerequisites">
+                </div>
+            </div>
+            
+            <button type="submit" style="width: fit-content;margin: 30px 0 0 150px;background: var(--green);color: #00202E;">Add Course Template</button>
+        </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,95 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<div class="errorField">
+
+    <div class="errorImg">
+        <img src="https://static.uacdn.net/production/_next/static/images/error.svg?q=75&auto=format%2Ccompress&w=828" alt="">
+    </div>
+
+
+    <div class="err_title">
+        {% if bad_request %}
+            Page Not Accessible...
+        {% endif %}
+
+        {% if bad_route %}
+            Oops! Page not found...
+        {% endif %}
+    </div>
+
+    <div class="err_subtitle">
+        {% if bad_request %}
+            The requested method was unauthorized
+        {% endif %}
+
+        {% if bad_route %}
+            Looks like you're looking for something that doesn't exist.
+        {% endif %}
+    </div>
 
     
-
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    
-    <!-- GET HEADER FOOTER -->
-    <link rel="stylesheet" href="{% static 'css/universal/header.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/footer.css' %} ">
-
-    <!-- LOAD REST OF PAGES AS NEEDED -->
-    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
-
-    <!-- LOAD REST OF PAGES AS NEEDED -->
-    <link rel="stylesheet" href="{% static 'css/error/error.css' %} ">
-
-
-    <title>{{ tab_title }}</title>
-</head>
-<body>
-    
-    <div class="parentContainer" onscroll="keepItSticky()">
-
-
-        <div class="headerSection">
-            {% include 'src/universal/header.html' %}
-        </div>
-    
-        <div class="mainSection" style="height: 500px !important;">
-
-
-
-
-            <div class="errorField">
-
-                <div class="errorImg">
-                    <img src="https://static.uacdn.net/production/_next/static/images/error.svg?q=75&auto=format%2Ccompress&w=828" alt="">
-                </div>
-
-
-                <div class="err_title">
-                    {% if bad_request %}
-                        Page Not Accessible...
-                    {% endif %}
-
-                    {% if bad_route %}
-                        Oops! Page not found...
-                    {% endif %}
-                </div>
-
-                <div class="err_subtitle">
-                    {% if bad_request %}
-                        The requested method was unauthorized
-                    {% endif %}
-
-                    {% if bad_route %}
-                        Looks like you're looking for something that doesn't exist.
-                    {% endif %}
-                </div>
-
-                
-                <div class="goHome_btn">
-                    <a href="/">Go Home</a>
-                </div>
-
-
-
-            </div>
-
-
-
-        </div>
-    
-    
-        <div class="footerSection">
-            {% include 'src/universal/footer.html' %}
-        </div>
-
-
-
+    <div class="goHome_btn">
+        <a href="/">Go Home</a>
     </div>
 
 
 
-
-
-</body>
-</html>
+</div>

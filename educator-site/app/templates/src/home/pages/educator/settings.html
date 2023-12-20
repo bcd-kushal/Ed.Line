@@ -1,0 +1,130 @@
+<div class="rsGroup" style="display: flex;align-items: center;justify-content: center;font-weight: 990;font-size: 2rem;padding-bottom: 50px;padding-top:150px;letter-spacing: 2.7px;">SETTINGS</div>
+<div class="rsGroup">
+    <div class="rsGrpTitle">Account</div>
+    <div class="rsGrpSubTitle"></div>
+    <div class="rsBox">
+        <div class="rsSubBox">
+            <div class="rsLSide">IMG</div>
+            <div class="rsRSide">
+                    <button type="submit" onclick="location.href='/educator/update-pfp/'" style="border: 1.3px solid rgba(86, 86, 86, 0.55); color: var(--green); background: transparent;">Edit profile image</button>
+            </div>
+        </div>
+        <div class="rsSubBox">
+            <div class="rsLSide">Name<br><b>{{full_name}}</b></div>
+            <div class="rsRSide">
+                <button type="submit" onclick="location.href='/educator/update-name/'" style="border: 1.3px solid rgba(86, 86, 86, 0.55); color: var(--green); background: transparent;">Edit name</button>
+            </div>
+        </div>
+        <div class="rsSubBox" style="border: none;">
+            <div class="rsLSide">Mobile<br><b>{{number}}</b></div>
+            <div class="rsRSide">
+                <button type="submit" onclick="location.href='/educator/update-number/'" style="border: 1.3px solid rgba(86, 86, 86, 0.55); color: var(--green); background: transparent;">Edit number</button>
+            </div>
+        </div>
+        <div class="rsSubBox"  style="border: none;">
+            <div class="rsLSide">Email ID<br><b>{{email}}</b></div>
+            <div class="rsRSide">
+                    <button type="submit" onclick="location.href='/educator/update-email/'" style="border: 1.3px solid rgba(86, 86, 86, 0.55); color: var(--green); background: transparent;">Edit email</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rsGroup">
+    <div class="rsGrpTitle">Preferences</div>
+    <div class="rsGrpSubTitle"></div>
+    <div class="rsBox">
+        <div class="rsSubBox" style="overflow: hidden;">
+            <div class="rsLSide">Theme</div>
+            <div class="rsRSide them">
+                <form action="" method="post" style="scale:.8;display: flex;gap:15px;align-items: center;justify-content: flex-end;flex-direction: row;padding: 15px;overflow-x: scroll;width: 100%;height: 100%;">
+                    {% csrf_token %}
+                    <button type="submit" class="themeBox" style="border: 2.1px solid var(23,45,200,0.56); color: aliceblue; background: rgba(166,166,166,.17);">
+                        <div class="themeName">Light</div>
+                        <div class="themePic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="310" height="171" fill="none"><mask id="a" fill="#fff"><path d="M0 0h310v166a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V0Z"/></mask><path fill="#F9FBFA" d="M0 0h310v166a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V0Z"/><path fill="#889397" d="M0-1h310v2H0v-2Zm310 172H0h310ZM0 171V0v171ZM310 0v171V0Z" mask="url(#a)"/><rect width="215" height="147" x="47.5" y="12.5" fill="#fff" stroke="#E8EDEB" rx="5.5"/><path fill="#E8EDEB" d="M47 18a6 6 0 0 1 6-6h50v148H53a6 6 0 0 1-6-6V18Z"/><circle cx="61" cy="26" r="6" fill="#00684A"/><rect width="120" height="8" x="119" y="83" fill="#E8EDEB" rx="4"/><rect width="32" height="8" x="119" y="67" fill="#E8EDEB" rx="4"/><rect width="32" height="8" x="155" y="67" fill="#E8EDEB" rx="4"/><rect width="32" height="8" x="191" y="67" fill="#00684A" rx="4"/><rect width="120" height="8" x="119" y="99" fill="#E8EDEB" rx="4"/><rect width="120" height="8" x="119" y="115" fill="#E8EDEB" rx="4"/></svg>
+                        </div>
+                    </button>
+                    <button type="submit" class="themeBox" style="border: 2.1px solid var(23,45,200,0.56); color: aliceblue; background: rgba(166,166,166,.3);">
+                        <div class="themeName">Dark</div>
+                        <div class="themePic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="310" height="171" fill="none"><mask id="a" fill="#fff"><path d="M0 0h310v166a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V0Z"/></mask><path fill="#5C6C75" d="M0 0h310v166a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V0Z"/><path fill="#889397" d="M0-1h310v2H0v-2Zm310 172H0h310ZM0 171V0v171ZM310 0v171V0Z" mask="url(#a)"/><rect width="215" height="147" x="47.5" y="12.5" fill="#001E2B" stroke="#1C2D38" rx="5.5"/><path fill="#1C2D38" d="M47 18a6 6 0 0 1 6-6h50v148H53a6 6 0 0 1-6-6V18Z"/><circle cx="61" cy="26" r="6" fill="#00ED64"/><rect width="120" height="8" x="119" y="83" fill="#889397" rx="4"/><rect width="32" height="8" x="119" y="67" fill="#889397" rx="4"/><rect width="32" height="8" x="155" y="67" fill="#889397" rx="4"/><rect width="32" height="8" x="191" y="67" fill="#00ED64" rx="4"/><rect width="120" height="8" x="119" y="99" fill="#889397" rx="4"/><rect width="120" height="8" x="119" y="115" fill="#889397" rx="4"/></svg>
+                        </div>
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="rsSubBox" style="border: none;">
+            <div class="rsLSide">Use cookies</div>
+            <div class="rsRSide">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="background: var(--green); color: aliceblue;">On</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rsGroup">
+    <div class="rsGrpTitle">Privacy</div>
+    <div class="rsGrpSubTitle"></div>
+    <div class="rsBox">
+        <div class="rsSubBox">
+            <div class="rsLSide">Share confidential data to learners</div>
+            <div class="rsRSide">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="border: 1.3px solid rgba(231, 91, 91, 0.85); color: rgba(231, 91, 91, 0.85); background: transparent;">Off</button>
+                </form>
+            </div>
+        </div>
+        <div class="rsSubBox" style="border: none;">
+            <div class="rsLSide">Use cookies</div>
+            <div class="rsRSide">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="background: var(--green); color: aliceblue;">On</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rsGroup" style="border-top: .5px solid rgba(231, 91, 91, 0.35);padding-top: 85px;margin-top: 85px;">
+    <div class="rsGrpTitle" style="color: rgba(231, 91, 91, 0.85);">Danger</div>
+    <div class="rsGrpSubTitle"></div>
+    <div class="rsBox" style="border-color: rgba(231, 91, 91, 0.35);">
+        <div class="rsSubBox">
+            <div class="rsLSide">Sign out</div>
+            <div class="rsRSide">
+                <form action="/logout/" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="border: 1.3px solid rgba(231, 91, 91, 0.85); color: rgba(231, 91, 91, 0.85); background: transparent;">Sign out</button>
+                </form>
+            </div>
+        </div>
+        <div class="rsSubBox" style="border: none;">
+            <div class="rsLSide">Delete account</div>
+            <div class="rsRSide">
+                <form action="/delete-account/" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="background: rgba(231, 91, 91, 0.85);">Delete your account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- 
+<form action="{% url 'profile-pic-update' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="profileImage">
+        Profile Image: <input type="file" name="{{picform.picture.name}}" id="{{picform.picture.id_for_label}}" value="{{picform.picture.value | default:''}}">
+    </div>
+    
+    <button type="submit">Add Profile Image</button>
+</form> -->

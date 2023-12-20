@@ -1,0 +1,76 @@
+<div
+  class="rsGroup"
+  style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 990;
+    font-size: 2rem;
+    padding-bottom: 50px;
+    padding-top: 150px;
+    letter-spacing: 2.7px;
+  "
+>
+  {{first_name}}'S {{to_edit}} UPDATE
+</div>
+
+<div class="rsGroup">
+  <div class="rsGrpTitle">Profile Update</div>
+  <div class="rsGrpSubTitle"></div>
+  <div class="rsBox">
+    <form
+      {% if to_edit2 == 'name' %}
+        action="/educator/update-name/"
+      {% elif to_edit2 == 'number' %}
+        action="/educator/update-number/"
+      {% elif to_edit2 == 'email' %}
+        action="/educator/update-email/"
+      {% else %}
+        action="/"
+      {% endif %}
+      method="post"
+    >
+        {% csrf_token %}
+      <div class="rsSubBox" style="border: none">
+        <div class="rsLSide">
+          Edit {{to_edit2}}<br />
+          <div class="abcd" style="padding: 15px 0">
+            <input
+              type="text"
+              name="updated_data"
+              id="updated_data"
+            />
+          </div>
+        </div>
+        <div
+          class="rsRSide"
+          style="display: flex; flex-direction: row; gap: 15px"
+        >
+          <button
+            type="submit"
+            style="
+              border: 1.3px solid rgba(86, 86, 86, 0.55);
+              color: var(--green);
+              background: transparent;
+            "
+          >
+            Update your {{to_edit2}}
+          </button>
+          <div
+            class="updateStatus"
+            style="
+              display: flex;
+              align-items: center;
+              padding: px 10px;
+              font-weight: 990;
+              opacity: 0.55;
+              color: var(--green);
+            "
+          >
+            {% if update_status %} {{to_edit2}} updated! {% endif %}
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

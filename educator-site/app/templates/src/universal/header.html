@@ -1,99 +1,60 @@
 <div class="header">
 
-    <div class="miniScreen">
 
-        <div class="titleContainer">
-            <div class="title" style="font-size: 140%;">
-                <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;scale: 1.22;"></i>&nbsp;Ed.Teach
-            </div>
-        </div>
+    <div class="upper">
 
-        <div class="miniRightContainer" style="display: flex;gap: 7px;align-items: center;justify-content: flex-end;padding: 0;">
-            
-            <!-- SHOW PROFILE -->
-            <div class="profileContainer" style="width: 50px;aspect-ratio: 1;padding-right: 0;">
-                <div class="profile">{{ username }}</div>
-            </div>
+        <!-- HOME BUTTON -->
+        <a href="/home/">
+            <svg style="fill: aliceblue;" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg><div class="xyz">&nbsp;&nbsp;Home</div>
+        </a>
 
-        </div>
+
+
+
+        <!-- ADD COURSE BUTTON -->
+        <a href="/add-course/">
+            <svg style="fill: aliceblue;" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg><div class="xyz">&nbsp;&nbsp;Add course</div>
+        </a>
+
+
+
+        <!-- COURSEE MANAGEMENT BUTTON -->
+        <a href="/educator/courses/">
+            <svg style="fill: aliceblue;" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M448 160H320V128H448v32zM48 64C21.5 64 0 85.5 0 112v64c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zM448 352v32H192V352H448zM48 288c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V336c0-26.5-21.5-48-48-48H48z"/></svg><div class="xyz">&nbsp;&nbsp;Manage courses</div>
+        </a>
+
+
+
+
+        <!-- ANALYTICS BUTTON -->
+        <a href="/course/analytics/">
+            <svg style="fill: aliceblue;" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/></svg><div class="xyz">&nbsp;&nbsp;Analytics</div>
+        </a>
+
 
     </div>
 
 
 
-    <div class="largeScreen">
-
-        <div class="mainBar">
-
-            <div class="leftSection">
-
-                <div class="titleContainer">
-                    <div class="title">
-                        <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;scale: 1.22;"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="rightSection">
-
-                <!-- SEARCH BAR -->
-                <div class="searchContainer" style="margin-right: 25px;">
-                    
-                    <div class="search_placeholder">
-                        <i class="fa-solid fa-magnifying-glass fa-xs" style="color: #545454;margin-right: 8px;margin-bottom: -2px;"></i> <div>Search</div>
-                    </div>
-                    <div class="searchField">
-                        <input type="text" name="searchvalue" id="searchbar" >
-                    </div>
-
-                </div>
-                
-                <!-- MY COURSES -->
-                <!-- <div class="wishlistContainer" style="height:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;width: 65px;margin-bottom: -18px;" onclick="location.href = '/home/courses/';">
-                    <i class="fa-solid fa-icons fa-lg pqr"></i>
-                    <div class="abcd" style="padding-top: 12px;font-size: .65rem;">Courses</div>
-                </div> -->
-                
-                <!-- MY LEAERNING -->
-                <!-- <div class="myLearningContainer" style="height:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;width: 65px;margin-bottom: -18px;" onclick="location.href = '/user/my-learning/enrolled/';">
-                    <i class="fa-solid fa-folder-tree fa-lg pqr"></i>
-                    <div class="abcd" style="padding-top: 12px;font-size: .65rem;">My Learning</div>
-                </div> -->
-
-                <!-- LEARNING STREAK -->
-                <!-- <div class="notificationContainer" style="width: 170px;">
-                    <div class="streakShow">
-                        <div class="streakSection">
-                            <div class="streakImg"><img src="https://static.uacdn.net/production/_next/static/images/layout/header/current_streak.svg?q=75&auto=format%2Ccompress&w=48" alt="" class="yess" style="padding-right: 0;"></div>
-                            <div class="streakTime">10min</div>
-                        </div>
-                        <div class="streakSection">
-                            <div class="streakImg"><img src="https://static.uacdn.net/production/_next/static/images/layout/header/current_streak.svg?q=75&auto=format%2Ccompress&w=48" alt="" style="padding-right: 0;"></div>
-                            <div class="streakTime">4 days</div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- SHOW PROFILE -->
-                <div class="profileContainer" style="width: 60px;">
-                    <div class="profile">{{ username }}</div>
-                </div>
+    <div class="lower">
 
 
-            </div>
+        <!-- SETTINGS BUTTON -->
+        <a href="/educator/settings/">
+            <i class="fa-solid fa-gear"></i><div class="xyz">&nbsp;&nbsp;Settings</div>
+        </a>
 
 
-        </div>
+
+        <!-- PROFILE BUTTON -->
+        <a href="/educator/profile/">
+            <svg style="fill: aliceblue;" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg><div class="xyz">&nbsp;&nbsp;{{first_name}}</div>
+        </a>
+
+
 
     </div>
-
 </div>
 
 <script>
-    
-    document.querySelectorAll(".titleContainer").forEach(el => el.addEventListener("click",() => {
-        window.location.href = "/home/";
-    }));
-
 </script>

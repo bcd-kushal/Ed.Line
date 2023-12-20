@@ -1,40 +1,40 @@
 <div class="dashboard_home">
 
-    <form action="{% url 'add-pfp' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="profileImage">
-            Profile Image: <input type="file" name="{{picform.picture.name}}" id="{{picform.picture.id_for_label}}" value="{{picform.picture.value | default:''}}">
-        </div>
+    {% if homepage == 'home' %}
+        {% include 'src/home/pages/dash_home.html' %}
+
+    {% elif homepage == 'analytics' %}
+        {% include 'src/home/pages/analytics.html' %}
+
+    {% elif homepage == 'add-course' %}
+        {% include 'src/home/pages/addCourse/overview.html' %}
+
+    {% elif homepage == 'course-details' %}
+        {% include 'src/home/pages/addCourse/courseDetails.html' %}
+
+    {% elif homepage == 'courses' %}
+        {% include 'src/home/pages/my_courses.html' %}
+
+    {% elif homepage == 'profile' %}
+        {% include 'src/home/pages/educator/profile.html' %}
+
+    {% elif homepage == 'settings' %}
+        {% include 'src/home/pages/educator/settings.html' %}
+
+    {% elif homepage == 'error' %}
+        {% include 'src/error/error_page.html' %}
         
-        <button type="submit">Add Profile Image</button>
-    </form>
+    {% elif homepage == 'name-edit' or homepage == 'number-edit' or homepage == 'email-edit' %}
+        {% include 'src/home/pages/update_user/user_edit.html' %}
+        
+    {% elif homepage == 'pfp-update' %}
+        {% include 'src/home/pages/update_user/pfp.html' %}
 
 
-    
-    <form action="{% url 'add-course' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="profileImage">
-            title <input type="text" name="course_title" id="course_title">
-        </div>
-        <div class="profileImage">
-            thumbnail <input type="file" name="course_thumbnail" id="course_thumbnail">
-        </div>
-        <div class="profileImage">
-            difficulty 
-            <select name="course_level" id="course_level">
-                <option value="beginner">beginner</option>
-                <option value="beginner">intermediate</option>
-                <option value="beginner">expert</option>
-            </select>
-        </div>
-        <div class="profileImage">
-            description <input type="text" name="course_desc" id="course_description">
-        </div>
-        <div class="profileImage">
-            prerequisites <input type="text" name="course_prerequisites" id="course_prerequisites">
-        </div>
+    {% else %}
         
-        <button type="submit">Add Course</button>
-    </form>
+        NOTHING MORE IN IF-IF
+
+    {% endif %}
 
 </div>

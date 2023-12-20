@@ -1,0 +1,191 @@
+<div class="profileWrapper">
+
+
+
+
+    <div class="closeButtonPFP">
+        <i class="fa-solid fa-xmark crossBPFP" style="scale: 1.4;"></i>
+    </div>
+    
+    <div class="headerSectionPFP">
+
+        <div class="profileBigImg">
+            {% if user.image is None %}
+                <img src="https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256" alt="">
+            {% else %}
+                
+            {% endif %}
+            
+        </div>
+        <div class="namePlates">
+            <div class="headerTitlePFP">{{full_name}}</div>
+            <div class="headerDescPFP" style="color: var(--footer-btn-hover-light);">Joined {{join_date}}</div>
+        </div>
+    </div>
+
+
+
+
+    <div class="profileInsights">
+        <div class="watchMinsPFP">
+            <div class="wmn" >{{total_watch_mins | default:'28'}}</div>
+            <div class="wmt">Courses added</div>
+        </div>
+
+        
+        <div class="followedPFP">
+            <div class="fn">{{total_followed | default:'13.6K'}}</div>
+            <div class="ft">Learners laerning</div>
+        </div>
+
+        
+        <div class="xPFP">
+            <div class="xn">{{x | default:'832.1H'}}</div>
+            <div class="xt">Video playtime</div>
+        </div>
+    </div>
+
+
+
+
+    
+    <div class="linksPFP">
+        <div class="settingsBarPFP">
+            <div class="themeMode">
+                {% if theme == 'light' %}
+                    L
+                {% elif theme == 'dark' %}
+                    D
+                {% else %}
+                <i class="fa-regular fa-sun" style="rotate: 22.5deg;"></i> <div class="themeNamePFP">&nbsp; &nbsp; Light</div>
+                {% endif %}
+            </div>
+
+            <div class="settingsPFPbar" onclick="location.href='/user/settings/'">
+                <div class="settingsIconPFP">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="settingsNamePFP">
+                    Settings &nbsp; &nbsp; <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </div><!-- 08bd8040 -->
+
+        <div class="preferredCourses">
+
+            <div class="goToBtn">
+                <div class="goToA" style="white-space: nowrap;">
+                    My Courses
+                </div>
+                <div class="goToB">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+
+            {% for x in educator_courses %}
+            <div class="courseTab videoTab">
+                <div class="vidThumbnailPFP">
+                    <div class="thumbnailImgBox">
+                        <img src="{{x.thumbnail}}" alt="" style="align-self: stretch;justify-content: stretch;">
+                    </div>
+                    <div class="thumbnailOtherBox">
+                        <div class="thumbnailDotBox" style="padding: 7px 15px;align-self: flex-end;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        {% if x.last_lesson %}
+                        <div class="vidSubTitle" style="font-size: .65rem;font-weight: 990;padding-bottom: 15px;color: rgba(255,255,255,0.95);">
+                            &nbsp;&nbsp;<i class="fa-solid fa-pause"></i> &nbsp; {{x.last_lesson}}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="vidDetails">
+
+                    {% if x.progress %}
+                    <div class="vidProgressBar">
+                        <div class="vidProgressed">w</div>
+                        <div class="vidUnprogressed">w</div>
+                    </div>
+                    {% endif %}
+
+                    <div class="vidTags">
+                        <div class="languageTag">{{x.language}}</div>
+                        <div class="courseTypeTag">{{x.courseType}}</div>
+                    </div>
+
+                    <div class="vidTitle">
+                        {{x.title}}
+                    </div>
+                    
+                    <div class="vidCreatorRow">
+
+                        <div class="vidRatings">
+                            <div class="ratingStarIcon">
+                                <i class="fa-solid fa-star" style="color: #ffdd00;"></i>
+                            </div>
+                            <div class="ratingRate">{{x.rating}}</div>
+                            {% if total_ratings %}
+                            <div class="ratingTotal">({{total_ratings}})</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="vidCreatorAbout">
+                            <div class="creatorIconXS">
+                                <img src="{{x.educator_pfp | default:'https://static.uacdn.net/thumbnail/user/default.png?q=75&auto=format%2Ccompress&w=256' }}" alt="">
+                            </div>
+                            <div class="creatorName">
+                                {{x.educator_name}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="otherVidDetailsRow">
+                        {% if x.tags %}
+                        <div class="typeTags">
+                            {% for t in x.tags %}
+                            <div class="courseTag">{{t}}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="otherVidDetails">
+                            {{x.footer_course_details}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+
+    <div class="burgerFooterSection">
+        <div class="burgerSectionMainBoxContainer burgerBottom">
+            <div class="bbr1">
+                <a href="/">Terms & Conditions</a> &nbsp; • &nbsp;<a href="/">Privacy Policy</a>
+            </div>
+            <div class="bbr2">
+                <a href="/">About</a> &nbsp; • &nbsp; <a href="/">Careers</a> &nbsp; • &nbsp; <a href="/">Blog</a>
+            </div>
+            <div class="bbr3">
+                {% for key,val in social.items %}
+                <div class="{{key}}Container" style="display: flex;align-items: center;justify-content: center;"  onclick="window.open('{{val.link}}', '_blank')">
+                    <i class="{{val.icon}}" style="color: var(--burger-subtitle-light);"></i>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="bbr4">
+                © {{year | default:'2023'}} RK Group Learning Pvt Ltd
+            </div>
+        </div>  
+    </div>
+
+</div>
+
+
+
+
+
+
