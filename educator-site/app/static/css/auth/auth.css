@@ -29,16 +29,19 @@ html,body{
 
 .authContainer{
     position: absolute;
-    width: 300px;
+    width: 620px;
     height: 460px;
     background: var(--cardbg);
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    right: 50%;
+    transform: translateY(-50%);
     box-shadow: 0px 16px 32px 0px var(--box-shadow);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    background: #00202E;
+    color: #7a8b94;
+    padding: 0 50px 0 25px;
 }
 
 .authContainer > *{
@@ -56,17 +59,21 @@ html,body{
 .rightPrettyAuthSection{
     height: calc(100% - 40px);
     padding: 15px;
+    justify-content: center;
+    margin-bottom: 280px;
 }
 
 .authTitle{
     font-size: 1.65rem;
     font-weight: 990;
+    color:#d2d2d2;
 }
 
 .authSubtitle, .authSubtitle a{
     color: var(--text);
     font-weight: 990;
     font-size: .87rem;
+    color:#7a8b94;
 }
 
 .authTroubleBox{
@@ -103,6 +110,7 @@ input{
     border-radius: 4.3px;
     font-size: 1rem;
     background: transparent;
+    color: #d2d2d2;
 }
 
 .errS{
@@ -127,7 +135,10 @@ input{
     cursor: pointer;
     justify-content: center !important;
     transition: .3s;
+    background: #08bd80;
+    color: #00202E;
 }
+
 
 .login:hover{
     scale: 1.035;

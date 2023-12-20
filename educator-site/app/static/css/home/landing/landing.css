@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Josefin+Sans:wght@400&family=Outfit:wght@300&family=Sacramento&display=swap');
 
 :root{
-    --text0-light: #282d31;
+    --text0-light: #d2d2d2;
     --text1-light: #a0a0a0;
 }
 
@@ -20,7 +20,7 @@ body, html{
     min-height: 100vh;
     min-width: 100vw;
     overflow-x: hidden;
-    background: #fcfcfc;
+    background: #112733;
 }
 
 .landingContainer{
@@ -34,7 +34,7 @@ body, html{
     display: flex;
     align-items: stretch;
     justify-content: center; 
-    background: #fcfcfc;
+    background: #112733;
 }
 
 .landingMain{
@@ -73,16 +73,21 @@ body, html{
 }
 
 
-.LRS button{
+.LRS button, #js{
     outline: none;
-    background: #364049;
-    border: 1.5px solid #364049;
-    color: azure;
+    background: #d2d2d2;
+    border: none;
+    color: #0E1F29;
     font-weight: 990;
-    
+    border: 1px solid #d2d2d2;
     padding: 12px 25px;
     border-radius: 8.5px;
 
+}
+
+.LRS a{
+    text-decoration: none;
+    margin-right: 10px;
 }
 
 .LLS{
@@ -98,12 +103,7 @@ body, html{
     scale: 1.5;
     fill: #3C4852;
 }
-#js{
-    border: 1.5px solid #364049;
-    background: transparent;
-    color: #364049;
-}
-
+#js{ background: transparent; color: #d2d2d2;}
 
 /* ============================================================ */
 
@@ -140,7 +140,7 @@ body, html{
 .heading {
     font-size: 48px;
     line-height: 56px;
-    color: #3C4852;
+    color: #d2d2d2;
     /* letter-spacing: -0.01em; */
     margin-bottom: 10px;
 
@@ -152,9 +152,19 @@ body, html{
     margin-top: 20px;
     width: 100%;
     height: fit-content;
-    border-width: 1px;
-    border: 1px solid rgb(20, 19, 19);
     border-radius: 9px;
+    outline: none;
+    text-decoration: none;
+    background: transparent;
+    letter-spacing: .8px;
+    color: #dedede;
+    border: 1.5px solid #676767;
+}
+
+
+.contact:hover, 
+.contact:focus{
+    border-color: #dedede;
 }
 
 .confirm {
@@ -165,14 +175,15 @@ body, html{
     margin-top: 20px;
     width: 100%;
     height: fit-content;
-    border-width: 1px;
     font-weight: 990;
-    border: 1px solid black;
     border-radius: 9px;
     padding: 15px;
-    background-color: #364049;
+    background-color: #03a46e;
+    outline: none;
+    text-decoration: none;
     color: white;
     font-size: medium;
+    border: none;
 }
     
 
@@ -214,7 +225,7 @@ body, html{
     padding-top: 40px;
     cursor: default;
     text-align: center;
-    box-shadow: 0px 5px 10px 0px #b7bbbe66;
+    box-shadow: 0px 5px 10px 0px #0E1F29;
 }
 
 
@@ -305,8 +316,8 @@ body, html{
     overflow: hidden;
     border-radius: 15px;
     padding: 25px;
-    background: #ffffff;
-    box-shadow: 0px 5px 10px 0px #b7bbbe66;
+    background: #112733;
+    box-shadow: 0px 5px 10px 0px #0E1F29;
     cursor: default;
 }
 
@@ -330,7 +341,7 @@ body, html{
  ::-webkit-scrollbar{display: none;}
 
  .card:hover{
-    background-color: #F7F9FB;
+    background-color: #112733;
  }
 
  .leftmain h3{
@@ -446,7 +457,6 @@ body, html{
     .heading{
         font-size: 40px;
         line-height: 56px;
-        color: #3C4852;
         /* letter-spacing: -0.01em; */
         margin-bottom: 10px;
         text-align: center;

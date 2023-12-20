@@ -2,20 +2,20 @@
 
 :root{
     --bgcolor0-light: #fcfcfc;
-    --bgcolor1-light: #ffffff;
+    --bgcolor1-light: #00202E;
     --footer-light: #ffffff;
     --footer-text0-light: #3c4852;
     --footer-text1-light: #8a9196;
     --footer-hover-light: rgba(147, 179, 235, 0.1);
     --footer-hover2-light: rgba(147, 235, 215, 0.135);
-    --text0-light: #3c4852;
+    --text0-light: #c6c7c7;
     --text1-light: #222;
     --footer-btn-hover-light: rgba(92, 100, 97, 0.65);
     --footer-play-btn-light: rgb(47, 47, 47);
     --burger-subtitle-light: rgba(58, 64, 70, .5);
     --burger-link-light: rgba(200, 200, 200, 0.557);
-    --color-shadow-light: #e9eef266; 
-    --color-shadow1-light: #b7bbbe66; 
+    --color-shadow-light: #71F6BA00; 
+    --color-shadow1-light: #71F6BA06; 
     --streak-light: linear-gradient(-71deg,#2d81f720, #2d81f720 50%, #ffb54e27 50%,  #ffb54e27) ;
     --mini-streak-light: linear-gradient(-71deg,#2d81f720, #2d81f720 35%, #ffb54e27 35%,  #ffb54e27) ;
     --streak-hover-light: linear-gradient(-71deg,#2d81f728, #2d81f728 50%, #ffb54e35 50%,  #ffb54e35) ;
@@ -290,6 +290,10 @@ body{
         cursor: pointer;
     }
 
+}
+
+.rsBox{
+    border: 1px solid #71F6BA19;
 }
 
 
