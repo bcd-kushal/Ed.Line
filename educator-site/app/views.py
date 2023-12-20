@@ -3,7 +3,7 @@ from django.shortcuts import render
 import time
 import threading
 
-
+from django.views.decorators.cache import cache_page
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.conf import settings
@@ -669,6 +669,7 @@ def educator_profile(req):
 
 
 # @/educator/settings/
+@cache_page(60 * 15)        
 def educator_settings(req):
     if req.method != "GET":
         return send_bad_request(req)
