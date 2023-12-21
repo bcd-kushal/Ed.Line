@@ -41,6 +41,9 @@ urlpatterns = [
     # path('educator/update-mobile/', r.user_pfp, name='mobile-update'),
     # path('educator/update-email/', r.user_pfp, name='email-update'),
     
+
+
+    
     path('privacy/', r.privacy, name='privacy'),     
     path('terms/', r.terms, name='terms'),     
     
@@ -51,8 +54,12 @@ urlpatterns = [
     path('blogs/', r.blogs, name='blogs'),             
     path('contact-us/', r.contact_us, name='contact-us'),  
 
+ 
+    path('terms/', r.terms, name='terms'),  
+    path('testimonials/', r.testimonials, name='testimonials'),  
 
-
+    path('collaborate/', r.collaborate, name='collaborate'),  
+    path('reviews/', r.reviews, name='reviews'),  
     
     # REST UNDEFINED PATTERNS
     re_path(r'^.*/$', r.bad_route, name='bad-route'),
