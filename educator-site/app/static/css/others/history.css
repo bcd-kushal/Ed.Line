@@ -1,0 +1,148 @@
+.historyContainer{
+    width: 100%;
+    padding: 40px 25px 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.LSHC{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: -2px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 20px;
+
+}
+
+.historyDesc{
+    letter-spacing: 3px;
+    color: var(--green);
+    font-weight: 990;
+    font-size: 1.3rem;
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.historyTitle{
+    color: var(--bgcolor1-light);
+    font-weight: 990;
+    font-size: 3.3rem;
+    padding-left: 20px;
+}
+
+.tt{
+    position: absolute;
+    height: auto;
+    width: 120px;
+    z-index: -5;
+    margin-left: -20px;
+}
+
+.tt img{
+    width: inherit;
+}
+
+
+/* RIGHT SIDE ------------------------------ */
+.RSHC{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;   
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.RSHC > *{
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 91%;
+    padding: 0 30px;
+}
+
+.RSHC > * > *{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+
+
+.boxLS{
+    width: 30px;
+    border-right: 1px solid var(--text0-light);
+}
+
+.historyIcon{
+    position: absolute;
+    background: #fcfcfc;
+    height: 70px;
+    width: 60px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.historyDoing, .historyYear{
+    padding-left: 40px;
+    font-size: 1.3rem;
+    color: #5e6974;
+    letter-spacing: .35px;
+}
+
+.historyYear{
+    padding-bottom: 10px;
+    font-weight: bolder;
+    color: var(--btn);
+    font-size: 2rem;
+    padding-top: 18px;
+}
+
+
+.historyIcon img{
+    width: 82%;
+}
+
+
+
+
+@media (max-width: 900px){
+    .historyBox{
+        width: 100%;
+        padding-right: 12px;
+    }
+}
+
+
+
+@media (max-width: 750px){
+    .historyContainer{
+        flex-direction: column;
+    }
+    .LSHC,.RSHC{
+        width: 100%;
+        padding-right: 20px;
+    }
+
+    .RSHC{
+        padding: 0;
+    }
+}
+
+
+
+@media (max-width: 750px){
+
+    .historyContainer{
+        padding: 0;
+    }
+
+    .historyBox { padding-right: 30px;}
+}
