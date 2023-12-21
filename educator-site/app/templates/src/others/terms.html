@@ -1,0 +1,28 @@
+<div class="privacyTermsContainer">
+    
+    <div class="LSOPTC">
+
+        <a href="/terms/" class="LSOPTCSUBS" style="color: var(--orange);"><b>Terms and conditions</b></a>
+        <a href="/privacy/" class="LSOPTCSUBS">Privacy policy</a>
+        <a href="/user-guidelines/" class="LSOPTCSUBS">User guidelines</a>
+        <a href="/refund-policy/" class="LSOPTCSUBS">Refund policy</a>
+        <a href="/unsat-terms/" class="LSOPTCSUBS">UNSAT T&C</a>
+
+    </div>
+
+
+
+    <div class="RSOPTC">
+        
+        {% for x in company_data %}
+        <div class="RSOPTCDesc">
+            {{x.info|safe}}
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+
+
+</div>

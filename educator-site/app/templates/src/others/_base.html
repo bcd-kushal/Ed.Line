@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{tab_title}}</title>
+
+    <link rel="stylesheet" href="{% static 'css/others/others_base.css' %}">
+
+    {% if other == 'about-us' %}
+        <link rel="stylesheet" href="{% static 'css/others/about_us.css' %}">
+        
+    {% elif other == 'blogs' %}
+        <link rel="stylesheet" href="{% static 'css/others/blogs.css' %}">
+
+    {% elif other == 'careers' %}
+        <link rel="stylesheet" href="{% static 'css/others/careers.css' %}">
+
+    {% elif other == 'collaborate' %}
+        <link rel="stylesheet" href="{% static 'css/others/collaborate.css' %}">
+
+    {% elif other == 'contact-us' %}
+        <link rel="stylesheet" href="{% static 'css/others/contact_us.css' %}">
+
+    {% elif other == 'gallery' %}
+        <link rel="stylesheet" href="{% static 'css/others/gallery.css' %}">
+
+    {% elif other == 'history' %}
+        <link rel="stylesheet" href="{% static 'css/others/history.css' %}">
+
+    {% elif other == 'privacy' %}
+        <link rel="stylesheet" href="{% static 'css/others/privacy.css' %}">
+
+    {% elif other == 'reviews' %}
+        <link rel="stylesheet" href="{% static 'css/others/reviews.css' %}">
+
+    {% elif other == 'terms' %}
+        <link rel="stylesheet" href="{% static 'css/others/terms.css' %}">
+
+    {% elif other == 'testimonials' %}
+        <link rel="stylesheet" href="{% static 'css/others/testimonials.css' %}">
+
+    {% else %}
+
+    {% endif %}
+
+
+    <link rel="stylesheet" href="{% static 'css/universal/footer2.css' %} ">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+
+        <!-- INCLUDE HEADER -->
+        {% include 'src/others/utils/header.html' %}
+
+
+        <!-- INCLUDE MAIN CONTENT -->
+        {% if other == 'about-us' %}
+            {% include 'src/others/about_us.html' %}   
+        
+        {% elif other == 'blogs' %}
+            {% include 'src/others/blogs.html' %}
+
+        {% elif other == 'careers' %}
+            {% include 'src/others/careers.html' %}
+
+        {% elif other == 'collaborate' %}
+            {% include 'src/others/collaborate.html' %}
+
+        {% elif other == 'contact-us' %}
+            {% include 'src/others/contact_us.html' %}
+
+        {% elif other == 'gallery' %}
+            {% include 'src/others/gallery.html' %}
+
+        {% elif other == 'history' %}
+            {% include 'src/others/history.html' %}
+
+        {% elif other == 'privacy' %}
+            {% include 'src/others/privacy.html' %}
+
+        {% elif other == 'reviews' %}
+            {% include 'src/others/reviews.html' %}
+
+        {% elif other == 'terms' %}
+            {% include 'src/others/terms.html' %}
+
+        {% elif other == 'testimonials' %}
+            {% include 'src/others/testimonials.html' %}
+
+        {% else %}
+            NOTHING MORE IN IF-IF
+
+
+        {% endif %}
+
+
+
+
+
+
+
+
+
+        <!-- INCLUDE FOOTER -->
+        {% include 'src/universal/footer.html' %}
+
+
+
+
+
+</body>
+</html>

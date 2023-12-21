@@ -1,0 +1,38 @@
+<div class="historyContainer">
+    
+    <div class="LSHC">
+        <div class="tt">
+            <img src="https://static.uacdn.net/production/_next/static/images/about/quote.png?q=75&auto=format%2Ccompress&w=256" alt="">
+        </div>
+        <div class="historyDesc">FROM HUMBLE BEGINNINGS</div>
+        <div class="historyTitle">Our journey so far</div>
+    </div>
+
+    <div class="RSHC">
+            {% for x in history %}
+            <div class="historyBox">
+                <div class="boxLS"></div>
+                <div class="boxRS">
+                    <div class="historyYear">{{x.year}}</div>
+                    <div class="historyDoing">
+                        {{x.desc}}
+                    </div>
+                </div>
+                <div class="historyIcon">
+                    <img src="{{x.icon}}" alt="">
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="historyBox">
+                <div class="boxRS">
+                    <div class="historyDoing" style="padding: 14px 20px; border-radius: 10px; color: aliceblue; font-weight: 990; background: var(--purple); width: fit-content;">
+                        And still creating history!!
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    
+</div>

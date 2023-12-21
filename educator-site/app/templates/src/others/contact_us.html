@@ -1,0 +1,58 @@
+<div class="contactUs">
+
+
+
+    <div class="LSOCU">
+        <font style="color: transparent;">LMAO</font>
+    </div>
+
+
+
+    <div class="RSOCU">
+
+
+        <div class="contactUsForm">
+
+
+            <form action="/contact-us/" method="post">
+                {% csrf_token %}
+                <div class="contactTitle">
+                        Reach out to us!
+                </div>
+                <div class="contactDescription" style="padding-top: 0;">
+                    For email updates of latest content or any queries associated
+                </div>
+
+                <div class="inputContactArea">
+                    <div class="inputTop">
+                        <div class="inputLSIDE">
+                            <input type="text" name="contact_name" id="contact_name" placeholder="Your Name">
+                        </div>
+                        <div class="inputRSIDE" style="border-left: .5px solid  var(--footer-text1-light);">
+                            <input type="email" name="contact_email" id="contact_email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="inputBottom">
+                        <textarea name="contact_msg" id="contact_msg" cols="30" rows="5" placeholder="Feedback" draggable="false"></textarea>
+                    </div>
+                </div>
+                <div class="contactSendBtn">
+                    <input type="submit" value="Reach out" id="contact_send">
+                </div>
+            </form>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="CUBGIMG">
+        <img src="https://img.freepik.com/free-vector/business-team-putting-together-jigsaw-puzzle-isolated-flat-vector-illustration-cartoon-partners-working-connection-teamwork-partnership-cooperation-concept_74855-9814.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702944000&semt=sph" alt="">
+    </div>
+
+
+</div>
