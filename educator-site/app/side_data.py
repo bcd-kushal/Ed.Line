@@ -1,9 +1,52 @@
+def get_company_history():
+    return [
+        {
+            "year": "2015",
+            "desc": "From a YouTube channel that started in 2010, we became a feature-rich educational technology platform in 2015",
+            "icon": "https://static.uacdn.net/production/_next/static/images/about/youtube.png?q=75&auto=format%2Ccompress&w=128"
+        },
+        
+        {
+            "year": "2017",
+            "desc": "Became India's largest online learning platform with 1m+ learners & 40k live classes",
+            "icon": "https://static.uacdn.net/production/_next/static/images/about/postcard.png?q=75&auto=format%2Ccompress&w=128"
+        },
+        
+        {
+            "year": "2018",
+            "desc": "Became the biggest Live Learning platform with 200k+ daily active users who are learning with live classes",
+            "icon": "https://static.uacdn.net/production/_next/static/images/about/live.png?q=75&auto=format%2Ccompress&w=128"
+        },
+        
+        {
+            "year": "2020",
+            "desc": "We acquired Kreatryx, PrepLadder and Codechef to encompass more avenues of learning, we also launched our own Graphy app for enjoying interactive stories & books",
+            "icon": "https://static.uacdn.net/production/_next/static/images/about/rocket.svg?q=75&auto=format%2Ccompress&w=128"
+        },
+        
+        {
+            "year": "2021",
+            "desc": "Revamped our entire learning experience on the app and launched it to all the learners via our first ever Unveil 1.0 event",
+            "icon": "https://static.uacdn.net/production/_next/static/images/about/youtube.png?q=75&auto=format%2Ccompress&w=128"
+        },
+        
+        {
+            "year": "2023",
+            "desc": "Reached over 1B+ learners and 50k+ educators worldwide that trust our platform",
+            "icon": "https://static.uacdn.net/production/_next/static/images/about/journey.svg?q=75&auto=format%2Ccompress&w=128"
+        },
+
+    ]
+
+
+
+
 def about_edline():
     return '''
     <h1>Ed.Line</h1>
     <h3>An ed-tech platoform built to learn and imbue next gen knowledge</h3>
     <br>
-    <hr>
+    <br><br><br>
     <br>
     <i>Born: Sat 2 Dec, 2023</i>
     '''
@@ -18,7 +61,7 @@ def careers_edline():
     return '''
     <h1>We don't hire</h1>
     <h3>We are ourselves jobless</h3>
-    <hr>
+    <br><br><br>
     '''
 
 
@@ -28,9 +71,13 @@ def careers_edline():
 
 
 def privacy_edline():
-    return '''
+    return [
+        {
+        "title": "Ed.Teach & Ed.Line Platform: Terms and Conditions",
+        "info":
+'''
     <h1>Ed.Line: Privacy Policy</h1>
-    <hr>
+    <br>
     <br>
     <h2>
         A. General
@@ -39,7 +86,7 @@ def privacy_edline():
 In addition to our Terms and conditions Service, edline respects your privacy and is committed to protecting it. This Privacy Policy (the “Policy”) explains the types of information collected by edline when you use the Platform (as defined in Terms and conditions) that references this Policy, how we collect, use, share and store such information collected and also explains the rationale for collection of such information, the privacy rights and choices you have regarding your information submitted to us when you use the Services.
 
 
-For ease of reference, use of the terms “edline”, “we”, “us, and/or “our” refer to Sorting Hat Technologies Private Limited – a company incorporated in India and all of its affiliates which have license to host the Platform and offer Services. Similarly, use of the terms “you”, “yours” and/or “User(s)” refer to all users of the Platform and includes all Learners and Content Providers (as more particularly defined under our Terms and conditions).
+For ease of reference, use of the terms “edline”, “we”, “us, and/or “our” refer to RK Group Learning Private Limited – a company incorporated in India and all of its affiliates which have license to host the Platform and offer Services. Similarly, use of the terms “you”, “yours” and/or “User(s)” refer to all users of the Platform and includes all Learners and Content Providers (as more particularly defined under our Terms and conditions).
 
 
 The Services are governed by this Policy, Terms and conditions, and any other rules, policies or guidelines published on the Platform as applicable to you. Please read this Policy carefully prior to accessing our Platform and using the Services. By accessing and using the Platform, providing your Personal Information (defined below), or by otherwise signalling your agreement when the option is presented to you, you consent to the collection, use, disclosure, sharing and storing of information described in this Policy, Terms of Service and any other rules, policies or guidelines published on the Platform as applicable to you (collectively referred to as the “Platform Terms”), and edline disclaims all the liabilities arising therefrom. If you have inadvertently submitted any Personal Information to edline prior to reading this Policy statements set out herein, or you do not agree with the way your Personal Information is collected, stored, or used, then you may access, modify and/or delete your Personal Information in accordance with this Policy (refer to the sections about Your Choices and Your Rights).
@@ -54,7 +101,7 @@ Capitalized terms used but not defined in this Policy can be found in our Terms 
 If you have any questions about this Policy, please contact us at privacy.edline@gmail.com.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         B. Applicability
@@ -70,7 +117,7 @@ edline owns and/or manages several platforms (other than the Platform) that offe
 edline has taken reasonable precautions as per applicable laws and implemented industry standards to treat Personal Information as confidential and to protect it from unauthorized access, improper use or disclosure, modification and unlawful destruction or accidental loss of the Personal Information.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         C. Access
@@ -80,7 +127,7 @@ You may be allowed to access and view the Platform as a guest and without creati
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         D. Use of Platform
@@ -97,7 +144,7 @@ The information in the relevant parts of this notice applies to Children as well
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         E. Controllers
@@ -106,7 +153,7 @@ The information in the relevant parts of this notice applies to Children as well
 edline is the controller of Personal Information that it collects and processes in connection with the use of the Platform and the provision of the Services on the Platform. The kind of Personal Information we collect in connection with such use is detailed below.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         F. Personal Information
@@ -124,7 +171,7 @@ Usage of the term ‘Personal Information’ shall include ‘Sensitive Personal
 We request you to not provide edline with any Personal Information unless specifically requested by us. In the event you share with edline any Personal Information without us having specifically requested for the same, then we bear no liability in respect of such Personal Information provided by you.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         G. Information we collect
@@ -154,7 +201,7 @@ We might receive and collect information about you from other sources in the cou
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         H. Basis of Collection and information we collect
@@ -185,7 +232,7 @@ We do not use Personal Information for making any automated decisions affecting 
 Where the processing of your Personal Information is based on your consent, you have the right to withdraw your consent at any point in time in accordance with this Policy. Please note that should the withdrawal of consent result in us not being able to continue offering our Services to you, we reserve the right to withdraw or cease from offering our Services to you upon your consent withdrawal. You may withdraw consent by contacting us with a written request to the contact details provided in the ‘Grievances’ section below. Upon receipt of your request to withdraw your consent, the consequences of withdrawal may be communicated to you. Upon your agreement to the same, your request for withdrawal will be processed.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         I. How we use and share the information collected
@@ -218,7 +265,7 @@ Your information may be shared for reasons not described in this Policy, however
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         J. Cross-border Data Transfer
@@ -237,7 +284,7 @@ We rely on legal bases to transfer information outside the EU, EEA and UK, and a
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         K. Duration for which your information is stored
@@ -252,7 +299,7 @@ Further, please note that we may not be able to delete all communications or pho
 Note: If you wish to exercise any of your rights (as specified in ‘Your Rights’ section below) to access, modify and delete any or all information stored about you, then you may do so by using the options provided within the Platform. You can always write to us at privacy.edline@gmail.com for any clarifications needed.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         L. Choices
@@ -263,7 +310,7 @@ Limit the communications You receive from us: Further, you will also have the op
 Reject Cookies and other similar technologies: You may reject or remove cookies from your web browser; you will always have the option to change the default settings on your web browser if the same is set to ‘accept cookies’. However, please note that some Services offered on the Platform may not function or be available to you, when the cookies are rejected, removed, or disabled.
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         M. Your Rights
@@ -284,7 +331,7 @@ Remember, you are entitled to exercise your rights as stated above only with res
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         N. Information Security
@@ -299,7 +346,7 @@ We try and ensure that the third parties who provide services to us under approp
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         O. Promotional Communication
@@ -321,7 +368,7 @@ We do not sell your Personal Information to third parties, and we do not use you
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         P. Interest based ads
@@ -337,7 +384,7 @@ Advertisers or ad companies working on their behalf sometimes use technology to 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         Q. Modification to privacy policy
@@ -347,7 +394,7 @@ Our business changes constantly and our Policy may change from time to time. We 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         R. Privacy Grievances
@@ -355,14 +402,14 @@ Our business changes constantly and our Policy may change from time to time. We 
     <br>
 If you have any questions about this Policy, wish to exercise your rights, have concerns about privacy of your data or any privacy related grievances in respect of the Platform, then please register your complaint with a thorough description via email to privacy.edline@gmail.com addressed to our grievance officer Mr. Tony Mathew (Associate General Counsel) or via a registered post to the below address-
 
-Sorting Hat Technologies Pvt Ltd
+RK Group Learning Pvt Ltd
 Maruti Infotech Centre, 3rd Floor,
 A-Block, Domlur, Koramangala Inner Ring Road,
 Bangalore- 560 071, Karnataka, India.
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
        S. Coutnry specific additional privacy terms
@@ -407,7 +454,7 @@ The above rights, the manner in which you can exercise the same and the category
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         T. CCPA COLLECTION OF DATA AT TERMS
@@ -423,7 +470,7 @@ Inferences:We may make inferences based upon the Personal Information collected 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         U. CCPA DATA COLLECTION PRACTICES SINCE LAST 12 MONTHS
@@ -468,7 +515,7 @@ We have disclosed each category of Personal Information to the following categor
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         V. CONSUMER RIGHTS AND REQUESTS UNDER THE CCPA
@@ -500,7 +547,7 @@ Excessive Requests: If requests from a User are manifestly unfounded or excessiv
 CCPA Non-Discrimination: You have the right not to receive discriminatory treatment by us due to your exercise of the rights provided by the CCPA. We do not offer financial incentives and price or service differences, and we do not discriminate against Users/consumers for exercising their rights under the CCPA.
 
 <br>
-<hr>
+<br><br><br>
 <br>
 
 <i>
@@ -509,7 +556,7 @@ CCPA Non-Discrimination: You have the right not to receive discriminatory treatm
     Last Updated on 17th March 2022
 </i>
     '''
-
+    }]
 
 
 
@@ -525,47 +572,55 @@ CCPA Non-Discrimination: You have the right not to receive discriminatory treatm
 
 
 def terms_edline():
-    return '''
-    <h1>Terms of Ed.Line</h1>
-
-    <br><br>
-
+    return [{
+        "info":
+'''
+    <h1>Ed.Line: Terms & Conditions</h1>
+<br>
+    <br>
     
 Welcome to edline! We hope that you have a great experience using our Platform.
 
-
+<br>
+    <br>
 These Terms and Conditions (“Terms and Conditions”) set out the terms and conditions for use of https://edline.com/ (the “Site”), the mobile application(s) (the “Application”) and any features, subdomains, content (except as specified hereunder), functionality, products, services (including the Services), media, applications, or solutions offered on or through the Site and/or the Application and/or through any modes, medium, platform or format, including through Secure Digital (‘SD’) cards, tablets or other storage/transmitting device (hereinafter collectively referred to as the “Platform”/ “edline Platform”).
 
+<br>
+    <br>
 
 These Terms and Conditions apply to all users of the Platform, including without limitation, all persons who create and / or make available Content Provider Content ( as defined under the ‘Intellectual Property’ section below) on the Platform (referred to as “Content Providers”) and users who access the Platform to learn a subject or a skill (referred to as “Learners”) or users who access the Platform otherwise (collectively referred to as “you”, “your”, or “User(s)”). These Terms and Conditions along with the Privacy Policy, Refund Policy, Cookies Policy, Accessibility Statement, the User Guidelines and any other terms and conditions, rules, policies or guidelines included in these Terms and Conditions or Privacy Policy by reference and/or as updated on the Platform or otherwise communicated to you from time to time (including terms and conditions of other third party platforms that may be used or accessed for gaining access to the Platform or using the Services on the Platform (collectively referred to as the “Platform Term(s)”), defines the relationship between you and edline, and they shall govern your use of the Platform and the Services (defined below) offered therein. Your access to the Platform is subject to your acceptance of the Platform Terms and such acceptance of the Platform Terms forms a legally binding agreement between you and edline (“Agreement”). Hence, please take your time to read the Platform Terms in their entirety.
 
+<br>
 
 From time-to-time, updated versions of the Platform Terms may be made available as aforesaid for your reference. By visiting and accessing the Platform, providing your Personal Information ( as defined in the Privacy Policy), using the Services offered or by otherwise signalling your agreement when the option is presented to you, you hereby expressly accept and agree to the Platform Terms. If you do not agree to any of the terms or do not wish to be bound by them, then please do not use the Platform in any manner.
 
+<br>
+    <br>
+When we speak of “edline”, “we”, “us”, and “our”, we collectively mean RK Group Learning Private Limited – a company incorporated in India and all of its affiliates which have license to host the Platform and offer Services. Kindly refer to the ‘ About edline and the Platform ’ section of these Terms and Conditions to know which edline entity your Agreement will be with.
 
-When we speak of “edline”, “we”, “us”, and “our”, we collectively mean Sorting Hat Technologies Private Limited – a company incorporated in India and all of its affiliates which have license to host the Platform and offer Services. Kindly refer to the ‘ About edline and the Platform ’ section of these Terms and Conditions to know which edline entity your Agreement will be with.
-
+<br>
+    <br>
 
 All capitalized terms are defined/have the meaning assigned to it under these Terms and Conditions. In other words, if you find any word herein that has its first letter capitalized, then it means that we have explained the meaning such word has in the context of these Terms and Conditions and/or the Platform Terms; if not here, then it will be provided in the relevant Platform Terms – when we refer to any such term in these Terms and Conditions, we will try and specify where in the Platform Terms you can find the meaning/definition.
 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         A. About edline and the Platform
     </h2>
     <br>
-In India, the Platform is owned, managed, operated and offered by Sorting Hat Technologies Private Limited, a company incorporated under the (Indian) Companies Act, 2013, having its registered office at Maruti Infotech Centre, 3rd Floor, A-Block, Domlur, Koramangala Inner Ring Road, Bangalore- 560 071, India (“edline India”). In any jurisdiction other than India, wherever Services are rendered through the Platform, the same is offered by edline India and / or its affiliates (as relevant pursuant to appropriate intra group contractual arrangements). For knowing with which entity of edline your Agreement will be, please refer the list in Annexure A below.
+In India, the Platform is owned, managed, operated and offered by RK Group Learning Private Limited, a company incorporated under the (Indian) Companies Act, 2013, having its registered office at Maruti Infotech Centre, 3rd Floor, A-Block, Domlur, Koramangala Inner Ring Road, Bangalore- 560 071, India (“edline India”). In any jurisdiction other than India, wherever Services are rendered through the Platform, the same is offered by edline India and / or its affiliates (as relevant pursuant to appropriate intra group contractual arrangements). For knowing with which entity of edline your Agreement will be, please refer the list in Annexure A below.
 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
-        B. Platform Services:
+        B. Platform Services
     </h2>
     <br>
 edline Platform is an online service platform enabling Content Providers to create and offer content in various formats including without limitation audiovisuals, audio, pre-recorded audiovisuals, live audiovisuals and/or in written form in a diverse range of categories through various modes and means (“Content Provider Content”) and publish and make available such Content Provider Content to the Learners. edline acts as an intermediary between the Content Providers and Learners [in accordance with the Information Technology Act, 2000, or the Digital Millennium Copyright Act (as amended from time to time)] or other equivalent / similar legislations and makes available the Content Provider Content to the Learners, including through subscription offerings ( refer to the Subscription Terms below to know more). edline may also offer, either directly or indirectly (through other third party platforms), other incidental and ancillary services which may include without limitation question banks, mock tests, doubt-solving solutions, Live Mentorship ( as explained here ), live videos (as explained as explained here ), contests, scholarships, webinars and events (physical and/or online) and facilitating discussion forums.
@@ -585,7 +640,7 @@ You agree and acknowledge that edline shall have the right at any time to change
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         C. Right to Access and Account Creation
@@ -662,7 +717,7 @@ Further, to access the Platform, create, publish and/or view the User-generated 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         D. Subscription terms
@@ -698,7 +753,7 @@ Depending on the Subscription Service you have purchased, you may be given acces
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         E. Pricing, Payments and Refunds
@@ -747,7 +802,7 @@ When you cancel your Subscription, edline may disable access to features made av
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         F. Use of the Platform
@@ -767,7 +822,7 @@ Except as expressly permitted under any of the Platform Terms or otherwise in wr
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         G. Content and Conduct
@@ -822,7 +877,7 @@ You shall not engage in any activity that will negatively impact edline and/or o
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         H. Communications
@@ -849,7 +904,7 @@ You acknowledge that any User-generated Content (including without limitation an
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         I. Processing of Personal Information
@@ -860,7 +915,7 @@ All our collection, processing, sharing and storing of any Personal Information 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         J. Intellectual Property and License to User-generated Content
@@ -883,7 +938,7 @@ You confirm and undertake not to utilize any data mining tools, robots, or simil
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         K. Feedback
@@ -894,7 +949,7 @@ If any User(s) submits suggestions, ideas, comments, or questions containing pro
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         L. Copyright, Trademarks, and other Intellectual Property Rights
@@ -907,7 +962,7 @@ If edline has knowledge of or has any reason to believe that any User-generated 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         M. Claims Against User-generated Content
@@ -918,7 +973,7 @@ edline does not monitor or have any control over or does not warrant, and makes 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         N. edline’s Rights
@@ -942,7 +997,7 @@ edline has no obligation to monitor any content that appears on the Platform or 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         O. Platform Availability
@@ -953,7 +1008,7 @@ Your access to the Platform may occasionally be suspended or restricted to allow
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         P. Deletion of Account
@@ -970,7 +1025,7 @@ If you are a Content Provider, your access and use of the Platform may be subjec
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         Q. Disclaimer:
@@ -981,7 +1036,7 @@ YOU AGREE THAT THE PLATFORM, CONTENT, AND ALL MATERIALS ARE PROVIDED ON AN “AS
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         R. Limitation of Liability
@@ -1001,7 +1056,7 @@ THE edline PLATFORM IS CONTROLLED AND OFFERED BY edline AND / OR ITS AFFILIATES 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         S. Indemnity and Release
@@ -1015,7 +1070,7 @@ You hereby expressly release edline, its affiliates and any of their respective 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         T. OFAC (Office of Foreign Asset Control)
@@ -1026,7 +1081,7 @@ You represent and warrant that you are not, nor are you owned or controlled dire
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         U. California Civil Code Section 1789.3
@@ -1037,7 +1092,7 @@ Californian Users are entitled to know that they may file grievances and complai
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         V. Applicable Law and Jurisdiction
@@ -1048,7 +1103,7 @@ The applicable law and jurisdiction is dependent upon which entity forming part 
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         W. General Provisions:
@@ -1065,7 +1120,7 @@ Miscellaneous: If any part of the Agreement is found to be unlawful, void or une
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         X. Contact for User Support/Queries
@@ -1076,7 +1131,7 @@ For queries relating to Services offered by edline, please write to us at help.e
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         Y. Consumer Grievance
@@ -1096,7 +1151,7 @@ Contact:consumergrievance.edline@gmail.com
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h2>
         Z. Contact Us
@@ -1106,14 +1161,14 @@ If you have concerns or queries regarding the Platform Terms, you may write to u
 
 
 
-<hr>
+<br><br><br>
     <br>
     <h4>
         Annexure A
     </h4>
     <br>
 
-All Services offered on the Platform other than those offered under the ‘International Goals’ section on the Platform are provisioned by Sorting Hat Technologies Pvt. Ltd. (edline India), Maruti Infotech Centre, 3rd Floor, A-Block, Domlur, Koramangala Inner Ring Road, Bangalore- 560 071.
+All Services offered on the Platform other than those offered under the ‘International Goals’ section on the Platform are provisioned by RK Group Learning Pvt. Ltd. (edline India), Maruti Infotech Centre, 3rd Floor, A-Block, Domlur, Koramangala Inner Ring Road, Bangalore- 560 071.
 All Services offered on the Platform under the ‘International Goals’ section on the Platform are provisioned by edline Inc., c/o Vistra (Delaware) Ltd., 3500 South Dupont HWY, Dover, Kent, Delaware- 19901
 
 
@@ -1124,3 +1179,4 @@ All Services offered on the Platform under the ‘International Goals’ section
     Terms and Conditions – Version 2.1
     Last Updated on 10th July 2023</i>
     '''
+    }]

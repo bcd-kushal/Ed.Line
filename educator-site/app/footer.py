@@ -5,9 +5,9 @@ def footer_data():
             "data": [
                 { "About": "/about-us/" },
                 { "Careers": "/careers/" },
+                { "Contact Us": "/contact-us/" },
+                { "History": "/history/" },
                 { "Blogs": "/blogs/" },
-                { "Privacy Policy": "/privacy/" },
-                { "Terms & Conditions": "/terms/" },
             ]
         },
 
@@ -17,15 +17,16 @@ def footer_data():
                 { "User Guidelines": "/about-us/" },
                 { "Site Map": "/careers/" },
                 { "Refund Policy": "/blogs/" },
+                { "Privacy Policy": "/privacy/" },
+                { "Terms & Conditions": "/terms/" },
                 { "Takedown Policy": "/privacy/" },
-                { "Grievance Redressal": "/terms/" },
             ]
         },
         
         "checkOut": {
             "title": "Products",
             "data": [
-                { '<i class="fa-solid fa-square-up-right fa-lg" style="color: rgb(83, 140, 215);"></i> &nbsp;Educator App': "/terms/" },
+                { '<i class="fa-solid fa-square-up-right fa-lg" style="color: rgb(83, 140, 215);"></i> &nbsp;Learner App': "http://127.0.0.1:8000" },
             ]
         },
         

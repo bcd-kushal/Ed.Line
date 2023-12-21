@@ -196,14 +196,14 @@ def login(req):
 def logout(req):
     if req.method in ["GET","POST"]:
         if req.user.username == None or req.user.username == "":
-            return redirect('')
+            return redirect('/')
         else:
             LogoutUser(req)
             return redirect('/login/')
         
     # elif req.method == "GET":
     #     if req.user.username == None or req.user.username == "":
-    #         return redirect('')
+    #         return redirect('/')
     #     else: 
 
         
@@ -742,96 +742,219 @@ def bad_route(req):
 
 
 
-
 # =======================================================================
+# ====================== [ OTHERS ] =====================================
 # =======================================================================
 
 
+# -------------------------------------> 1
 
 # @/about-us/
 def about_us(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "About Us: Ed.Teach",
-        "company_data": about_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Ed.Teach & Ed.Line - Your right, Our website",
+        "company_data": about_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "about-us"
+    }
+
+    return render(req,'src/others/_base.html',CONTEXT)
 
 
 
 
+# -------------------------------------> 2
 
 # @/careers/
 def careers(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "Careers: Ed.Teach",
-        "company_data": careers_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Careers | Ed.Teach, Ed.Line",
+        "company_data": careers_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "careers"
+    }
+    
+    return render(req,'src/others/_base.html',CONTEXT)
 
 
 
 
-
+# -------------------------------------> 3
 
 # @/history/
 def history(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "History: Ed.Teach",
-        "company_data": privacy_edline()
-    })
+    CONTEXT = {
+        "tab_title": "History | Ed.Teach, Ed.Line",
+        "company_data": careers_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "history": get_company_history(),
+
+        "other": "history"
+    }
+    
+    return render(req,'src/others/_base.html',CONTEXT)
+    
+    
 
 
 
 
+# -------------------------------------> 4
 
 # @/gallery/
 def gallery(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "Gallery: Ed.Teach",
-        "company_data": privacy_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Gallery | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "gallery"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
 
 
 
+
+
+
+# -------------------------------------> 5
 
 # @/blogs/
 def blogs(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "Blogs: Ed.Teach",
-        "company_data": privacy_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Blogs | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "blogs"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
 
 
 
+
+
+
+
+# -------------------------------------> 6
 
 # @/contact-us/
 def contact_us(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "Contact Us: Ed.Teach",
-        "company_data": terms_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Contact Us | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "contact-us"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
+    
 
 
 
 
 
-
-# =======================================================================
-# =======================================================================
-
-
+# -------------------------------------> 7
 
 # @/privacy/
 def privacy(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "Privacy: Ed.Teach",
-        "company_data": privacy_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Privacy | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "privacy"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
 
 
 
+
+
+
+# -------------------------------------> 8
 
 # @/terms/
 def terms(req):
-    return render(req,'src/others/others.html',{
-        "tab_title": "Terms: Ed.Teach",
-        "company_data": terms_edline()
-    })
+    CONTEXT = {
+        "tab_title": "Terms | Ed.Teach, Ed.Line",
+        "company_data": terms_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "terms"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
+
+
+
+
+
+
+
+# -------------------------------------> 9
+
+# @/testimonials/
+def testimonials(req):
+    CONTEXT = {
+        "tab_title": "Testimonials | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "testimonials"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
+
+
+
+
+
+
+
+
+
+
+
+# -------------------------------------> 10
+
+# @/reviews/
+def reviews(req):
+    CONTEXT = {
+        "tab_title": "Our reviews | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "reviews"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
+
+
+
+
+
+
+# -------------------------------------> 11
+
+# @/collaborate/
+def collaborate(req):
+    CONTEXT = {
+        "tab_title": "Collaboarte with us | Ed.Teach, Ed.Line",
+        "company_data": privacy_edline(),
+        "footer": FOOTER_LINKS["LINKS"],
+        "social": FOOTER_LINKS["SOCIALS"],
+
+        "other": "collaborate"
+    }
+    return render(req,'src/others/_base.html',CONTEXT)
