@@ -1,0 +1,44 @@
+<div class="careerContainer">
+
+
+
+    
+    <div class="LSHC">
+        <div class="tt">
+            <img src="https://static.uacdn.net/production/_next/static/images/about/quote.png?q=75&auto=format%2Ccompress&w=256" alt="">
+        </div>
+        <div class="historyDesc" style="color: var(--red);">WORK WITH ED.LINE</div>
+        <div class="historyTitle">Open job positions</div>
+    </div>
+
+    <div class="RSHC">
+            {% for x in careers %}
+            <div class="historyBox">
+                <div class="boxLS"></div>
+                <div class="boxRS">
+                    <div class="historyYear">{{x.position}}</div>
+                    <div class="historyDoing">
+                        {{x.location}}
+                    </div>
+                </div>
+                <div class="historyIcon">
+                    {{x.date}}
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="historyBox bgdg" style="padding: 0; background: transparent; box-shadow: none;">
+                <div class="boxRS" >
+                    <div class="historyDoing" style="padding: 14px 20px; border-radius: 10px; color: aliceblue; font-weight: 990; background: var(--red); width: fit-content;">
+                        Click here to notify for new openings
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    
+
+
+</div>
+

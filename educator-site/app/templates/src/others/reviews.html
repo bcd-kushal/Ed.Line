@@ -1,0 +1,43 @@
+<div class="reviewContainer">
+
+
+
+    
+    <div class="LSHC">
+        <div class="tt">
+            <img src="https://static.uacdn.net/production/_next/static/images/about/quote.png?q=75&auto=format%2Ccompress&w=256" alt="">
+        </div>
+        <div class="historyDesc" style="color: var(--purple);">BUILT UPON TRUST</div>
+        <div class="historyTitle">Hear from our user reviews</div>
+    </div>
+
+    <div class="RSHC">
+            {% for x in reviews %}
+            <div class="historyBox">
+                <div class="boxLS"></div>
+                <div class="boxRS">
+                    <div class="historyYear">{{x.name}}</div>
+                    <div class="historyDoing">
+                        {{x.info}}
+                    </div>
+                </div>
+                <div class="historyIcon">
+                    {{x.rating}}
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="historyBox" style="padding: 0; background: transparent; box-shadow: none;">
+                <div class="boxRS" >
+                    <div class="historyDoing" style="padding: 14px 20px; border-radius: 10px; color: aliceblue; font-weight: 990; background: goldenrod; width: fit-content;">
+                        And plenty more!!
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    
+
+
+</div>
