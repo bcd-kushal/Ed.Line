@@ -56,6 +56,92 @@ def about_edline():
 
 
 
+def get_current_job_openings():
+    return [
+        {
+            "position": "Software Developer III",
+            "location": "Bangalore, India",
+            "date": "12/12"
+        },
+        
+        {
+            "position": "Frontend UI Designer I",
+            "location": "PAN-India",
+            "date": "21/12"
+        },
+        
+        {
+            "position": "Backend Developer II",
+            "location": "Delhi, India",
+            "date": "30/11"
+        },
+        
+        {
+            "position": "UI/UX Designer",
+            "location": "Chennai, India",
+            "date": "23/11"
+        },
+        
+        {
+            "position": "Data Analyst",
+            "location": "Remote, Work from home",
+            "date": "1/11"
+        },
+        
+        {
+            "position": "Cloud Solution Architect",
+            "location": "Bangalore, India",
+            "date": "25/10"
+        },
+
+    ]
+
+
+
+
+
+def get_user_reviews():
+    return [
+        {
+            "name": "Rudra Kumar Mishra",
+            "info": "The platform helped in the growth of employees under my company to leverage their maximum potential into blooming our company services across the globe.",
+            "rating": "4.9"
+        },
+        
+        {
+            "name": "Shubham Mishra",
+            "info": "A true experience of in-house deep learning with Ed.Line... Massive shoutouts to them, must try",
+            "rating": "5.0"
+        },
+        
+        {
+            "name": "Naveen Kumar",
+            "info": "All courses are available with premium teaching quality to go with, i rely on it to upgrade my career skills.",
+            "rating": "4.7"
+        },
+        
+        {
+            "name": "Rajesh Sharma",
+            "info": "Landed on this site after trying out many other such services, truly one of a kind experience here.",
+            "rating": "4.5"
+        },
+        
+        {
+            "name": "Ravi Singh",
+            "info": "The courses are short and intuitive - upto the understanding of general public which makes it one of the best platform in my eyes",
+            "rating": "4.6"
+        },
+        
+        {
+            "name": "Kushal Kumar",
+            "info": "Learnt much, thanks",
+            "rating": "4.3"
+        },
+
+    ]
+
+
+
 
 def careers_edline():
     return '''
