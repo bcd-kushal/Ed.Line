@@ -1,13 +1,183 @@
 .testimonialsContainer{
     width: 100%;
-    padding: 0 0 80px 0;
+    padding: 0;
 }
 
 
 .titleContainerTESTI{
     position: absolute;
-    height: 200px;
-    width: 700px;
-    background: rebeccapurple;
-    
+    height: 900px;
+    top: -40%;
+    left: -40%;
+    width: 1200px;
+    background: var(--purple);
+    z-index: 5;
+    border-radius: 100%;
+    color: white;
+    font-weight: 990;
+    letter-spacing: .5px;
+    font-size: 3rem;
+    animation: sb 1s ease-in linear;
+}
+
+
+.testimonialsContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.titleTestimonials{
+    position: relative;
+    top: 52%;
+    left: 50%;
+    width: 450px;
+}
+
+@keyframes sb{
+    0%{
+        top: 0%;
+        left: 0%;
+    }
+    100%{
+        top: -40%;
+        left: -40%;
+    }
+}
+
+.LSTC,.RSTC{
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 45px;
+    padding: 20px 40px 80px 20px;
+    height: 100vh;
+    overflow: scroll;
+}
+.RSTC { align-items: flex-start; padding: 20px 20px 80px 40px;}
+
+.reviewCard{
+    padding: 50px 40px;
+    position: relative;
+    border-radius: 15px;
+    background: rgb(255, 247, 236);
+    min-width: 300px;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    align-items: stretch;
+    cursor: pointer;
+    animation: down 20s linear infinite;
+    box-shadow: 0 0 7px .7px rgba(153, 145, 95, 0.85);
+}
+
+.reviewCard:hover{
+    scale: 1.01;
+}
+.reviewCardPattern{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.reviewCardPattern img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(.9);
+}
+
+.reviewBottomRow{
+    font-size: 1.2rem;
+    color: var(--footer-text0-light);
+}
+
+.reviewBottomRow, .reviewTopRow{ z-index: 2;}
+
+
+.reviewTopRow{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    gap: 10px;
+}
+
+.reviewImg{
+    aspect-ratio: 1;
+    width: 40px;
+    border-radius: 300px;
+    background: rgb(198, 167, 123);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-weight: 990;
+}
+
+.reviewerName{
+    font-weight: 990;
+    font-size: 1.4rem;
+    color: var(--btn);
+}
+
+.otherHeader{
+    z-index: 10;
+    background: rgba(0,0,0,0) !important;
+}
+
+.LSTC{
+    padding-top: 500px;
+
+}
+
+.RSTC .reviewCard{
+    animation: up 20s linear infinite;
+}
+
+@keyframes up{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes down{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+
+.titleContainer{
+    color: aliceblue;
+}
+
+@media (max-width: 1000px){
+    .LSTC, .RSTC{ padding: 500px 20px 80px;}
+    .LSTC{ padding-top: 540px; }
+}
+
+
+@media (max-width: 700px){
+    .testimonialsContainer{
+        flex-direction: column;
+    }
+    .LSTC,.RSTC{
+        width: 100%;
+    }
+    .LSTC{
+        padding-bottom: 20px;
+    }
+    .RSTC{
+        padding-top: 0;
+    }
 }
