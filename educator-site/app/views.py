@@ -775,6 +775,7 @@ def careers(req):
         "footer": FOOTER_LINKS["LINKS"],
         "social": FOOTER_LINKS["SOCIALS"],
 
+        "careers": get_current_job_openings(),
         "other": "careers"
     }
     
@@ -936,6 +937,8 @@ def reviews(req):
         "footer": FOOTER_LINKS["LINKS"],
         "social": FOOTER_LINKS["SOCIALS"],
 
+        "reviews": get_user_reviews(),
+
         "other": "reviews"
     }
     return render(req,'src/others/_base.html',CONTEXT)
@@ -958,3 +961,32 @@ def collaborate(req):
         "other": "collaborate"
     }
     return render(req,'src/others/_base.html',CONTEXT)
+
+
+
+
+
+
+
+
+
+
+# -------------------------------------
+# -------------------------------------
+# -------------------------------------
+# -------------------------------------
+
+
+
+
+
+
+
+
+# @/user-reviews/
+# @/user-review/
+# @/user_reviews/
+# @/user_review/
+# @/review/
+def goto_reviews(req):
+    return redirect('/reviews/')
