@@ -1,4 +1,4 @@
-<div class="otherHeader">
+<div class="otherHeader" style="padding-right: 40px; padding-top: 21px;">
     <div class="LSideOtherH">
         <div class="titleContainer" style="cursor: pointer;" onclick="location.href='/'">
             <i class="fa-solid fa-circle-nodes" style="rotate: -2deg;"></i>&nbsp;Ed.Teach
@@ -6,7 +6,62 @@
     </div>
 
 
-    <div class="RSideOtherH">
+    <div class="RSideOtherH" style="font-size: 1.17rem; display: flex; gap: 31px;">
         
+        {% if other != 'gallery' %}
+
+
+
+            {% if other != 'about-us' %}
+            <a href="/about-us/" style="text-decoration: none; color: var(--btn);">About Us</a>
+            {% else %}
+            <a href="/history/" style="text-decoration: none; color: var(--btn);">History</a>        
+            {% endif %}
+
+
+
+            
+        
+        
+            <a href="/gallery/" style="text-decoration: none; color: var(--btn);">Gallery</a>
+            
+
+
+
+
+        
+        
+            {% if other != 'blogs' %}
+            <a href="/blogs/" style="text-decoration: none; color: var(--btn);">Blogs</a>
+            {% else %}
+            <a href="/history/" style="text-decoration: none; color: var(--btn);">History</a>        
+            {% endif %}
+
+
+
+
+        
+        
+            {% if other != 'careers' %}
+            <a href="/careers/" style="text-decoration: none; color: var(--btn);">Careers</a>
+            {% else %}
+            <a href="/testimonials/" style="text-decoration: none; color: var(--btn);">Testimonials</a>        
+            {% endif %}
+        
+        
+        
+        
+        
+            {% if other != 'contact-us' %}
+            <a href="/contact-us/" style="text-decoration: none; color: var(--btn);">Contact Us</a>
+            {% else %}
+            <a href="/collaborate/" style="text-decoration: none; color: var(--btn);">Colaborate</a>        
+            {% endif %}
+
+
+
+        {% else %}
+
+        {% endif %}
     </div>
 </div>

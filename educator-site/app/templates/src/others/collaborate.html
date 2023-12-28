@@ -2,7 +2,60 @@
 
 
 
+    <div class="LSOCU">
+        <font style="color: transparent;"></font>
+    </div>
 
 
-    
+
+    <div class="RSOCU">
+
+
+        <div class="contactUsForm">
+
+
+            <form action="/collaborate/" method="post">
+                {% csrf_token %}
+                <div class="contactTitle">
+                        Interested? Collaborate with us today!
+                </div>
+                <div class="contactDescription" style="padding-top: 10px;">
+                    Our team will reach out to you via your shared email address to discuss
+                    matters of the potential partnership in 3-4 business days. 
+                    <br>
+                    <br>
+                </div>
+
+                <div class="inputContactArea">
+                    <div class="inputTop">
+                        <div class="inputLSIDE">
+                            <input type="text" name="company_name" id="company_name" placeholder="Company name">
+                        </div>
+                        <div class="inputRSIDE" style="border-left: .5px solid  var(--footer-text1-light);">
+                            <input type="email" name="company_email" id="company_email" placeholder="Company email" required>
+                        </div>
+                    </div>
+                    <div class="inputBottom">
+                        <textarea name="company_msg" id="company_msg" cols="30" rows="5" placeholder="Brief summary of potential collab ideas" draggable="false"></textarea>
+                    </div>
+                </div>
+                <div class="contactSendBtn">
+                    <input type="submit" value="Reach out" id="contact_send">
+                </div>
+            </form>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="CUBGIMG">
+        <img src="https://img.freepik.com/free-vector/coworkers-cartoon-characters-effective-collaboration-coworkers-cooperation-teamwork-colleagues-discussing-solution-successful-interaction_335657-2309.jpg" alt="">
+    </div>
+
+
 </div>
