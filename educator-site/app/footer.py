@@ -3,23 +3,23 @@ def footer_data():
         "companyGrid": {
             "title": "Company",
             "data": [
-                { "About": "/about-us/" },
+                { "About Us": "/about-us/" },
                 { "Careers": "/careers/" },
-                { "Contact Us": "/contact-us/" },
+                { "The Gallery": "/gallery/" },
+                { "Our Blogs": "/blogs/" },
                 { "History": "/history/" },
-                { "Blogs": "/blogs/" },
             ]
         },
 
         "helpSupportGrid": {
             "title": "Help & Support",
             "data": [
-                { "User Guidelines": "/about-us/" },
-                { "Site Map": "/careers/" },
-                { "Refund Policy": "/blogs/" },
+                { "Contact Us": "/contact-us/" },
+                { "Colaborate": "/collaborate/" },
+                { "Site Map": "https://maps.app.goo.gl/D6aamcDGJabo22e56" },
+                # { "Refund Policy": "/blogs/" },
                 { "Privacy Policy": "/privacy/" },
                 { "Terms & Conditions": "/terms/" },
-                { "Takedown Policy": "/privacy/" },
             ]
         },
         
