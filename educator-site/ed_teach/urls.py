@@ -60,6 +60,16 @@ urlpatterns = [
 
     path('collaborate/', r.collaborate, name='collaborate'),  
     path('reviews/', r.reviews, name='reviews'),  
+
+
+
+
+
+    path('user-reviews/', r.goto_reviews, name='goto-reviews'),  
+    path('user-review/', r.goto_reviews, name='goto-reviews'), 
+    path('user_reviews/', r.goto_reviews, name='goto-reviews'),  
+    path('user_review/', r.goto_reviews, name='goto-reviews'),   
+    path('review/', r.goto_reviews, name='goto-reviews'),  
     
     # REST UNDEFINED PATTERNS
     re_path(r'^.*/$', r.bad_route, name='bad-route'),
