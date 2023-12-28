@@ -82,7 +82,10 @@ def goto_homepage_or_landing(req):
 
         if req.user.username == None or req.user.username == '':
             CONTEXT = {
-                "tab_title": "Ed.Teach - The Next Wave"
+                "tab_title": "Ed.Teach - The Next Wave",
+                
+                "footer": FOOTER_LINKS["LINKS"],
+                "social": FOOTER_LINKS["SOCIALS"],
             }
             return render(req,"src/landing/landing2.html",CONTEXT)
         else:
@@ -952,16 +955,35 @@ def reviews(req):
 
 # @/collaborate/
 def collaborate(req):
-    CONTEXT = {
-        "tab_title": "Collaboarte with us | Ed.Teach, Ed.Line",
-        "company_data": privacy_edline(),
-        "footer": FOOTER_LINKS["LINKS"],
-        "social": FOOTER_LINKS["SOCIALS"],
+    if req.method == "POST":
+        name = req.POST.get("company_name")
+        email = req.POST.get("company_email")
+        brief = req.POST.get("company_msg")
 
-        "other": "collaborate"
-    }
-    return render(req,'src/others/_base.html',CONTEXT)
 
+        print(f"\n\nNAME: {name}\nEMAIL: {email}\nDESC: {brief}\n\n")
+
+
+        pass
+
+    elif req.method == "GET":
+        CONTEXT = {
+            "tab_title": "Collaboarte with us | Ed.Teach, Ed.Line",
+            "company_data": privacy_edline(),
+            "footer": FOOTER_LINKS["LINKS"],
+            "social": FOOTER_LINKS["SOCIALS"],
+
+            "other": "collaborate"
+        }
+        return render(req,'src/others/_base.html',CONTEXT)
+
+
+
+    else:
+        return send_bad_request(req)
+
+
+    
 
 
 
