@@ -1,0 +1,175 @@
+.blogsContainer{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.blogImage{
+    position: absolute;
+    top: -130px;
+    left: 0;
+    width: 100%;
+    height: 340px;
+    z-index: -50;
+    overflow: hidden;
+}
+
+.blogImage img{
+    width: 100%;
+    filter: contrast(.75) saturate(1.4);
+}
+
+.blogTitle{
+    font-weight: 990;
+    font-size: 4.3rem;
+    width: 100%;
+    color: aliceblue;
+    display: flex;
+    justify-content: flex-end;
+    padding: 85px 70px 25px 0;
+}
+
+.RSideOtherH a{
+    color: aliceblue !important;
+}
+.otherHeader{
+    background: transparent;
+    color: aliceblue;
+    z-index: 1;
+    padding-right: 70px !important;
+    position: sticky;
+    top: 0;
+}
+
+
+
+/* featured row */
+.blogFeatured{
+    padding: 70px 40px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.blogFeaturedRight{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+    height: 520px;
+    padding-top: 20px;
+}
+
+
+.blogFeaturedRight > *{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+.blogFeaturedBox{
+    width: 85%;
+}
+
+.blogNewsletterBriefTitle, .blogNewsletterTitle{
+    font-size: 1.18rem;
+    font-weight: 990;
+}
+
+.blogNewsletterBriefDesc, .blogNewsletterDesc{
+    font-size: .8rem;
+}
+
+.blogNewsletterMailBox{
+    display: flex;
+    border: .7px solid var(--btn);
+    margin-top: 12px;
+    padding: 5.5px 9px;
+    border-radius: 3.5px;
+    flex-direction: row;
+}
+
+.blogNewsletterMailBox input, .blogNewsletterMailBox button{
+    text-decoration: none;
+    background: transparent;
+    color: var(--text0-light);
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.blogNewletterBox{
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 0.7px #30303037;
+}
+
+
+.blogNewsletterBrief{
+    background: rgba(144,144,144,.22);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.blogFeaturedBox{
+    display: grid;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 520px;
+    box-shadow: 0px 3px 6px 0.7px #30303037;
+}
+
+.blogFeaturedBox > *{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    display: flex;
+    align-items: center;
+}
+
+.blogFeaturedBox img{
+    width: 100%;
+    position: relative;
+    bottom: 80px;
+}
+
+.blogFaeaturedDetails{
+    z-index: 10;
+    height: 520px;
+    padding: 0 30px 30px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    font-size: 1.1rem;
+    background: linear-gradient(transparent 0%,#00000050 25%,#00000098 100%);
+}
+
+
+.blogFeaturedTitle{
+    font-weight: 990;
+    font-size: 3.4rem;
+}
+
+.blogFeaturedMore{
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+    font-size: .8rem;
+}
+
+.blogFearturedBrief{
+    padding-right: 120px;
+}

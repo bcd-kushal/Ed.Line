@@ -10,10 +10,10 @@
     align-items: stretch;
     justify-content: space-between;
 }
-/* 
-.header:hover{
-    width: 200px;
-} */
+
+.RSideOtherH{
+    font-size: .85rem !important;
+}
 
 .header > *{
     display: flex;
