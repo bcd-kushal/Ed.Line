@@ -1,1 +1,124 @@
-MORE COURSE DETAILS
+<div class="rsGroup" style="display: flex;align-items: center;justify-content: center;font-weight: 990;font-size: 2rem;padding-bottom: 10px;padding-top:100px;letter-spacing: 2.7px;">
+    Details for "{{overview_title}}"
+</div>
+
+
+
+<div class="rsGroup">
+    <div class="rsGrpTitle" style="max-width: 700px;padding-bottom: 25px; text-align: center; color: gray; font-size: 1.1rem;">-- Add a section to your course --</div>
+    <div class="rsBox" style="max-width: 700px;">
+        
+
+        <form action="{% url 'add-course-data' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="rsSubBox"  style="border: none;display: flex;flex-direction: column;gap: 15px;width: 100%;">
+            <!-- hidden field -->
+            <div style="display: none;">
+                <input type="text" name="overview_id" value="{{overview_id}}" readonly>
+            </div>
+            <!-- header name -->
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Header</div>
+                <div class="RR"><input type="text" name="header_title" id="course_title"></div>
+            </div>
+            <!-- description to header -->
+            <div class="courseTab" style="display:flex;flex-direction: row;height: 55px">
+                <div class="LL">Description</div>
+                <div class="RR">
+                    <input type="text" name="header_desc" id="course_description">
+                </div>
+            </div>
+            <!-- videos inside this course -->
+            <div style="width: 100%; display: flex; flex-wrap: wrap;gap: 10px; justify-content: space-evenly;">
+                
+                <!-- video 1 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video1" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_1" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 2 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video2" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_2" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 3 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video3" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_3" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 4 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video4" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_4" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 5 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video5" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_5" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 6 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video6" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_6" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 7 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video7" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_7" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+                <!-- video 8 -->
+                <div class="rsBox" style="min-width:300px; border-width:2px; max-width: 700px;padding: 25px;margin-top: 10px;background: #00A35C10; width:45%">
+                    <div class="courseTab" style="cursor:pointer; display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="file" name="video8" accept="video/*"></div>
+                    </div>
+                    <div class="courseTab" style="display:flex;flex-direction: row;height: 55px; background: transparent;">
+                        <div class="RR" style="padding: 0;"><input type="text" name="video_name_8" id="course_title" placeholder="Video Name" style="border: none;text-align: center;"></div>
+                    </div>
+                </div>
+
+    
+            
+            </div>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center;">
+                <!-- save all button -->
+                <button type="submit" name="submit-action" value="save-all" style="margin:15px 0 0; width: fit-content;background: var(--green);color: #00202E;">Save course</button>
+                <div class="" style="margin: 15px 0 0;">or</div>
+                <!-- add more header button -->
+                <button type="submit" name="submit-action" value="add-more-header" style="margin:15px 0 0; width: fit-content;background: #00202E;color: var(--green); border: 1px solid var(--green);">Add another section</button>
+            </div>
+            
+        </div>
+        </form>
+    </div>
+</div>
+
+
