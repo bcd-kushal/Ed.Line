@@ -18,13 +18,15 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 from datetime import datetime
+from moviepy.editor import VideoFileClip
 
 from .forms import *
 from .footer import *
 from .utils import *
 from .models import *
 from .side_data import *
-
+from .utils.generate_id import generate_id
+from .utils.utils import initials_of_name, get_courses_of_educator, get_date_time_rn
 
 
 MOBILE = ""
@@ -38,6 +40,11 @@ FOOTER_LINKS = {
     "SOCIALS": footer_socials()
 }
 
+
+OVERVIEW_ID = ""
+HEADER_ID = ""
+VIDEO_ID = ""
+
 def helper():
     global MOBILE
     time.sleep(1.5)
@@ -47,6 +54,46 @@ def helper_pfp():
     global PIC_UPDATE_STATUS
     time.sleep(2.5)
     PIC_UPDATE_STATUS = False
+
+
+def helper_overview():
+    global OVERVIEW_ID
+    time.sleep(4)
+    OVERVIEW_ID = ""
+
+
+def helper_header():
+    global HEADER_ID
+    time.sleep(4)
+    HEADER_ID = ""
+
+    
+def helper_video():
+    global VIDEO_ID
+    time.sleep(4)
+    VIDEO_ID = ""
+
+import beautifish.templates as bft
+import subprocess
+from django.conf import settings as sett
+
+def check_vid_duration(vid):
+    # get video file name 
+    vid_name = vid.name
+
+    # format file path just how django saves it up
+    vid_name = vid_name.replace(" ","_")
+    vid_name = vid_name.replace("'","")
+    """ 
+    vid_path = os.path.join(sett.MEDIA_ROOT,"media\\videos\\"+vid_name)
+    t = subprocess.run(["ffprobe", "-v", "error", "-show_entries",
+                             "format=duration", "-of",
+                             "default=noprint_wrappers=1:nokey=1", vid_path],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
+    bft.success(vid_path)
+    bft.warning(mode="spaced",msg=str(float(t.stdout))) """
+    return 0
 
 
 # ###############################################################################################################
@@ -517,7 +564,8 @@ def user_edit(req,to_edit):
 
 # @/add-course-overview/
 def add_course_overview(req):
-    print("\n----------------------------------> WE REACHED HERE\n")
+    global OVERVIEW_ID
+    print("\n----------------------------------> REACHED: CREATE NEW COURSE PAGE\n")
     if req.method == "POST":    
         # this is where the educator posts their course content and it comes here
 
@@ -556,25 +604,27 @@ def add_course_overview(req):
         # ...............//others as needed
 
 
-
-
-
         # COURSE TABLE REQUIREMENTS
-        course_title = req.POST.get("course_title")    # maxlength=100
+        course_id=generate_id()
+        OVERVIEW_ID = course_id
+        course_title = req.POST.get("course_title") or "Empty title"    # maxlength=100
         course_thumbnail = req.FILES["course_thumbnail"]
-        course_description = req.POST.get("course_desc")
+        course_description = req.POST.get("course_desc") or "Description not provided"
         course_level = req.POST.getlist("course_level")
-        course_prerequisite = req.POST.get("course_prerequisites")
-
-        print("\n\n\n @@@@@@@@@@@@@@@@@@@@@@@")
-        print(course_title, course_thumbnail, course_level,course_prerequisite, course_description)
-
-        # THIS MUCH ON TOP WORKS
+        course_prerequisite = req.POST.get("course_prerequisites") or "none"
 
 
 
+        print(f"{course_title}, {course_thumbnail}, {course_level}, {course_prerequisite}, {course_description}, {course_id}")
 
-        # now go to add course details and videos
+
+        # add data to model db and redirect to course details
+        overview_instance = CourseOverview(course_title=course_title, course_thumbnail=course_thumbnail, course_description=course_description, course_level=course_level, course_id=course_id)
+        overview_instance.save()
+        
+        thread = threading.Thread(target=helper_overview)
+        thread.start()
+
         return redirect('/add-course-data/')
    
 
@@ -582,17 +632,17 @@ def add_course_overview(req):
         if req.user.username == "" or req.user.username == None:
             return redirect('/')
         else:
+            # first fetch the overview details that queried this...
+
+            # send the overview details to template in a hidden form
             CONTEXT = {
                 "tab_title": "Course Details|Ed.Teach",
                 "footer": FOOTER_LINKS["LINKS"],
                 "social": FOOTER_LINKS["SOCIALS"],
-                "homepage": 'add-course'
+                "homepage": 'add-course',
+                "overview_id": ""
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
-
-
-
-
 
     else:
         return send_bad_request(req)
@@ -603,19 +653,158 @@ def add_course_overview(req):
 
 # @/add-course-data/
 def add_course_data(req):
-    if req.method != "GET":
-        return send_bad_request(req)
-    else:
+    if req.method=="POST":
+        if not (req.POST.get("overview_id") and req.POST.get("overview_id")!=""):
+            return send_bad_request(req)
+        else:
+
+            overview_id = req.POST.get("overview_id")
+            if not (CourseOverview.objects.filter(course_id=overview_id).exists()):
+                return send_bad_request(req)
+            else:
+
+                # get all form data 
+                section_title = req.POST.get("header_title")
+                section_desc = req.POST.get("header_desc") or ""
+                
+
+
+                videos = [
+                    {
+                        "name": req.POST.get("video_name_1") or "",
+                        "video": req.FILES.get("video1") if req.FILES.get("video1")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_2") or "",
+                        "video": req.FILES["video2"] if req.FILES.get("video2")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_3") or "",
+                        "video": req.FILES["video3"] if req.FILES.get("video3")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_4") or "",
+                        "video": req.FILES["video4"] if req.FILES.get("video4")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_5") or "",
+                        "video": req.FILES["video5"] if req.FILES.get("video5")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_6") or "",
+                        "video": req.FILES["video6"] if req.FILES.get("video6")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_7") or "",
+                        "video": req.FILES["video7"] if req.FILES.get("video7")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                    {
+                        "name": req.POST.get("video_name_8") or "",
+                        "video": req.FILES["video8"] if req.FILES.get("video8")!=None else "",
+                        "duration": -1 if req.FILES.get("video1")==None else 35
+                    },
+                ]
+
+                submit_type = req.POST.get("submit-action")
+
+                videos = [ video for video in videos if video["video"]!="" ]
+
+                print(f"INVOKED: {submit_type}")
+                print(f"\nTITLE = {section_title}\nDESC = {section_desc}")
+                print(f"TOTAL VIDEOS GIVEN: {len(videos)}")
+                print(f"VIDEOS ARE: {videos}")
+
+                header_id = "head-" + generate_id()
+                
+                overview_instance = CourseOverview.objects.get(course_id=overview_id)
+
+                # ADD HEADER...
+                header_instance = HeaderTitles(overview_id=overview_instance,header=section_title,total_subcourses=len(videos),header_desc=section_desc,header_id=header_id)
+                header_instance.save()
+                print("ADDED HEADER", header_id)
+
+                header_instance = HeaderTitles.objects.get(header_id=header_id)
+
+                # after getting all valid data... first add it to the database --------------------------------
+
+                count = 1
+                for video in videos:
+                    video_id = f"vid{count}-" + header_id
+
+                    # ADD VIDEO TITLE...
+                    vid_title_instance = VideoTitles(header_id=header_instance,overview_id=overview_instance,vid_title=video["name"],vid_length=video["duration"],vid_id=video_id)
+                    vid_title_instance.save()
+                    print(f"ADDED VIDEO TITLE {count}")
+
+                    # ADD VIDEO...
+                    video_title_instance = VideoTitles.objects.get(vid_id=video_id)
+                    vid_instance = Videos(overview_id=overview_instance,vid_id=video_title_instance,video=video["video"])
+                    vid_instance.save()
+                    print(f"ADDED VIDEO {count}")
+                    count+=1
+                
+            
+                # then check for what submit button was clicked and navigate as required...
+                if(submit_type=="add-more-header"):
+                    CONTEXT = {
+                        "tab_title": "Course Details|Ed.Teach",
+                        "footer": FOOTER_LINKS["LINKS"],
+                        "social": FOOTER_LINKS["SOCIALS"],
+                        "homepage": 'course-details',
+                        "overview_id": overview_id,
+                        "overview_title": ""
+                    }
+                    return render(req,"src/home/_base_structure.html",CONTEXT)
+
+                if(submit_type=="save-all"):
+                    # since the records are already saved so just go to homepage
+                    return redirect("/home/")
+                
+                
+            
+
+    
+    elif req.method=="GET":
         if req.user.username == "" or req.user.username == None:
             return redirect('/')
         else:
+            global OVERVIEW_ID
+            overview_id = OVERVIEW_ID
+
+            if overview_id=="":
+                return send_bad_request(req)
+            if not CourseOverview.objects.filter(course_id=overview_id).exists():
+                return send_bad_request(req)
+
+            overview_title = ""
+            data = ""
+            try:
+                data = CourseOverview.objects.get(course_id=overview_id)
+            except CourseOverview.DoesNotExist:
+                return send_bad_request(req)
+            
+            overview_title = data.course_title
+            overview_thumbnail = data.course_thumbnail
+
             CONTEXT = {
                 "tab_title": "Course Details|Ed.Teach",
                 "footer": FOOTER_LINKS["LINKS"],
                 "social": FOOTER_LINKS["SOCIALS"],
-                "homepage": 'course-details'
+                "homepage": 'course-details',
+                "overview_id": overview_id,
+                "overview_title": overview_title
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
+    
+    else: 
+        return send_bad_request(req)
 
 
 
@@ -640,7 +829,8 @@ def educator_courses(req):
                 "tab_title": "Courses|Ed.Teach",
                 "footer": FOOTER_LINKS["LINKS"],
                 "social": FOOTER_LINKS["SOCIALS"],
-                "homepage": 'courses'
+                "homepage": 'courses',
+                "educator_name": req.user.username.capitalize()
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
         
