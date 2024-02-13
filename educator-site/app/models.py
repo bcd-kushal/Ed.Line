@@ -8,7 +8,7 @@ import os
 
 
 def validate_image_extension(value):
-    allowed_extensions = ['.png', '.jpg', '.jpeg']
+    allowed_extensions = ['.png', '.jpg', '.jpeg', '.webp']
     ext = str(value).lower().split('.')[-1]
     if not ext in allowed_extensions:
         raise ValidationError(
@@ -42,6 +42,26 @@ class CourseOverview(models.Model):
 
 
 
+@receiver(pre_save, sender=CourseOverview)
+def delete_previous_thumbnail_image(sender, instance, **kwargs):
+    # Check if the instance already exists in the database
+    if instance.pk:
+        try:
+            # Retrieve the previous instance from the database
+            previous_instance = CourseOverview.objects.get(pk=instance.pk)
+
+            # Check if the image has changed
+            if previous_instance.course_thumbnail and previous_instance.course_thumbnail != instance.course_thumbnail:
+                # Delete the previous image file
+                if os.path.isfile(previous_instance.course_thumbnail.path):
+                    os.remove(previous_instance.course_thumbnail.path)
+
+        except CourseOverview.DoesNotExist:
+            pass
+
+
+
+
 
 
 class HeaderTitles(models.Model):
@@ -59,11 +79,11 @@ class HeaderTitles(models.Model):
 
 
 class VideoTitles(models.Model):
+    vid_id = models.CharField(primary_key=True, max_length=32)
     header_id = models.ForeignKey(HeaderTitles,on_delete=models.CASCADE)
     overview_id = models.ForeignKey(CourseOverview,on_delete=models.CASCADE)
     vid_title = models.CharField(max_length=50, validators=[MinLengthValidator(5)])
     vid_length = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(30*60*1000)])
-    vid_id = models.OneToOneField('Videos', on_delete=models.CASCADE, primary_key=True, max_length=32)
 
     def __str__(self):
         return self.vid_title
@@ -75,6 +95,7 @@ class VideoTitles(models.Model):
 
 class Videos(models.Model):
     overview_id = models.ForeignKey(CourseOverview,on_delete=models.CASCADE)
+    vid_id = models.ForeignKey(VideoTitles,on_delete=models.CASCADE)
     video = models.FileField(upload_to='media/videos/')
 
     def __str__(self):
