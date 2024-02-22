@@ -1,0 +1,148 @@
+$color_1: var(--green);
+$color_2: var(--bgcolor1-light);
+$color_3: #5e6974;
+$color_4: var(--btn);
+$color_5: var(--red);
+$background-color_1: rgb(255, 243, 243);
+
+/* RIGHT SIDE ------------------------------ */
+.careerContainer {
+	width: 100%;
+	padding: 40px 25px 80px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 40px;
+	user-select: none;
+}
+.LSHC {
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	gap: -2px;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 0 20px;
+}
+.historyDesc {
+	letter-spacing: 3px;
+	color: $color_1;
+	font-weight: 990;
+	font-size: 1.3rem;
+	padding-top: 60px;
+	padding-left: 20px;
+}
+.historyTitle {
+	color: $color_2;
+	font-weight: 990;
+	font-size: 3.3rem;
+	padding-left: 20px;
+}
+.tt {
+	position: absolute;
+	height: auto;
+	width: 120px;
+	z-index: -5;
+	margin-left: -20px;
+	img {
+		width: inherit;
+	}
+}
+.RSHC {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+	align-items: stretch;
+	justify-content: flex-start;
+	>* {
+		display: flex;
+		align-items: stretch;
+		justify-content: stretch;
+		width: 91%;
+		padding: 0 30px;
+		>* {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 30px;
+		}
+	}
+}
+.boxLS {
+	width: 30px;
+}
+.historyIcon {
+	position: absolute;
+	background: #f9f9f9;
+	height: 30px;
+	width: 60px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 40px;
+	font-weight: 990;
+	font-size: 1.3rem;
+	color: $color_5;
+}
+.historyDoing {
+	padding-left: 40px;
+	font-size: 1.3rem;
+	color: $color_3;
+	letter-spacing: .35px;
+}
+.historyYear {
+	padding-left: 40px;
+	font-size: 1.3rem;
+	color: $color_3;
+	letter-spacing: .35px;
+	padding-bottom: 10px;
+	font-weight: bolder;
+	color: $color_4;
+	font-size: 2rem;
+	padding-top: 18px;
+}
+.historyBox {
+	margin-bottom: 20px;
+	border-radius: 15px;
+	box-shadow: 3px 5px 7px .2px rgba(166,166,166,.5);
+	padding: 20px;
+	background: #f9f9f9;
+	transition: .5s;
+	cursor: pointer;
+	&:hover {
+		scale: 1.03;
+		background-color: $background-color_1;
+		box-shadow: 3px 5px 7px .2px rgba(255, 171, 171, 0.5);
+	}
+}
+.bgdg {
+	&:hover {
+		scale: .97;
+	}
+}
+@media (max-width: 900px) {
+	.historyBox {
+		width: 100%;
+		padding-right: 12px;
+	}
+}
+@media (max-width: 750px) {
+	.careerContainer {
+		flex-direction: column;
+		padding: 0;
+	}
+	.LSHC {
+		width: 100%;
+		padding-right: 20px;
+	}
+	.RSHC {
+		width: 100%;
+		padding-right: 20px;
+		padding: 0 30px;
+	}
+	.historyBox {
+		padding-right: 30px;
+	}
+}

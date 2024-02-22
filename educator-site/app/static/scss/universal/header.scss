@@ -1,9 +1,5 @@
 $color_1: aliceblue;
 
-/* 
-.header:hover{
-    width: 200px;
-} */
 .header {
 	width: 82px;
 	height: 100%;
@@ -39,6 +35,9 @@ $color_1: aliceblue;
 			}
 		}
 	}
+}
+.RSideOtherH {
+	font-size: .85rem !important;
 }
 .xyz {
 	display: none;

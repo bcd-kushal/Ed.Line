@@ -15,7 +15,7 @@ $font-family_1: 'Outfit', 'Josefin Sans';
 	color: $color_1;
 	letter-spacing: .2px;
 }
-&:root {
+:root {
 	--bgcolor: #fcfcfc;
 	--cardbg: #ffffff;
 	--lookbg: #e1d9fd65;
@@ -36,7 +36,7 @@ body {
 	overflow: hidden;
 	background: var(--bgcolor);
 }
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
 	display: none;
 }
 .authContainer {

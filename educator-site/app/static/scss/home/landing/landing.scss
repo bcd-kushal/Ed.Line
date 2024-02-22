@@ -6,6 +6,8 @@ $color_5: #dedede;
 $color_6: #7A8B94;
 $color_7: white;
 $color_8: var(--text1-light);
+$color_9: aliceblue;
+$color_10: #03a46e;
 $font-family_1: 'Outfit', 'Josefin Sans';
 $background-color_1: #03a46e;
 $background-color_2: #323538;
@@ -15,7 +17,7 @@ $border-color_1: #dedede;
 
 @import "https://fonts.googleapis.com/css2?family=Ephesis&family=Josefin+Sans:wght@400&family=Outfit:wght@300&family=Sacramento&display=swap";
 /* ============================================================ */
-&:root {
+:root {
 	--text0-light: #d2d2d2;
 	--text1-light: #a0a0a0;
 }
@@ -49,14 +51,14 @@ html {
 	left: 50%;
 	transform: translate(-50%,-50%);
 	display: flex;
-	align-items: stretch;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: stretch;
 	background: #112733;
 }
 .landingMain {
 	position: relative;
 	width: 100%;
-	max-width: 1200px;
 	height: 100%;
 	overflow-y: scroll;
 	display: flex;
@@ -65,6 +67,7 @@ html {
 	flex-direction: column;
 	>* {
 		width: 100%;
+		max-width: 1200px;
 	}
 }
 .landingHeader {
@@ -72,8 +75,15 @@ html {
 	display: flex;
 	padding: 12px 45px;
 	align-items: center;
+	position: sticky;
+	top: -3px;
 	height: 80px;
+	z-index: 9999;
 	justify-content: space-between;
+	background: #112733;
+}
+.footer {
+	max-width: 100vw;
 }
 .LRS {
 	display: flex;
@@ -129,17 +139,21 @@ html {
 	width: 100%;
 }
 .container1 {
-	width: 100%;
+	width: 50%;
+	padding-right: 50px;
 	height: 100%;
 }
 .container2 {
-	width: 100%;
+	width: 50%;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
-	padding: 40px;
 	img {
-		width: 400px;
+		width: 100%;
+		align-self: flex-start;
+		border-radius: 18px;
+		box-shadow: 0px 5px 10px 0px #0E1F29;
+		scale: 1.13;
 	}
 }
 .heading {
@@ -182,6 +196,7 @@ html {
 	text-decoration: none;
 	color: $color_7;
 	font-size: medium;
+	cursor: pointer;
 	border: none;
 	cursor: pointer;
 	&:hover {
@@ -220,12 +235,14 @@ html {
 	width: 100%;
 	aspect-ratio: 1;
 	align-items: center;
+	cursor: pointer;
 	border-radius: 10px;
 	justify-content: center;
 	padding-top: 40px;
 	cursor: default;
 	text-align: center;
 	box-shadow: 0px 5px 10px 0px #0E1F29;
+	cursor: pointer;
 	&:hover {
 		scale: 1.07;
 		background-color: $background-color_4;
@@ -273,6 +290,7 @@ html {
 	padding: 15px 25px;
 	width: fit-content;
 	justify-content: center;
+	cursor: pointer;
 	align-items: center;
 	background-color: $background-color_3;
 	font-size: 1rem;
@@ -307,6 +325,7 @@ html {
 	border-radius: 15px;
 	padding: 25px;
 	background: #112733;
+	cursor: pointer;
 	box-shadow: 0px 5px 10px 0px #0E1F29;
 	cursor: default;
 	&:hover {
@@ -327,7 +346,7 @@ html {
 	padding: 15px;
 	gap: 30px;
 }
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
 	display: none;
 }
 input {
@@ -336,6 +355,27 @@ input {
 	padding: 15px 15px;
 	font-weight: 990;
 	height: 60px;
+}
+.successPage {
+	display: flex;
+	width: 85%;
+	gap: 90px;
+	padding: 65px 47px;
+	text-align: center;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background: #0E1F29;
+	border-radius: 18px;
+	color: $color_9;
+	font-size: 1.2rem;
+	margin-bottom: 80px;
+}
+.successTitle {
+	font-weight: 990;
+	color: $color_10;
+	font-size: 2rem;
+	padding-bottom: 12px;
 }
 @media (max-width:900px) {
 	.container {

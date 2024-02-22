@@ -10,7 +10,7 @@ $background-color_1: transparent;
     box-shadow: 0 -16px 40px 0px var(--color-shadow-dark);
 } */
 /* .profilePane{ right: 0 ; } */
-&:root {
+:root {
 	--bgcolor0-light: #fcfcfc;
 	--bgcolor1-light: #00202E;
 	--footer-light: #ffffff;
@@ -65,7 +65,7 @@ $background-color_1: transparent;
 	--light-blue: #64beff;
 	--orange: #ffad3b;
 }
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
 	display: none;
 }
 * {

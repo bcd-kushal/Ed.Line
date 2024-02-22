@@ -1,0 +1,215 @@
+$color_1: aliceblue;
+$color_2: gray;
+$color_3: rgba(0,0,0,0.7);
+$color_4: rgba(0,0,0,0.75);
+$color_5: rgba(255,255,255,.7);
+
+.aboutUs {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 80px;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	>* {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+	}
+}
+.aboutUsTitle {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 990;
+	font-size: 4rem;
+	padding-left: 20px;
+}
+.aboutUsImg {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 990;
+	font-size: 4rem;
+	padding-left: 20px;
+}
+.aboutUsBlogs {
+	background: #75d8ba;
+	a {
+		text-decoration: none;
+		color: $color_1;
+		font-weight: 990;
+		font-size: 1.8rem;
+	}
+}
+.trustedCompaniesRibbon {
+	flex-direction: column;
+	gap: 30px;
+	background: rgba(166,166,166,.15);
+	padding: 40px 20px;
+}
+.tct {
+	font-weight: 990;
+	font-size: 1.2rem;
+	color: $color_2;
+	letter-spacing: .3px;
+}
+.tctIcons {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 40px 130px;
+	gap: 80px;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+.tctIcon {
+	height: 40px;
+	img {
+		height: 40px;
+	}
+}
+.aboutLast {
+	gap: 80px;
+	padding: 45px;
+	margin: 100px 0 30px;
+}
+.ALB {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 40px;
+	border-radius: 15px;
+	color: $color_3;
+	cursor: pointer;
+	&:hover {
+		scale: 1.01;
+	}
+	>* {
+		width: 100%;
+	}
+}
+.ALBT {
+	font-size: 1.9rem;
+	margin-bottom: 10px;
+	font-weight: 990;
+}
+.ALBL {
+	margin-top: 60px;
+	a {
+		text-decoration: none;
+		font-weight: 990;
+		font-size: 1.1rem;
+		color: $color_4;
+	}
+}
+.keepGrowingRibbon {
+	background: #5624D0;
+	margin-top: 100px;
+	flex-direction: column;
+	gap: 10px;
+	color: $color_1;
+	padding-top: 64px;
+	padding-bottom: 32px;
+	letter-spacing: .3px;
+}
+.weJustKeepGrowingNumberRow {
+	display: flex;
+	gap: 70px;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 20px 0;
+	font-size: 1.3rem;
+	height: 180px;
+	>* {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+.fred {
+	align-self: flex-end;
+}
+.weJustKeepGrowingTitle {
+	font-weight: 990;
+	font-size: 2rem;
+}
+.wjkgnMT {
+	font-weight: 990;
+	font-size: 2rem;
+}
+.weJustKeepGrowingSubTitle {
+	font-size: .9rem;
+	padding-bottom: 10px;
+	color: $color_5;
+}
+.learnMore {
+	margin: 140px 0;
+	flex-direction: column;
+	text-decoration: none;
+	text-align: center;
+	gap: 40px;
+	padding: 0 200px;
+	font-size: 1.2rem;
+	a {
+		text-decoration: none;
+		padding: 12px 22px;
+		background: black;
+		color: $color_1;
+		letter-spacing: .3px;
+	}
+}
+.aboutUsTwo {
+	margin: 105px 0;
+	padding: 0 280px;
+	flex-direction: column;
+	gap: 15px;
+	font-size: 1.2rem;
+	text-align: center;
+}
+.aboutUs2Title {
+	font-size: 1.8rem;
+}
+.aboutUsPages {
+	margin: 50px 0;
+	padding: 0 90px;
+	flex-direction: column;
+	gap: 85px;
+	font-size: 1.2rem;
+	margin-top: 190px;
+	>* {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 17px;
+		overflow: hidden;
+	}
+}
+.aboutUsRight {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	padding: 30px;
+	padding-right: 200px;
+}
+.aboutUsLeft {
+	width: 55%;
+	overflow: hidden;
+	height: 100%;
+	img {
+		width: 100%;
+		height: 100%;
+		scale: 1.05;
+	}
+}
+.aboutUsTTT {
+	font-weight: 990;
+	font-size: 2rem;
+}
