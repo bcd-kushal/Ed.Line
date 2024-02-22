@@ -2,15 +2,16 @@
 <html lang="en">
   <head>
     {% load static %}
+    {% load sass_tags %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{tab_title}}</title>
 
-    <link rel="stylesheet" href="{% static 'css/others/others_base.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'scss/others/others_base.scss' %}">
 
     
-    <link rel="stylesheet" href="{% static 'css/home/landing/landing.css' %}">
-    <link rel="stylesheet" href="{% static 'css/universal/footer2.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'scss/home/landing/landing.scss' %}">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/footer2.scss' %}">
     
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
