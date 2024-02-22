@@ -1,11 +1,9 @@
 $color_1: var(--footer-text1-light);
 $color_2: var(--btn);
 $color_3: var(--footer-text0-light);
-$color_4: inherit;
+$color_4: var(--);
+$color_5: aliceblue;
 
-/* ======= LEFT SECTION ============================ */
-/* ======= RIGHT SECTION ============================ */
-/* ======= MEDIA QUERIES ============================ */
 .settings {
 	width: 100%;
 	display: flex;
@@ -110,7 +108,37 @@ $color_4: inherit;
 	padding: 30px;
 	border-radius: 20px;
 	overflow: hidden;
-	height: 200px;
+	display: flex;
+	flex-direction: column;
+	padding: 5px 25px;
+	align-items: stretch;
+	justify-content: space-evenly;
+	>* {
+		padding: 25px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		border-bottom: .5px solid rgba(30,30,30,.07);
+	}
+	button {
+		text-decoration: none;
+		cursor: pointer;
+		inset: none;
+		border: none;
+		outline: none;
+		background: var(--footer-text0-light);
+		font-weight: 990;
+		color: $color_5;
+		padding: 12px 20px;
+		border-radius: 9px;
+		&:hover {
+			scale: 1.06;
+		}
+	}
+}
+.rsLSide {
+	font-size: 1.1rem;
 }
 @media (max-width: 1030px) {
 	.lssec {

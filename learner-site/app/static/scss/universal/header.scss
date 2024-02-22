@@ -7,9 +7,6 @@ $color_6: var(--orange);
 $border-color_1: var(--text0-light);
 $border-color_2: var(--blue);
 
-/* MINI SCREEN ################################################# */
-/* LARGER SCREEN ################################################# */
-/* MEDIA QUERIES ################################################# */
 .header {
 	width: 100%;
 	height: 100%;
@@ -35,7 +32,7 @@ $border-color_2: var(--blue);
 	justify-content: space-between;
 	align-items: center;
 	padding: 5px 8px;
-	box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.02);
+	box-shadow: 0 2px 4px rgba(0,0,0,.01), 0 4px 12px rgba(0,0,0,.01);
 	>* {
 		padding: 8px;
 	}
@@ -63,7 +60,7 @@ $border-color_2: var(--blue);
 	align-items: stretch;
 	justify-content: "center";
 	flex-direction: column;
-	box-shadow: 0 2px 4px rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.02);
+	box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.1);
 	>* {
 		display: flex;
 		align-items: center;
