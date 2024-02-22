@@ -1,6 +1,7 @@
 $color_1: var(--footer-text1-light);
 $color_2: var(--btn);
 $color_3: var(--footer-text0-light);
+$color_4: var(--text1-light);
 
 /* ======= LEFT SECTION ============================ */
 /* ======= RIGHT SECTION ============================ */
@@ -123,6 +124,34 @@ $color_3: var(--footer-text0-light);
 }
 .allEnrolledTab {
 	width: calc( calc( 100% * 0.33333 ) - 10px );
+}
+.filterButton {
+	text-decoration: none;
+	background: transparent;
+	border: none;
+	font-size: 0.88rem;
+	outline: none;
+	color: $color_4;
+}
+#sortByOption {
+	text-decoration: none;
+	background: transparent;
+	border: none;
+	font-size: 0.88rem;
+	outline: none;
+	color: $color_4;
+}
+.filterSortButtonSection {
+	color: $color_4;
+	>* {
+		background: rgba(30, 30, 30, 0.06);
+		padding: 5px 11.5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 300px;
+		font-size: 0.88rem;
+	}
 }
 @media (max-width: 1030px) {
 	.lssecENR {

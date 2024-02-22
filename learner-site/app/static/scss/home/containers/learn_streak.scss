@@ -211,6 +211,12 @@ $color_4: white;
 		margin-left: -110px;
 	}
 }
+.notificationContainer {
+	cursor: pointer;
+}
+.profileContainer {
+	cursor: pointer;
+}
 @media (max-width: 566px) {
 	.streakDaysSection {
 		.streakDays {

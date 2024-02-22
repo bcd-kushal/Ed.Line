@@ -1,11 +1,12 @@
 $color_1: var(--text0-light);
-$color_2: #f0f0f0;
+$color_2: rgba(60, 61, 62, 0.77);
+$color_3: #f0f0f0;
 $font-family_1: 'Outfit', 'Josefin Sans';
 $background-color_1: transparent;
 
 @import "https://fonts.googleapis.com/css2?family=Ephesis&family=Josefin+Sans:wght@400&family=Outfit:wght@300&family=Sacramento&display=swap";
 /* .profilePane{ right: 0 ; } */
-&:root {
+:root {
 	--bgcolor0-light: #fcfcfc;
 	--bgcolor1-light: #ffffff;
 	--footer-light: #ffffff;
@@ -60,7 +61,7 @@ $background-color_1: transparent;
 	--light-blue: #64beff;
 	--orange: #ffad3b;
 }
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
 	display: none;
 }
 * {
@@ -165,6 +166,71 @@ body {
 	gap: 20px;
 	overflow-y: scroll;
 }
+.filterButtonContainer {
+	* {
+		cursor: pointer;
+	}
+}
+.sortByOptionTitle {
+	cursor: pointer;
+	* {
+		cursor: pointer;
+	}
+}
+.subCoursePill {
+	cursor: pointer;
+}
+.videoTab2 {
+	* {
+		cursor: pointer;
+	}
+}
+.goLeftPage {
+	* {
+		cursor: pointer;
+	}
+}
+.goRightPage {
+	* {
+		cursor: pointer;
+	}
+}
+.headerR {
+	cursor: pointer;
+}
+.themeMode {
+	cursor: pointer;
+}
+.settingsPFPbar {
+	cursor: pointer;
+}
+.profileInsights {
+	>* {
+		cursor: pointer;
+	}
+}
+.bbr3 {
+	>* {
+		cursor: pointer;
+	}
+}
+.searchMini {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	height: 70px;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $color_2;
+	z-index: 1900;
+	border-radius: 300px;
+	background: #3c4852;
+	box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.3);
+	cursor: pointer;
+	display: none;
+}
 @media (max-width: 60000px) {
 	.hamburgerSection {
 		display: none;
@@ -245,7 +311,7 @@ body {
 		top: 15px;
 		right: 15px;
 		background: var(--btn);
-		color: $color_2;
+		color: $color_3;
 		display: flex;
 		align-items: center;
 		justify-content: center;
