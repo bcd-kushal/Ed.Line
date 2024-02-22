@@ -1,6 +1,9 @@
 
 from django.contrib import admin
 from django.urls import path, re_path
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 from app import views as r
 
@@ -54,3 +57,7 @@ urlpatterns = [
     # path('home/courses/music/', r.show_specific_course_page, name='home-courses-music'),              # <---- for the signed-in  
     # path('home/courses/teaching-and-academics/', r.show_specific_course_page, name='home-courses-teaching-and-academics'),              # <---- for the signed-in             # <---- for the signed-in
 ]
+
+
+
+urlpatterns += static(settings.MEDIA_URI,document_root=settings.MEDIA_ROOT)
