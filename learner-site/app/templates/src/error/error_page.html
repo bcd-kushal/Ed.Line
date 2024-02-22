@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
+    {% load sass_tags %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,20 +11,20 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- GET WISHLIST, NOTIFICATIONS, STREAK -->
-    <link rel="stylesheet" href="{% static 'css/home/containers/learn_streak.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/home/containers/learn_streak.scss' %} ">
     
     
     <!-- GET HEADER FOOTER -->
-    <link rel="stylesheet" href="{% static 'css/universal/header.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/footer.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/hamburger.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/rightPage.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/header.scss' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/footer.scss' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/hamburger.scss' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/rightPage.scss' %} ">
 
     <!-- LOAD REST OF PAGES AS NEEDED -->
-    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/global.scss' %} ">
 
     <!-- LOAD REST OF PAGES AS NEEDED -->
-    <link rel="stylesheet" href="{% static 'css/error/error.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/error/error.scss' %} ">
 
 
     <title>{{ tab_title }}</title>

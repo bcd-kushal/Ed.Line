@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
+    {% load sass_tags %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -10,37 +11,37 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- GET WISHLIST, NOTIFICATIONS, STREAK -->
-    <link rel="stylesheet" href="{% static 'css/home/containers/learn_streak.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/home/containers/profile.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/home/containers/learn_streak.scss' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/home/containers/profile.scss' %} ">
     <!-- LOAD REST OF PAGES AS NEEDED -->
-    <link rel="stylesheet" href="{% static 'css/global.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/global.scss' %} ">
     <!-- GET HEADER FOOTER -->
-    <link rel="stylesheet" href="{% static 'css/universal/header.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/footer.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/universal/rightPage.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/header.scss' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/footer.scss' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/universal/rightPage.scss' %} ">
     <!--------------------------------------------------------------------->
     {% if courses %}
-    <link rel="stylesheet" href="{% static 'css/home/pages/courses.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/home/pages/courses.scss' %} ">
     {% endif %}
 
     {% if homepage %}
-        <link rel="stylesheet" href="{% static 'css/home/pages/home.css' %} ">
+        <link rel="stylesheet" href="{% sass_src 'scss/home/pages/home.scss' %} ">
     {% endif %}
 
     {% if specific_course %}
-    <link rel="stylesheet" href="{% static 'css/home/courses/specific_course.css' %} ">
+    <link rel="stylesheet" href="{% sass_src 'scss/home/courses/specific_course.scss' %} ">
     {% endif %}
 
     {% if enrollments or user_lists or user_ongoing_tag %}
-        <link rel="stylesheet" href="{% static 'css/home/my_learning/user_learning.css' %} ">
+        <link rel="stylesheet" href="{% sass_src 'scss/home/my_learning/user_learning.scss' %} ">
     {% endif %}
 
     {% if settings %}
-        <link rel="stylesheet" href="{% static 'css/settings/settings.css' %} ">
+        <link rel="stylesheet" href="{% sass_src 'scss/settings/settings.scss' %} ">
     {% endif %}
 
     {% if video_player %}
-        <link rel="stylesheet" href="{% static 'css/play/player.css' %} ">
+        <link rel="stylesheet" href="{% sass_src 'scss/play/player.scss' %} ">
     {% endif %}
 
 </head>
