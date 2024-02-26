@@ -4,6 +4,7 @@ from django.core.validators import MinValueValidator, MinLengthValidator, MaxVal
 from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from django.contrib.auth.models import User
 import os
 
 
@@ -23,6 +24,7 @@ def validate_image_extension(value):
 
 # =============== COURSES DATABASE ===================================================
 class CourseOverview(models.Model):
+    username = models.CharField(default='___none___',max_length=255)
     course_title = models.CharField(max_length=100, default='Some Course')
     course_thumbnail = models.ImageField(upload_to='media/static/courses/course_thumbnails/', validators=[validate_image_extension])
     course_description = models.CharField(max_length=250, default='No course description')
