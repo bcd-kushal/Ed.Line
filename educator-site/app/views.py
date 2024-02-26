@@ -23,6 +23,7 @@ from moviepy.editor import VideoFileClip
 from .forms import *
 from .footer import *
 from .utils import *
+from .educator_courses import *
 from .models import *
 from .side_data import *
 from .utils.generate_id import generate_id
@@ -619,7 +620,7 @@ def add_course_overview(req):
 
 
         # add data to model db and redirect to course details
-        overview_instance = CourseOverview(course_title=course_title, course_thumbnail=course_thumbnail, course_description=course_description, course_level=course_level, course_id=course_id)
+        overview_instance = CourseOverview(course_title=course_title, course_thumbnail=course_thumbnail, course_description=course_description, course_level=course_level, course_id=course_id, username=req.user.username)
         overview_instance.save()
         
         thread = threading.Thread(target=helper_overview)
@@ -825,12 +826,15 @@ def educator_courses(req):
         if req.user.username == "" or req.user.username == None:
             return redirect('/')
         else:
+            course_data = read_educator_courses(req.user.username)
+
             CONTEXT = {
                 "tab_title": "Courses|Ed.Teach",
                 "footer": FOOTER_LINKS["LINKS"],
                 "social": FOOTER_LINKS["SOCIALS"],
                 "homepage": 'courses',
-                "educator_name": req.user.username.capitalize()
+                "educator_name": req.user.username.capitalize(),
+                "courses": course_data
             }
             return render(req,"src/home/_base_structure.html",CONTEXT)
         
