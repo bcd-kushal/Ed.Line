@@ -12,4 +12,12 @@
 - `Ed.Line` is an ed-tech website for learning through courses, with preferences of user based content display
 - `Ed.Teach` is the educator-end, to upload, create and edit one's courses
 
+<hr>
 
+## ⚖️ License
+
+This project is licensed under the MIT License - see the <a href=''>LICENSE</a> file for details.
+
+<hr>
+
+<h3><img title="Kushal-Kumar" width="17" src="https://github.com/bcd-kushal/bcd-kushal/blob/main/icons/dark/filled/kushalkumar_bg_dark.png"/>&nbsp;Kushal Kumar 2024 • All rights reserved </h3>
