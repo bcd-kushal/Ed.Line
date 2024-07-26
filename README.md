@@ -10,7 +10,7 @@
 <img style="height:25px" src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png"/> &nbsp;
       
 - `Ed.Line` is an ed-tech website for learning through courses, with preferences of user based content display
-- `Ed.Teach` is the educator-end, to upload, create and edit one's courses 
+- `Ed.Teach` is the educator-end, to upload, create and edit one's courses
 
 <hr>
 
