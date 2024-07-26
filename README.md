@@ -12,7 +12,7 @@
 - `Ed.Line` is an ed-tech website for learning through courses, with preferences of user based content display
 - `Ed.Teach` is the educator-end, to upload, create and edit one's courses
 
-<hr> 
+<hr>
 
 ## ⚖️ License
 
